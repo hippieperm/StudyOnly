@@ -1,4 +1,4 @@
-import 'package:first_pj/Pomodoro%20App/screens/home_screen.dart';
+import 'package:first_pj/Pomodoro_App_v2/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

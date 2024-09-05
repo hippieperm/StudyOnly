@@ -15,7 +15,7 @@ class CommonText extends StatelessWidget {
     super.key,
     required this.text,
     required this.fontSize,
-    this.textColor = const Color.fromARGB(255, 255, 255, 255),
+    this.textColor = Colors.white,
     this.fontWeight = FontWeight.w600,
     this.isDark = true,
     this.setStyle = false,
