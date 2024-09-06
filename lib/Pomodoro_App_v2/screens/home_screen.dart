@@ -41,11 +41,11 @@ class _HomeScreenState extends State<HomeScreen> {
           if (rounds % 4 == 0) {
             goals += 1; // 4개의 라운드가 완료되면 1회 목표 달성
             rounds = 0;
+            // 휴식 시간으로 전환
+            isBreakTime = true;
+            totalSeconds = breakTime; // 휴식 시간 설정 (5분)
           }
-
-          // 휴식 시간으로 전환
-          isBreakTime = true;
-          totalSeconds = breakTime; // 휴식 시간 설정 (5분)
+          totalSeconds = workTime;
         });
       }
     } else {
@@ -169,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         for (int i = 0; i < 5; i++)
                           TextButton(
                             onPressed: () {
-                              _onButtonPressed(i, (i + 0) * 1); // 버튼마다 시간 변경
+                              _onButtonPressed(i, (i + 3) * 5); // 버튼마다 시간 변경
                             },
                             style: TextButton.styleFrom(
                               side: selectedButtonIndex == i
@@ -214,7 +214,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 90),
+                  const SizedBox(height: 20),
+                  const CommonText(text: 'TestSet!', fontSize: 20),
+                  const SizedBox(height: 5),
+                  const CommonText(text: 'WorkTime : 1s', fontSize: 20),
+                  const SizedBox(height: 5),
+                  const CommonText(text: 'BreakTime : 2s', fontSize: 20),
+                  const SizedBox(height: 50),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 30),
                     child: Row(
