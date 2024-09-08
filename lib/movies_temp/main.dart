@@ -39,7 +39,7 @@ class MainScreen extends StatelessWidget {
           'Returning to her home planet, an infamous bounty hunter forms an unexpected alliance with a team of unlikely heroes. Together, they battle monsters and dangerous bandits to protect a young girl who holds the key to unimaginable power.',
       'duration': 'N/A',
       'genre': 'Action, Sci-Fi, Comedy, Adventure, Thriller',
-      'vote_average': 7.5,
+      'vote_average': 7.7,
     },
     {
       'title': 'Inside Out 2',
