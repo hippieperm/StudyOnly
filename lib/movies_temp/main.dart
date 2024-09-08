@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MainScreen extends StatelessWidget {
-  final List<Map<String, String>> popularMovies = [
+  final List<Map<String, dynamic>> popularMovies = [
     {
       'title': 'Deadpool & Wolverine',
       'image':
@@ -28,7 +28,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.',
       'duration': 'N/A',
-      'genre': 'Action, Comedy, Sci-Fi'
+      'genre': 'Action, Comedy, Sci-Fi',
+      'vote_average': 7.7,
     },
     {
       'title': 'Borderlands',
@@ -37,7 +38,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'Returning to her home planet, an infamous bounty hunter forms an unexpected alliance with a team of unlikely heroes. Together, they battle monsters and dangerous bandits to protect a young girl who holds the key to unimaginable power.',
       'duration': 'N/A',
-      'genre': 'Action, Sci-Fi, Comedy, Adventure, Thriller'
+      'genre': 'Action, Sci-Fi, Comedy, Adventure, Thriller',
+      'vote_average': 7.7,
     },
     {
       'title': 'Inside Out 2',
@@ -46,7 +48,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'Teenager Riley\'s mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone.',
       'duration': 'N/A',
-      'genre': 'Animation, Family, Adventure, Comedy'
+      'genre': 'Animation, Family, Adventure, Comedy',
+      'vote_average': 7.5,
     },
     {
       'title': 'Beetlejuice Beetlejuice',
@@ -55,7 +58,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'After a family tragedy, three generations of the Deetz family return home to Winter River. Still haunted by Beetlejuice, Lydia\'s life is turned upside down when her teenage daughter, Astrid, accidentally opens the portal to the Afterlife.',
       'duration': 'N/A',
-      'genre': 'Comedy, Horror, Fantasy'
+      'genre': 'Comedy, Horror, Fantasy',
+      'vote_average': 7.5,
     },
     {
       'title': 'Twilight of the Warriors: Walled In',
@@ -63,7 +67,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'Set in the 1980s, troubled youth Chan Lok-kwun accidentally enters the Walled City, discovers the order amidst its chaos, and learns important life lessons along the way. In the Walled City, he becomes close friends with Shin, Twelfth Master and AV. Under the leadership of Cyclone, they resist against the invasion of villain Mr. Big in a series of fierce battles. Together, they vow to protect the safe haven that is Kowloon Walled City.',
       'duration': 'N/A',
-      'genre': 'Action, Crime, Thriller'
+      'genre': 'Action, Crime, Thriller',
+      'vote_average': 7.5,
     },
     {
       'title': 'Despicable Me 4',
@@ -72,7 +77,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'Gru and Lucy and their girls—Margo, Edith and Agnes—welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad. Gru also faces a new nemesis in Maxime Le Mal and his femme fatale girlfriend Valentina, forcing the family to go on the run.',
       'duration': 'N/A',
-      'genre': 'Animation, Family, Comedy, Action'
+      'genre': 'Animation, Family, Comedy, Action',
+      'vote_average': 7.5,
     },
     {
       'title': 'The Killer',
@@ -81,7 +87,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'Zee is a feared contract killer known as "the Queen of the Dead," but when she refuses to murder a young blind woman, she finds herself hunted both by criminal colleagues and a determined police detective.',
       'duration': 'N/A',
-      'genre': 'Action, Thriller, Crime'
+      'genre': 'Action, Thriller, Crime',
+      'vote_average': 7.5,
     },
     {
       'title': 'Bad Boys: Ride or Die',
@@ -90,7 +97,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'After their late former Captain is framed, Lowrey and Burnett try to clear his name, only to end up on the run themselves.',
       'duration': 'N/A',
-      'genre': 'Action, Crime, Thriller, Comedy'
+      'genre': 'Action, Crime, Thriller, Comedy',
+      'vote_average': 7.5,
     },
     {
       'title': 'Twisters',
@@ -99,7 +107,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'As storm season intensifies, the paths of former storm chaser Kate Carter and reckless social-media superstar Tyler Owens collide when terrifying phenomena never seen before are unleashed. The pair and their competing teams find themselves squarely in the paths of multiple storm systems converging over central Oklahoma in the fight of their lives.',
       'duration': 'N/A',
-      'genre': 'Action, Adventure, Thriller'
+      'genre': 'Action, Adventure, Thriller',
+      'vote_average': 7.5,
     },
     {
       'title': 'Trap',
@@ -108,11 +117,12 @@ class MainScreen extends StatelessWidget {
       'description':
           'A father and teen daughter attend a pop concert, where they realize they\'re at the center of a dark and sinister event.',
       'duration': 'N/A',
-      'genre': 'Crime, Thriller'
+      'genre': 'Crime, Thriller',
+      'vote_average': 7.5,
     },
   ];
 
-  final List<Map<String, String>> nowInCinemas = [
+  final List<Map<String, dynamic>> nowInCinemas = [
     // Add your current 'Now in Cinemas' movies here,
     {
       'title': 'Borderlands',
@@ -121,15 +131,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'Returning to her home planet, an infamous bounty hunter forms an unexpected alliance with a team of unlikely heroes. Together, they battle monsters and dangerous bandits to protect a young girl who holds the key to unimaginable power.',
       'duration': 'N/A',
-      'genre': 'Action, Sci-Fi, Comedy, Adventure, Thriller'
-    },
-    {
-      'title': 'Twilight of the Warriors: Walled In',
-      'image': 'https://image.tmdb.org/t/p/w500/PywbVPeIhBFc33QXktnhMaysmL.jpg',
-      'description':
-          'Set in the 1980s, troubled youth Chan Lok-kwun accidentally enters the Walled City, discovers the order amidst its chaos, and learns important life lessons along the way. In the Walled City, he becomes close friends with Shin, Twelfth Master and AV. Under the leadership of Cyclone, they resist against the invasion of villain Mr. Big in a series of fierce battles. Together, they vow to protect the safe haven that is Kowloon Walled City.',
-      'duration': 'N/A',
-      'genre': 'Action, Crime, Thriller'
+      'genre': 'Action, Sci-Fi, Comedy, Adventure, Thriller',
+      'vote_average': 7.5,
     },
     {
       'title': 'Inside Out 2',
@@ -138,16 +141,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'Teenager Riley\'s mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone.',
       'duration': 'N/A',
-      'genre': 'Animation, Family, Adventure, Comedy'
-    },
-    {
-      'title': 'Despicable Me 4',
-      'image':
-          'https://image.tmdb.org/t/p/w500/wWba3TaojhK7NdycRhoQpsG0FaH.jpg',
-      'description':
-          'Gru and Lucy and their girls—Margo, Edith and Agnes—welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad. Gru also faces a new nemesis in Maxime Le Mal and his femme fatale girlfriend Valentina, forcing the family to go on the run.',
-      'duration': 'N/A',
-      'genre': 'Animation, Family, Comedy, Action'
+      'genre': 'Animation, Family, Adventure, Comedy',
+      'vote_average': 7.5,
     },
     {
       'title': 'Beetlejuice Beetlejuice',
@@ -156,8 +151,30 @@ class MainScreen extends StatelessWidget {
       'description':
           'After a family tragedy, three generations of the Deetz family return home to Winter River. Still haunted by Beetlejuice, Lydia\'s life is turned upside down when her teenage daughter, Astrid, accidentally opens the portal to the Afterlife.',
       'duration': 'N/A',
-      'genre': 'Comedy, Horror, Fantasy'
+      'genre': 'Comedy, Horror, Fantasy',
+      'vote_average': 7.5,
     },
+    {
+      'title': 'Twilight of the Warriors: Walled In',
+      'image': 'https://image.tmdb.org/t/p/w500/PywbVPeIhBFc33QXktnhMaysmL.jpg',
+      'description':
+          'Set in the 1980s, troubled youth Chan Lok-kwun accidentally enters the Walled City, discovers the order amidst its chaos, and learns important life lessons along the way. In the Walled City, he becomes close friends with Shin, Twelfth Master and AV. Under the leadership of Cyclone, they resist against the invasion of villain Mr. Big in a series of fierce battles. Together, they vow to protect the safe haven that is Kowloon Walled City.',
+      'duration': 'N/A',
+      'genre': 'Action, Crime, Thriller',
+      'vote_average': 7.5,
+    },
+
+    {
+      'title': 'Despicable Me 4',
+      'image':
+          'https://image.tmdb.org/t/p/w500/wWba3TaojhK7NdycRhoQpsG0FaH.jpg',
+      'description':
+          'Gru and Lucy and their girls—Margo, Edith and Agnes—welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad. Gru also faces a new nemesis in Maxime Le Mal and his femme fatale girlfriend Valentina, forcing the family to go on the run.',
+      'duration': 'N/A',
+      'genre': 'Animation, Family, Comedy, Action',
+      'vote_average': 7.5,
+    },
+
     {
       'title': 'The Killer',
       'image':
@@ -165,7 +182,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'Zee is a feared contract killer known as "the Queen of the Dead," but when she refuses to murder a young blind woman, she finds herself hunted both by criminal colleagues and a determined police detective.',
       'duration': 'N/A',
-      'genre': 'Action, Thriller, Crime'
+      'genre': 'Action, Thriller, Crime',
+      'vote_average': 7.5,
     },
     {
       'title': 'Twisters',
@@ -174,7 +192,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'As storm season intensifies, the paths of former storm chaser Kate Carter and reckless social-media superstar Tyler Owens collide when terrifying phenomena never seen before are unleashed. The pair and their competing teams find themselves squarely in the paths of multiple storm systems converging over central Oklahoma in the fight of their lives.',
       'duration': 'N/A',
-      'genre': 'Action, Adventure, Thriller'
+      'genre': 'Action, Adventure, Thriller',
+      'vote_average': 7.5,
     },
     {
       'title': 'Trap',
@@ -183,11 +202,12 @@ class MainScreen extends StatelessWidget {
       'description':
           'A father and teen daughter attend a pop concert, where they realize they\'re at the center of a dark and sinister event.',
       'duration': 'N/A',
-      'genre': 'Crime, Thriller'
+      'genre': 'Crime, Thriller',
+      'vote_average': 7.5,
     },
   ];
 
-  final List<Map<String, String>> comingSoon = [
+  final List<Map<String, dynamic>> comingSoon = [
     // Add your upcoming 'Coming Soon' movies here,
     {
       'title': 'Beetlejuice Beetlejuice',
@@ -196,7 +216,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'After a family tragedy, three generations of the Deetz family return home to Winter River. Still haunted by Beetlejuice, Lydia\'s life is turned upside down when her teenage daughter, Astrid, accidentally opens the portal to the Afterlife.',
       'duration': 'N/A',
-      'genre': 'Comedy, Horror, Fantasy'
+      'genre': 'Comedy, Horror, Fantasy',
+      'vote_average': 7.5,
     },
     {
       'title': 'Trap',
@@ -205,7 +226,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'A father and teen daughter attend a pop concert, where they realize they\'re at the center of a dark and sinister event.',
       'duration': 'N/A',
-      'genre': 'Crime, Thriller'
+      'genre': 'Crime, Thriller',
+      'vote_average': 7.5,
     },
     {
       'title': 'Kill',
@@ -214,7 +236,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'When an army commando finds out his true love is engaged against her will, he boards a New Dehli-bound train in a daring quest to derail the arranged marriage. But when a gang of knife-wielding thieves begin to terrorize innocent passengers on his train, the commando takes them on himself in a death-defying kill-spree to save those around him — turning what should have been a typical commute into an adrenaline-fueled thrill ride.',
       'duration': 'N/A',
-      'genre': 'Action, Crime'
+      'genre': 'Action, Crime',
+      'vote_average': 7.5,
     },
     {
       'title': 'It Ends with Us',
@@ -223,7 +246,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'When a woman\'s first love suddenly reenters her life, her relationship with a charming, but abusive neurosurgeon is upended, and she realizes she must learn to rely on her own strength to make an impossible choice for her future.',
       'duration': 'N/A',
-      ',genre': 'Romance, Drama'
+      ',genre': 'Romance, Drama',
+      'vote_average': 6.8,
     },
     {
       'title': 'Harold and the Purple Crayon',
@@ -232,7 +256,8 @@ class MainScreen extends StatelessWidget {
       'description':
           'Inside of his book, adventurous Harold can make anything come to life simply by drawing it. After he grows up and draws himself off the book\'s pages and into the physical world, Harold finds he has a lot to learn about real life.',
       'duration': 'N/A',
-      'genre': 'Animation, Family'
+      'genre': 'Animation, Family',
+      'vote_average': 6.8,
     },
   ];
 
@@ -248,15 +273,10 @@ class MainScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Popular Movies Section
             sectionTitle('Popular Movies'),
             horizontalMovieList(context, popularMovies),
-
-            // Now in Cinemas Section
             sectionTitle('Now in Cinemas'),
             horizontalMovieList(context, nowInCinemas),
-
-            // Coming Soon Section
             sectionTitle('Coming Soon'),
             horizontalMovieList(context, comingSoon),
           ],
@@ -265,7 +285,6 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  // Helper method for section titles
   Widget sectionTitle(String title) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -276,9 +295,8 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  // Helper method to create a horizontal scrolling movie list
   Widget horizontalMovieList(
-      BuildContext context, List<Map<String, String>> movies) {
+      BuildContext context, List<Map<String, dynamic>> movies) {
     return SizedBox(
       height: 220, // Adjust height as necessary
       child: ListView.builder(
@@ -287,7 +305,6 @@ class MainScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           final movie = movies[index];
           return GestureDetector(
-            
             onTap: () {
               Navigator.push(
                 context,
@@ -320,7 +337,7 @@ class MainScreen extends StatelessWidget {
                   Text(
                     movie['title']!,
                     style: const TextStyle(
-                        fontSize: 13, fontWeight: FontWeight.bold),
+                        fontSize: 12, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -333,8 +350,30 @@ class MainScreen extends StatelessWidget {
   }
 }
 
+class RatingStars extends StatelessWidget {
+  final double voteAverage;
+
+  const RatingStars({super.key, required this.voteAverage});
+
+  @override
+  Widget build(BuildContext context) {
+    int starCount = ((voteAverage / 10) * 5).round();
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: List.generate(
+        5,
+        (index) => Icon(
+          index < starCount ? Icons.star : Icons.star_border,
+          color: Colors.amber,
+          size: 20,
+        ),
+      ),
+    );
+  }
+}
+
 class DetailScreen extends StatelessWidget {
-  final Map<String, String> movie;
+  final Map<String, dynamic> movie;
 
   const DetailScreen({super.key, required this.movie});
 
@@ -376,6 +415,8 @@ class DetailScreen extends StatelessWidget {
               movie['description']!,
               style: const TextStyle(fontSize: 16),
             ),
+            const SizedBox(height: 16),
+            RatingStars(voteAverage: movie['vote_average']),
             const SizedBox(height: 24),
             Center(
               child: ElevatedButton(
