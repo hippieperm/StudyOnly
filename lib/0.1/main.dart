@@ -1,10 +1,10 @@
 import 'package:first_pj/2/app2.dart';
 import 'package:first_pj/style/color.dart';
-import 'package:first_pj/widgets/button.dart';
-import 'package:first_pj/widgets/currency_card.dart';
+import 'package:first_pj/0.1/widgets/button.dart';
+import 'package:first_pj/0.1/widgets/currency_card.dart';
 import 'package:flutter/material.dart';
 
-import '1/app1.dart';
+import '../1/app1.dart';
 
 void main() {
   // runApp(const App());
