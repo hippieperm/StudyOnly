@@ -1,4 +1,4 @@
-import 'package:first_pj/webtoon_app/screens/detail_screen.dart';
+import 'package:first_pj/webtoon_app_v1/screens/detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class Webtoon extends StatelessWidget {

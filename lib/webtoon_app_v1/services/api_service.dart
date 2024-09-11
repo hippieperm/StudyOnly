@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:first_pj/webtoon_app/models/webtoon_detail_model.dart';
-import 'package:first_pj/webtoon_app/models/webtoon_episode_model.dart';
-import 'package:first_pj/webtoon_app/models/webtoon_model.dart';
+import 'package:first_pj/webtoon_app_v1/models/webtoon_detail_model.dart';
+import 'package:first_pj/webtoon_app_v1/models/webtoon_episode_model.dart';
+import 'package:first_pj/webtoon_app_v1/models/webtoon_model.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {

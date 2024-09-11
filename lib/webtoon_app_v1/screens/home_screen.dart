@@ -1,6 +1,6 @@
-import 'package:first_pj/webtoon_app/models/webtoon_model.dart';
-import 'package:first_pj/webtoon_app/services/api_service.dart';
-import 'package:first_pj/webtoon_app/widgets/webtoon_widget.dart';
+import 'package:first_pj/webtoon_app_v1/models/webtoon_model.dart';
+import 'package:first_pj/webtoon_app_v1/services/api_service.dart';
+import 'package:first_pj/webtoon_app_v1/widgets/webtoon_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text(
           "오늘의 웹툰",
           style: TextStyle(
-            fontSize: 22,
+            fontSize: 22,ㅇㄴㄹ
             fontWeight: FontWeight.w600,
           ),
         ),
