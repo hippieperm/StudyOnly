@@ -1,5 +1,4 @@
-import 'package:first_pj/webtoon_app/screens/home_screen.dart';
-import 'package:first_pj/webtoon_app/services/api_service.dart';
+import 'package:first_pj/webtoon_app_v1/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
