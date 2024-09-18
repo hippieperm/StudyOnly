@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class ApiServiceV2 {
   static const String mainUrl =
       'https://webtoon-crawler.nomadcoders.workers.dev';
-  static const String today = 'todaty';
+  static const String today = 'today';
 
   static Future<List<WebtoonModelV2>> getTodaysToons() async {
     final url = Uri.parse('$mainUrl/$today');

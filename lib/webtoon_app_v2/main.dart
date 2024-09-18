@@ -5,7 +5,7 @@ import 'screens/home_screen_v2.dart';
 
 void main() {
   runApp(const App());
-  ApiServiceV2.getTodaysToons();
+  // ApiServiceV2.getTodaysToons();
 }
 
 class App extends StatelessWidget {

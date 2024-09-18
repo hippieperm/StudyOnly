@@ -35,7 +35,7 @@ class HomeScreenV2 extends StatelessWidget {
                 ListView.separated(
                   itemBuilder: (context, index) {
                     var webtoon = snapshot.data![index];
-                    print(index);
+                    print(webtoon.title);
                     return null;
                   },
                   // separatorBuilder: (context, index) => const SizedBox(
