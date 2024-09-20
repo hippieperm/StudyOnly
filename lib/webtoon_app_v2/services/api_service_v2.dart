@@ -12,7 +12,11 @@ class ApiServiceV2 {
     final url = Uri.parse('$mainUrl/$today');
     final response = await http.get(url);
     if (response.statusCode == 200) {
-      print(response.body);
+      final List<dynamic> webtoons = jsonDecode(response.body);
+      for (var webtoon in webtoons) {
+        final toon = WebtoonModelV2.formJson(webtoon);
+        print(toon.title);
+      }
     }
     throw Error();
   }
