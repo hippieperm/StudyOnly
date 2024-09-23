@@ -9,14 +9,15 @@ class ApiServiceV2 {
   static const String today = 'today';
 
   static Future<List<WebtoonModelV2>> getTodaysToons() async {
+    List<WebtoonModelV2> webtoonInstances = [];
     final url = Uri.parse('$mainUrl/$today');
     final response = await http.get(url);
     if (response.statusCode == 200) {
       final List<dynamic> webtoons = jsonDecode(response.body);
       for (var webtoon in webtoons) {
-        final toon = WebtoonModelV2.formJson(webtoon);
-        print(toon.title);
+        webtoonInstances.add(WebtoonModelV2.formJson(webtoon));
       }
+      return webtoonInstances;
     }
     throw Error();
   }
