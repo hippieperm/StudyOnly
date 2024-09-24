@@ -35,7 +35,7 @@ class HomeScreenV2 extends StatelessWidget {
             );
           }
           return const Text(
-            'isLoading',
+            '...',
             style: TextStyle(
               fontSize: 30,
               color: Colors.white,
