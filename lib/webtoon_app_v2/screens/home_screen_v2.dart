@@ -10,26 +10,39 @@ class HomeScreenV2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xff212528),
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          title: Text(
-            'Webtoon!',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.w600,
-              color: Colors.white.withOpacity(0.7),
-            ),
+      backgroundColor: const Color(0xff212528),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        title: Text(
+          'Webtoon!',
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.w600,
+            color: Colors.white.withOpacity(0.7),
           ),
         ),
-        body: FutureBuilder(
-          future: toons,
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return const Text('data');
-            }
-            return const Text('load...');
-          },
-        ));
+      ),
+      body: FutureBuilder(
+        future: toons,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return const Text(
+              'HasData',
+              style: TextStyle(
+                fontSize: 30,
+                color: Colors.white,
+              ),
+            );
+          }
+          return const Text(
+            '...,',
+            style: TextStyle(
+              fontSize: 30,
+              color: Colors.white,
+            ),
+          );
+        },
+      ),
+    );
   }
 }
