@@ -4,59 +4,32 @@ import 'package:flutter/material.dart';
 
 class HomeScreenV2 extends StatelessWidget {
   HomeScreenV2({super.key});
-  final Future<List<WebtoonModelV2>> webtoons = ApiServiceV2.getTodaysToons();
-  // ApiServiceV2.getTodaysToons();
+
+  Future<List<WebtoonModelV2>> toons = ApiServiceV2.getTodaysToons();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff212528),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: Text(
-          'Webtoon!',
-          style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.w600,
-            color: Colors.white.withOpacity(0.7),
+        backgroundColor: const Color(0xff212528),
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          title: Text(
+            'Webtoon!',
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.w600,
+              color: Colors.white.withOpacity(0.7),
+            ),
           ),
         ),
-      ),
-      body: FutureBuilder(
-        future: webtoons,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return Column(
-              children: [
-                const SizedBox(
-                  height: 50,
-                ),
-                ListView.separated(
-                  itemBuilder: (context, index) {
-                    var webtoon = snapshot.data![index];
-                    print(webtoon.title);
-                    return null;
-                  },
-                  // separatorBuilder: (context, index) => const SizedBox(
-                  //   width: 30,
-                  // ),
-                  separatorBuilder: (context, index) {
-                    return const SizedBox(
-                      width: 30,
-                    );
-                  },
-                  itemCount: snapshot.data!.length,
-                )
-              ],
-            );
-          }
-          return Center(
-            child: CircularProgressIndicator(
-              color: Colors.white.withOpacity(0.8),
-            ),
-          );
-        },
-      ),
-    );
+        body: FutureBuilder(
+          future: toons,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return const Text('data');
+            }
+            return const Text('load...');
+          },
+        ));
   }
 }
