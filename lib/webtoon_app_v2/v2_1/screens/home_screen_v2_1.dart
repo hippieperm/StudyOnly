@@ -1,11 +1,14 @@
 import 'package:first_pj/webtoon_app_v2/v2_1/models/webtoon_model_v2_14.dart';
 import 'package:first_pj/webtoon_app_v2/v2_1/services/api_service_v2_14.dart';
+import 'package:first_pj/webtoon_app_v2/v2_1/services/api_service_v2_15.dart';
 import 'package:flutter/material.dart';
+
+import '../models/webtoon_model_v2_15.dart';
 
 class HomeScreenV2_1 extends StatelessWidget {
   HomeScreenV2_1({super.key});
 
-  Future<List<WebtoonModelV2_14>> toons = ApiServiceV2_14.getTodayToons();
+  Future<List<WebtoonModelV2_15>> toons = ApiServiceV2_15.getTodayToon();
 
   @override
   Widget build(BuildContext context) {
@@ -27,18 +30,18 @@ class HomeScreenV2_1 extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return const Text(
-              'Has data!',
+              'HasData!',
               style: TextStyle(
-                fontSize: 30,
                 color: Colors.white,
+                fontSize: 30,
               ),
             );
           }
           return const Text(
-            '...!',
+            '....!',
             style: TextStyle(
-              fontSize: 30,
               color: Colors.white,
+              fontSize: 30,
             ),
           );
         },
