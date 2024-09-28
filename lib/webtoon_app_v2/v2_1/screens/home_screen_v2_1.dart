@@ -1,6 +1,8 @@
 import 'package:first_pj/webtoon_app_v2/v2_1/models/webtoon_model_v2_14.dart';
+import 'package:first_pj/webtoon_app_v2/v2_1/models/webtoon_model_v2_16.dart';
 import 'package:first_pj/webtoon_app_v2/v2_1/services/api_service_v2_14.dart';
 import 'package:first_pj/webtoon_app_v2/v2_1/services/api_service_v2_15.dart';
+import 'package:first_pj/webtoon_app_v2/v2_1/services/api_service_v2_16.dart';
 import 'package:flutter/material.dart';
 
 import '../models/webtoon_model_v2_15.dart';
@@ -8,7 +10,7 @@ import '../models/webtoon_model_v2_15.dart';
 class HomeScreenV2_1 extends StatelessWidget {
   HomeScreenV2_1({super.key});
 
-  Future<List<WebtoonModelV2_15>> toons = ApiServiceV2_15.getTodayToon();
+  Future<List<WebtoonModelV2_16>> toons = ApiServiceV2_16.getTodayToons();
 
   @override
   Widget build(BuildContext context) {
@@ -29,19 +31,23 @@ class HomeScreenV2_1 extends StatelessWidget {
         future: toons,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return const Text(
-              'HasData!',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 30,
+            return const Center(
+              child: Text(
+                'HasData',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                ),
               ),
             );
           }
-          return const Text(
-            '....!',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 30,
+          return const Center(
+            child: Text(
+              '...',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 60,
+              ),
             ),
           );
         },
