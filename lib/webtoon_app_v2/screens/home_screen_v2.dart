@@ -26,21 +26,26 @@ class HomeScreenV2 extends StatelessWidget {
         future: toons,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return const Text(
-              'HasData',
-              style: TextStyle(
-                fontSize: 30,
-                color: Colors.white,
-              ),
+            return ListView.separated(
+              scrollDirection: Axis.horizontal,
+              itemCount: snapshot.data!.length,
+              itemBuilder: (context, index) {
+                print(index);
+                final webtoons = snapshot.data![index];
+                return Text(
+                  webtoons.title,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                );
+              },
+              separatorBuilder: (context, index) {
+                return const SizedBox(width: 15);
+              },
             );
           }
-          return const Text(
-            '...,',
-            style: TextStyle(
-              fontSize: 30,
-              color: Colors.white,
-            ),
-          );
+          return const Center(child: CircularProgressIndicator());
         },
       ),
     );
