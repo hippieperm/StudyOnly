@@ -1,11 +1,11 @@
-import 'package:first_pj/webtoon_app_v2/v3_4/models/webtoon_model_V3_4.dart';
-import 'package:first_pj/webtoon_app_v2/v3_4/services/api_service_v3_4.dart';
+import 'package:first_pj/webtoon_app_v2/v3_5/models/webtoon_model_V3_4.dart';
+import 'package:first_pj/webtoon_app_v2/v3_5/services/api_service_v3_5.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreenV3_4 extends StatelessWidget {
-  HomeScreenV3_4({super.key});
+class HomeScreenV3_5 extends StatelessWidget {
+  HomeScreenV3_5({super.key});
 
-  Future<List<WebtoonModelV3_4>> webtoon = ApiServiceV3_4.getTodayToons();
+  Future<List<WebtoonModelV3_5>> webtoons = ApiServiceV3_5.getTodaysToons();
 
   @override
   Widget build(BuildContext context) {
@@ -23,34 +23,33 @@ class HomeScreenV3_4 extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: FutureBuilder(
-          future: webtoon,
+          future: webtoons,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return ListView.separated(
                 itemBuilder: (context, index) {
                   print(index);
                   final toons = snapshot.data![index];
-                  var title = toons.title;
-                  var id = toons.id;
-                  var thumb = toons.thumb;
+                  final id = toons.id;
+                  final title = toons.title;
+                  final thumb = toons.thumb;
                   return Text(
-                    '$id    $title\n\n$thumb ',
+                    '$id / $title\n$thumb',
                     style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
                       color: Colors.white.withOpacity(0.8),
+                      fontSize: 24,
+                      fontWeight: FontWeight.w600,
                     ),
                   );
                 },
                 separatorBuilder: (context, index) =>
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 30),
                 itemCount: snapshot.data!.length,
-                scrollDirection: Axis.vertical,
               );
             }
-            return const Center(child: CircularProgressIndicator());
+            return const CircularProgressIndicator();
           },
         ),
       ),
