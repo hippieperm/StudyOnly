@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'solution.dart';
 
 void main() {
@@ -24,5 +26,8 @@ void main() {
   print(Solution().solution7(3, 4));
   print(Solution().solution7(27, 19));
 
-  // Solution().solution8();
+  // Solution().solution11();
+  Solution().solution12();
+  Solution().solution13();
+  Solution().solution14();
 }
