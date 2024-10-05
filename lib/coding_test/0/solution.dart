@@ -60,11 +60,17 @@ class Solution {
     return myString.substring(0, n);
   }
 
-  //접미사인지 확인하기
-  // int solution5(String myString, String isSuffix) {
-  //   int answer = 0;
-  //   return answer;
-  // }
+  // 접미사인지 확인하기
+  int solution5(String myString, String isSuffix) {
+    int answer = 0;
+    for (var i = 0; i < myString.length; i++) {
+      final subMyString = myString.substring(i, myString.length);
+      if (subMyString == isSuffix) {
+        return answer = 1;
+      }
+    }
+    return answer;
+  }
 
   int solution6(int age) {
     int answer = 0;
@@ -131,10 +137,32 @@ class Solution {
     print('$s1$s2');
   }
 
-  void solution15() {}
-  void solution16() {}
-  void solution17() {}
-  void solution18() {}
+  //문자열 돌리기,
+  void solution15() {
+    // String s1 = stdin.readLineSync()!;
+    String s1 = 'abcde';
+    for (var i = 0; i < s1.length; i++) {
+      print(s1[i]);
+    }
+  }
+
+  void solution16(int input) {
+    var a = input;
+    if (a % 2 == 0) {
+      print('$a is even');
+    } else {
+      print('$a is odd');
+    }
+  }
+
+  int solution17(int num, int n) {
+    int answer = 0;
+    if (num % n == 0) {
+      return answer = 1;
+    }
+    return answer;
+  }
+
   void solution19() {}
   void solution20() {}
   void solution21() {}

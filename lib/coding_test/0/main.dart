@@ -18,7 +18,11 @@ void main() {
   print(Solution().solution4_1('He110W0r1d', 5));
 
   //접미사
-  // print(Solution().solution5(myString, isSuffix));
+  print('---------------접미사---------------');
+  print(Solution().solution5('banana', 'ana'));
+  print(Solution().solution5('banana', 'nan'));
+  print(Solution().solution5('banana', 'wxyz'));
+  print(Solution().solution5('banana', 'abanana'));
 
   print(Solution().solution6(40));
   print(Solution().solution6(23));
@@ -30,4 +34,12 @@ void main() {
   Solution().solution12();
   Solution().solution13();
   Solution().solution14();
+
+  Solution().solution15();
+
+  Solution().solution16(100);
+  Solution().solution16(1);
+
+  Solution().solution17(98,2);
+  Solution().solution17(34, 3);
 }
