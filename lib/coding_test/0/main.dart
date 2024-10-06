@@ -40,6 +40,36 @@ void main() {
   Solution().solution16(100);
   Solution().solution16(1);
 
-  Solution().solution17(98,2);
+  Solution().solution17(98, 2);
   Solution().solution17(34, 3);
+
+  print('---------------연산비교 테스트---------------');
+  Solution().solution19(2, 91);
+  Solution().solution19(91, 2);
+  Solution().solution19(2, 91);
+  Solution().solution19(91, 2);
+
+  print('---------------문자열 겹쳐쓰기---------------');
+  String myString = 'He11oWor1d';
+  String overwriteString = 'lloWorl';
+  int s = 2;
+  // print('${myString.substring(0, s)}$overwriteString');
+  String answer = '${myString.substring(0, s)}$overwriteString';
+  answer += myString.substring(answer.length);
+  print(answer);
+
+  print(
+    myString.substring(0, s) +
+        overwriteString +
+        myString.substring(s + overwriteString.length),
+  );
+
+  int number = 60;
+  int n = 2;
+  int m = 3;
+  print((number % n == 0 && number % m == 0) ? 1 : 0);
+
+  print('---------------조건 문자열---------------');
+  Solution().solution23('<', '=', 20, 50);
+  Solution().solution23('>', '!', 41, 78);
 }
