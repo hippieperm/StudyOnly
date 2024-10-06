@@ -72,4 +72,7 @@ void main() {
   print('---------------조건 문자열---------------');
   Solution().solution23('<', '=', 20, 50);
   Solution().solution23('>', '!', 41, 78);
+
+  Solution().solution26([3, 4, 5, 2, 1]);
+  Solution().solution26([5, 7, 8, 3]);
 }
