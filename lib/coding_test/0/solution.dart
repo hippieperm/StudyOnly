@@ -146,6 +146,7 @@ class Solution {
     }
   }
 
+  //홀짝 구분하기
   void solution16(int input) {
     var a = input;
     if (a % 2 == 0) {
@@ -155,6 +156,7 @@ class Solution {
     }
   }
 
+  //n의 배수
   int solution17(int num, int n) {
     int answer = 0;
     if (num % n == 0) {
@@ -163,14 +165,90 @@ class Solution {
     return answer;
   }
 
-  void solution19() {}
-  void solution20() {}
-  void solution21() {}
-  void solution22() {}
-  void solution23() {}
-  void solution24() {}
-  void solution25() {}
-  void solution26() {}
+  // 두 수의 연산값 비교하기
+  int solution19(int a, int b) {
+    int answer = 0;
+
+    var calInt = int.parse('$a$b');
+    var cal2 = 2 * a * b;
+
+    if (calInt > cal2) {
+      return calInt;
+    }
+    if (calInt < cal2) {
+      return cal2;
+    }
+    if (calInt == cal2) {
+      answer = calInt;
+    }
+    return answer;
+  }
+
+  //삼항연산자 활용
+  int solution19_1(int a, int b) {
+    var calInt = int.parse('$a$b');
+    var cal2 = 2 * a * b;
+
+    return (calInt >= cal2) ? calInt : cal2;
+  }
+
+  //문자열 겹쳐쓰기
+  String solution20(String myString, String overwriteString, int s) {
+    String answer = "";
+    answer = '${myString.substring(0, s)}$overwriteString';
+    answer += myString.substring(answer.length);
+
+    return answer;
+  }
+
+  //더 크게 합치기
+  int solution21(int a, int b) {
+    var sum1 = int.parse('$a$b');
+    var sum2 = int.parse('$b$a');
+
+    return (sum1 >= sum2) ? sum1 : sum2;
+  }
+
+  // 공배수
+  int solution22(int number, int n, int m) {
+    return (number % n == 0 && number % m == 0) ? 1 : 0;
+  }
+
+  // 조건 문자열 ***
+  int solution23(String ineq, String eq, int n, int m) {
+    if (ineq == '<') {
+      return eq == '=' ? (n <= m ? 1 : 0) : (n < m ? 1 : 0);
+    } else {
+      return eq == '=' ? (n >= m ? 1 : 0) : (n > m ? 1 : 0);
+    }
+  }
+
+  //flag에 따라 다른 값 반환하기
+  int solution24(int a, int b, bool flag) {
+    return flag ? (a + b) : (a - b);
+  }
+
+  //간단한 논리 연산
+  //(x1 ∨ x2) ∧ (x3 ∨ x4) A 모양이 ANd 반대가 OR
+  bool solution25(bool x1, bool x2, bool x3, bool x4) {
+    return (x1 || x2) && (x3 || x4) ? true : false;
+  }
+
+  //이어 붙인 수
+  int solution26(List<int> numList) {
+    String even = '';
+    String odd = '';
+
+    for (var num in numList) {
+      var strNum = num.toString();
+      (num % 2 == 0) ? (even += strNum) : (odd += strNum);
+    }
+    int intEven = int.parse(even);
+    int intOdd = int.parse(odd);
+
+    return (intOdd + intEven);
+  }
+
   void solution27() {}
   void solution28() {}
   void solution29() {}
