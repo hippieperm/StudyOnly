@@ -235,6 +235,7 @@ class Solution {
   }
 
   //이어 붙인 수
+  // 다트에서 정상작동 하는데 numList 변수명이 코틀린에서 달라서 실행이 안됨
   int solution26(List<int> numList) {
     String even = '';
     String odd = '';
