@@ -1,6 +1,6 @@
-import 'package:first_pj/webtoon_app/models/webtoon_model.dart';
-import 'package:first_pj/webtoon_app/services/api_service.dart';
-import 'package:first_pj/webtoon_app/widgets/webtoon_widget.dart';
+import 'package:first_pj/webtoon_app_v1/models/webtoon_model.dart';
+import 'package:first_pj/webtoon_app_v1/services/api_service.dart';
+import 'package:first_pj/webtoon_app_v1/widgets/webtoon_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -24,7 +24,6 @@ class HomeScreen extends StatelessWidget {
         foregroundColor: Colors.green,
         surfaceTintColor: Colors.white,
         shadowColor: Colors.black,
-
         elevation: 2,
       ),
       body: FutureBuilder(
@@ -33,9 +32,9 @@ class HomeScreen extends StatelessWidget {
           if (snapshot.hasData) {
             return Column(
               children: [
-                const SizedBox(
-                  height: 50,
-                ),
+                // const SizedBox(
+                //   height: 50,
+                // ),
                 Expanded(
                   child: makeList(snapshot),
                 ),
@@ -52,7 +51,7 @@ class HomeScreen extends StatelessWidget {
 
   ListView makeList(AsyncSnapshot<List<WebtoonModel>> snapshot) {
     return ListView.separated(
-      scrollDirection: Axis.horizontal,
+      // scrollDirection: Axis.horizontal,
       itemCount: snapshot.data!.length,
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       itemBuilder: (BuildContext context, int index) {
@@ -65,7 +64,8 @@ class HomeScreen extends StatelessWidget {
         );
       },
       separatorBuilder: (BuildContext context, int index) => const SizedBox(
-        width: 40,
+        // width: 40,
+        height: 30,
       ),
     );
   }
