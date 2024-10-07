@@ -35,6 +35,7 @@ class App extends StatelessWidget {
                               height: 60,
                             ),
                           ),
+                          
                           const Icon(
                             Icons.add,
                             size: 50,
