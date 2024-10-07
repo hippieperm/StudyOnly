@@ -77,4 +77,6 @@ void main() {
   Solution().solution26([5, 7, 8, 3]);
 
   Solution().solution27(3, 10);
+
+  print(2 - 3);
 }
