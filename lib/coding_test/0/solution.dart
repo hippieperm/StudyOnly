@@ -265,4 +265,48 @@ class Solution {
   int solution28(int num1, int num2) {
     return (num1 - num2);
   }
+
+  // 등차수열의 특정한 항만 더하기
+  int solution29(int num1, int d, List<bool> included) {
+    int answer = 0;
+    int a = num1;
+    for (bool bool in included) {
+      if (bool) {
+        answer += a;
+      }
+      a += d;
+    }
+    return answer;
+  }
+
+  // /주사위 게임 2
+  int solution30(int a, int b, int c) {
+    int answer = 0;
+    if (a != b && b != c && a != c) {
+      answer = (a + b + c);
+    }
+    if (a == b || b == c || a == c) {
+      answer = (a + b + c) * ((a * a) + (b * b) + (c * c));
+    }
+    if (a == b && b == c) {
+      answer = (a + b + c) *
+          ((a * a) + (b * b) + (c * c)) *
+          ((a * a * a) + (b * b * b) + (c * c * c));
+    }
+    return answer;
+  }
+
+  int solution30_1(int a, int b, int c) {
+    int sum = a + b + c;
+    int sqSum = (a * a) + (b * b) + (c * c);
+    int cubeSum = (a * a * a) + (b * b * b) + (c * c * c);
+
+    if (a == b && b == c) {
+      return sum * sqSum * cubeSum;
+    } else if (a == b || b == c || a == c) {
+      return sum * sqSum;
+    } else {
+      return sum;
+    }
+  }
 }
