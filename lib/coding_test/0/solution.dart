@@ -297,7 +297,7 @@ class Solution {
   }
 
   int solution30_1(int a, int b, int c) {
-    int sum = a + b + c;
+    int sum = (a + b + c);
     int sqSum = (a * a) + (b * b) + (c * c);
     int cubeSum = (a * a * a) + (b * b * b) + (c * c * c);
 
@@ -308,5 +308,16 @@ class Solution {
     } else {
       return sum;
     }
+  }
+
+  //원소들의 곱과 합
+  int solution31(List<int> numList) {
+    var mix = 1;
+    var sum = 0;
+    for (var list in numList) {
+      sum += list;
+      mix *= list;
+    }
+    return ((sum * sum) > mix) ? 1 : 0;
   }
 }
