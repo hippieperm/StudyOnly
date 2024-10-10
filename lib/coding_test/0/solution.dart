@@ -267,17 +267,17 @@ class Solution {
   }
 
   // 등차수열의 특정한 항만 더하기
-  int solution29(int num1, int d, List<bool> included) {
-    int answer = 0;
-    int a = num1;
-    for (bool bool in included) {
-      if (bool) {
-        answer += a;
-      }
-      a += d;
-    }
-    return answer;
-  }
+  // int solution29(int num1, int d, List<bool> included) {
+  //   int answer = 0;
+  //   int a = num1;
+  //   for (bool bool in included) {
+  //     if (bool) {
+  //       answer += a;
+  //     }
+  //     a += d;
+  //   }
+  //   return answer;
+  // }
 
   // /주사위 게임 2
   int solution30(int a, int b, int c) {
@@ -319,5 +319,15 @@ class Solution {
       mix *= list;
     }
     return ((sum * sum) > mix) ? 1 : 0;
+  }
+
+  List<int> solution32(List<int> numList) {
+    final lastVal = numList[numList.length - 1];
+    final minusoneVal = numList[numList.length - 2];
+    final listInstances =
+        lastVal > minusoneVal ? lastVal - minusoneVal : lastVal * 2;
+
+    // 새로운 List<int> 생성
+    return [...numList, listInstances];
   }
 }

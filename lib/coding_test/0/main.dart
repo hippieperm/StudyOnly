@@ -79,4 +79,9 @@ void main() {
   Solution().solution27(3, 10);
 
   print(2 - 3);
+
+  List<int> numList = [5, 2, 1, 7, 5];
+  print(numList.length);
+  // var lastVal = numList[numList.length];
+  // var minusoneVal = numList[numList.length - 1];
 }
