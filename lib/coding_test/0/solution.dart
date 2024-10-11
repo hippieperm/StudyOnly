@@ -330,4 +330,75 @@ class Solution {
     // 새로운 List<int> 생성
     return [...numList, listInstances];
   }
+
+  //수 조작하기
+  int solution33(int n, String control) {
+    int answer = n;
+    for (var i = 0; i < control.length; i++) {
+      var index = control[i];
+      if (index == 'w') {
+        answer++;
+      }
+      if (index == 's') {
+        answer--;
+      }
+      if (index == 'd') {
+        answer += 10;
+      }
+      if (index == 'a') {
+        answer -= 10;
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  //수 조작하기2 *** 못품
+  String solution34(List<int> numLog) {
+    String answer = '';
+    print(numLog);
+    for (int i = 1; i < numLog.length; i++) {
+      int diff = numLog[i] - numLog[i - 1];
+      switch (diff) {
+        case 1:
+          answer += 'w';
+          break;
+        case -1:
+          answer += 's';
+          break;
+        case 10:
+          answer += 'd';
+          break;
+        case -10:
+          answer += 'a';
+          break;
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  String solution34_1(List<int> numLog) {
+    String answer = '';
+    for (var i = 1; i < numLog.length; i++) {
+      var difIndex = numLog[i] - numLog[i - 1];
+      switch (difIndex) {
+        case 1:
+          answer += 'w';
+          break;
+        case -1:
+          answer += 's';
+          break;
+        case 10:
+          answer += 'd';
+          break;
+        case -10:
+          answer += 'a';
+          break;
+      }
+    }
+    print('wri');
+    print(answer);
+    return answer;
+  }
 }

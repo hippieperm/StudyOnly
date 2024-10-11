@@ -84,4 +84,10 @@ void main() {
   print(numList.length);
   // var lastVal = numList[numList.length];
   // var minusoneVal = numList[numList.length - 1];
+
+  print('----');
+  Solution().solution33(0, 'wsdawsdassw');
+
+  Solution().solution34([0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1]);
+  Solution().solution34_1([0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1]);
 }
