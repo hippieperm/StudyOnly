@@ -88,6 +88,49 @@ void main() {
   print('----');
   Solution().solution33(0, 'wsdawsdassw');
 
+  print('----3434----3434----3434----3434----3434');
+  Solution().solution34([0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1]);
   Solution().solution34([0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1]);
   Solution().solution34_1([0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1]);
+  Solution().solution34_2([0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1]);
+
+  Solution().solution38(3, 2);
+  Solution().solution38(7, 3);
+  Solution().solution38(3, 16);
+
+  Solution().solution40(10);
+  Solution().solution40(4);
+
+  Solution().solution42([1, 2, 3, 4, 5]);
+  Solution().solution42([1, 3, 5, 7]);
+
+  print('===================================');
+  Solution().solution43([1, 1, 2, 3, 4, 5], 1);
+  Solution().solution43([0, 2, 3, 4], 1);
+
+  Solution().solution45([1, 2, 3, 4, 5]);
+  Solution().solution45([1, 2, 100, -99, 1, 2, 3]);
+
+  Solution().solution46(144);
+
+  Solution().solution48(10);
+  Solution().solution48(15);
+
+  Solution().solution49(7);
+  Solution().solution49(1);
+  Solution().solution49(2);
+  Solution().solution49(3);
+  Solution().solution49(4);
+  Solution().solution49(5);
+  Solution().solution49(6);
+  Solution().solution49(15);
+
+  print('배열뒤집기ds');
+  Solution().solution51([1, 2, 3, 4, 5]);
+  Solution().solution51([1, 1, 1, 1, 1, 2]);
+  Solution().solution51([1, 0, 1, 1, 1, 3, 5]);
+
+  Solution().solution52([1, 2, 3]);
+  Solution().solution52([3, 6, 2]);
+  Solution().solution52([199, 72, 222]);
 }

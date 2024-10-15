@@ -1,6 +1,9 @@
 // ignore_for_file: avoid_print
 
+import 'dart:collection';
+import 'dart:ffi';
 import 'dart:io';
+import 'dart:math';
 
 class Solution {
   //문자열 섞기
@@ -279,7 +282,7 @@ class Solution {
   //   return answer;
   // }
 
-  // /주사위 게임 2
+  // /주사�� 게임 2
   int solution30(int a, int b, int c) {
     int answer = 0;
     if (a != b && b != c && a != c) {
@@ -331,7 +334,7 @@ class Solution {
     return [...numList, listInstances];
   }
 
-  //수 조작하기
+  //수 하기
   int solution33(int n, String control) {
     int answer = n;
     for (var i = 0; i < control.length; i++) {
@@ -400,5 +403,215 @@ class Solution {
     print('wri');
     print(answer);
     return answer;
+  }
+
+  // 이거
+  void solution34_2(List<int> numLog) {
+    String answer = '';
+    for (var i = 1; i < numLog.length; i++) {
+      var diff = (numLog[i] - numLog[i - 1]);
+      (diff == 1)
+          ? answer += 'w'
+          : diff == -1
+              ? answer += 's'
+              : diff == 10
+                  ? answer += 'd'
+                  : diff == -10
+                      ? answer += 'a'
+                      : null;
+    }
+    print('*****');
+    print(answer);
+  }
+
+  // 나머지 구하기
+  int solution35(int num1, int num2) {
+    int answer = (num1 % num2);
+    return answer;
+  }
+
+  //숫자 비교하기
+  int solution36(int num1, int num2) {
+    return (num1 == num2) ? 1 : -1;
+  }
+
+  // 몫 구하기
+  int solution37(int num1, int num2) {
+    return num1 ~/ num2;
+    // ~/ 몫의 소숫점을 버림
+  }
+
+  //두 수의 나눗셈
+  int solution38(int num1, int num2) {
+    double s1 = num1 / num2;
+    print((s1 * 1000).toInt());
+    return (s1 * 1000).toInt();
+  }
+
+  //각도기
+  int solution39(int angle) {
+    var result = 0;
+    // if 는 모든 조건 검사
+    // else if 문은 앞에서 참일경우 뒤에 조건 검사X
+    if (0 < angle && angle < 90) {
+      result = 1;
+    } else if (angle == 90) {
+      result = 2;
+    } else if (90 < angle && angle < 180) {
+      result = 3;
+    } else if (angle == 180) {
+      result = 4;
+    }
+    return result;
+  }
+
+  int solution39_1(int angle) {
+    if (angle < 90) return 1;
+    if (angle == 90) return 2;
+    if (angle < 180) return 3;
+    return 4;
+  }
+
+  //짝수의 합
+  int solution40(int n) {
+    //   var answer = 0;
+    // for (var i = 2; i <= n; i += 2) {
+    //   answer += i;
+    // }
+    var answer = (n ~/ 2) * (n ~/ 2 + 1);
+    print(answer);
+    return answer;
+  }
+
+  int solution41(int num1, int num2) {
+    return num1 + num2;
+  }
+
+  List<int> solution42(List<int> numList) {
+    int even = 0;
+    int odd = 0;
+    List<int> result = [];
+    for (var nl in numList) {
+      (nl % 2 == 0) ? even += 1 : odd += 1;
+    }
+    result = [even, odd];
+    print(result);
+    return result;
+  }
+
+  int solution43(List<int> array, int n) {
+    int answer = 0;
+    for (var index in array) {
+      if (index == n) answer++;
+    }
+    print(answer);
+    return answer;
+  }
+
+  int solution44(List<int> array, int height) {
+    int answer = 0;
+    for (var element in array) {
+      if (element > height) answer++;
+    }
+    return answer;
+  }
+
+  List<int> solution45(List<int> numbers) {
+    List<int> answer = [];
+    for (var element in numbers) {
+      answer += [element * 2];
+    }
+    print(answer);
+    return answer;
+  }
+
+  int solution46(int n) {
+    // for (var i = 1; i * i <= n; i++) {
+    //   if (i * i == n) {
+    //     return 1;
+    //   }
+    // }
+    // return 2;
+
+    for (var i = 1; i < n; i++) {
+      if (n == (i * i)) return 1;
+    }
+    return 2;
+  }
+
+  int solution47(List<int> array) {
+    int answer = 0;
+    int centerVal = array.length ~/ 2;
+    array.sort();
+    for (var i = 0; i <= centerVal; i++) {
+      answer = array[i].toInt();
+    }
+    return answer;
+  }
+
+  int solution47_1(List<int> array) {
+    array.sort();
+    return array[array.length ~/ 2];
+  }
+
+  List<int> solution48(int n) {
+    List<int> answer = [];
+    for (var i = 1; i <= n; i++) {
+      if ((i % 2) == 1) answer += [i];
+    }
+    print(answer);
+    return answer;
+  }
+
+  int solution49(int n) {
+    double answer = 0;
+    if (n <= 7) {
+      answer++;
+    } else {
+      answer = n / 7;
+      if (answer % 1 != 0) {
+        answer++;
+      }
+    }
+    print(answer.toInt());
+    return answer.toInt();
+  }
+
+  List<int> solution51(List<int> numList) {
+    List<int> answer = [];
+    for (var i = numList.length - 1; i >= 0; i--) {
+      answer.add(numList[i]);
+      if (i == 0) break;
+    }
+    print(answer);
+    return answer;
+  }
+
+  int solution52(List<int> sides) {
+    int max = 0;
+    int mid = 0;
+    int min = 0;
+
+    if (sides[0] >= sides[1] && sides[0] >= sides[1]) {
+      max = sides[0];
+      mid = sides[1] >= sides[2] ? sides[1] : sides[2];
+      min = sides[1] > sides[2] ? sides[2] : sides[1];
+    } else if (sides[1] >= sides[0] && sides[1] >= sides[2]) {
+      max = sides[1];
+      mid = sides[0] >= sides[2] ? sides[0] : sides[2];
+      min = sides[0] > sides[2] ? sides[2] : sides[0];
+    } else if (sides[2] >= sides[0] && sides[2] >= sides[0]) {
+      max = sides[2];
+      mid = sides[0] >= sides[1] ? sides[0] : sides[1];
+      min = sides[0] > sides[1] ? sides[1] : sides[0];
+    }
+    print('max : $max  /mid : $mid  /min : $min');
+    print((max < (mid + min)) ? 1 : 2);
+    return (max < (mid + min)) ? 1 : 2;
+  }
+
+  int solution52_1(List<int> sides) {
+    sides.sort(); // 리스트를 오름차순으로 정렬
+    return sides[0] + sides[1] > sides[2] ? 1 : 2;
   }
 }
