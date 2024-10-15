@@ -610,8 +610,75 @@ class Solution {
     return (max < (mid + min)) ? 1 : 2;
   }
 
+  int solution52_2(List<int> sides) {
+    int a = sides[0];
+    int b = sides[1];
+    int c = sides[2];
+
+    int max = a;
+    if (b > max) {
+      max = b;
+    }
+    if (c > max) {
+      max = c;
+    }
+
+    int sum = a + b + c;
+    int otherTwo = sum - max;
+
+    if (otherTwo > max) {
+      return 1;
+    } else {
+      return 2;
+    }
+  }
+
   int solution52_1(List<int> sides) {
     sides.sort(); // 리스트를 오름차순으로 정렬
     return sides[0] + sides[1] > sides[2] ? 1 : 2;
+  }
+
+  int solution53(int price) {
+    int answer = 0;
+    double fivePercentage = 0.95;
+    double tenPercentage = 0.90;
+    double twentyPercentage = 0.80;
+
+    (price >= 500000)
+        ? answer = (price * twentyPercentage).toInt()
+        : (price >= 300000)
+            ? answer = (price * tenPercentage).toInt()
+            : (price >= 100000)
+                ? answer = (price * fivePercentage).toInt()
+                : answer = price;
+    print(answer);
+    return answer;
+  }
+
+  List<int> solution54(int money) {
+    List<int> answer = [];
+    int iceCoffe = 5500;
+    answer.add(money ~/ iceCoffe);
+    answer.add((money % iceCoffe));
+    print(answer);
+    return answer;
+  }
+
+  List<int> solution54_1(int money) {
+    int iceCoffe = 5500;
+    print([money ~/ iceCoffe, money % iceCoffe]);
+    return [money ~/ iceCoffe, money % iceCoffe];
+  }
+
+  int solution55(String myString) {
+    int answer = 0;
+    for (var i = 0; i < myString.length; i++) {
+      var num = int.tryParse(myString[i]);
+      if (num != null) {
+        answer += num;
+      }
+    }
+    print(answer);
+    return answer;
   }
 }

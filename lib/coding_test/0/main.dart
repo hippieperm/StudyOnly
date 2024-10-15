@@ -133,4 +133,16 @@ void main() {
   Solution().solution52([1, 2, 3]);
   Solution().solution52([3, 6, 2]);
   Solution().solution52([199, 72, 222]);
+
+  Solution().solution53(150000);
+  Solution().solution53(580000);
+  Solution().solution53(88000);
+
+  Solution().solution54(5500);
+  Solution().solution54(15000);
+  Solution().solution54_1(5500);
+  Solution().solution54_1(15000);
+
+  Solution().solution55('aAb1B2cC34oOp');
+  Solution().solution55('1a2b3c4d123');
 }
