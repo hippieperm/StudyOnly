@@ -695,4 +695,58 @@ class Solution {
     print(answer);
     return answer;
   }
+
+  int solution57(String message) {
+    int answer = 0;
+    for (var element in message.split('')) {
+      answer += 2;
+    }
+    print(answer);
+    return answer;
+  }
+
+  double solution58(List<int> numbers) {
+    var result = 0;
+    for (var element in numbers) {
+      result += element;
+    }
+    print(result / numbers.length);
+    return result / numbers.length;
+  }
+
+  int solution59(int n, int t) {
+    int answer = 0;
+    for (var i = 0; i < t; i++) {
+      if (answer != 0) {
+        answer = answer * 2;
+      } else {
+        answer = n * 2;
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  int solution59_1(int n, int t) {
+    int answer = n;
+    for (var i = 0; i < t; i++) {
+      answer *= n;
+    }
+    print(answer);
+    return answer;
+  }
+
+  List<int> solution60(List<int> array) {
+    List<int> answer = [];
+    var max = 0;
+    for (var i = 0; i < array.length - 1; i++) {
+      max = array[i];
+      answer = [array[i], i];
+      if (max < array[i + 1]) {
+        answer = [array[i + 1], i + 1];
+      }
+    }
+    print(answer);
+    return answer;
+  }
 }

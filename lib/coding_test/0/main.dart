@@ -148,4 +148,19 @@ void main() {
 
   Solution().solution56('cccCCC');
   Solution().solution56('abCdEfghIJ');
+
+  Solution().solution57('happy birthday!');
+  Solution().solution57('I love you~');
+
+  Solution().solution58([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  Solution().solution58([89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]);
+
+  Solution().solution59(2, 10);
+  Solution().solution59(7, 15);
+
+  Solution().solution59_1(2, 10);
+  Solution().solution59_1(7, 15);
+
+  Solution().solution60([1, 8, 3]);
+  Solution().solution60([9, 10, 11, 8]);
 }
