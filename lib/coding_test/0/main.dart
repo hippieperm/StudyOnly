@@ -145,4 +145,7 @@ void main() {
 
   Solution().solution55('aAb1B2cC34oOp');
   Solution().solution55('1a2b3c4d123');
+
+  Solution().solution56('cccCCC');
+  Solution().solution56('abCdEfghIJ');
 }

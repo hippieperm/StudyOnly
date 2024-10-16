@@ -681,4 +681,18 @@ class Solution {
     print(answer);
     return answer;
   }
+
+  String solution56(String myString) {
+    String answer = '';
+
+    for (var element in myString.split('')) {
+      if (element == element.toLowerCase()) {
+        answer += element.toUpperCase();
+      } else if (element == element.toUpperCase()) {
+        answer += element.toLowerCase();
+      }
+    }
+    print(answer);
+    return answer;
+  }
 }
