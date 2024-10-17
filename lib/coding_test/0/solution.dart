@@ -749,4 +749,42 @@ class Solution {
     print(answer);
     return answer;
   }
+
+  List<int> solution61(int n, List<int> numlist) {
+    List<int> answer = [];
+    for (var element in numlist) {
+      (element % n == 0) ? answer.add(element) : null;
+    }
+    print(answer);
+    return answer;
+  }
+
+  List<int> solution62(List<int> arr, int k) {
+    List<int> answer = [];
+    for (var element in arr) {
+      if (k % 2 == 0) {
+        answer.add(element + k);
+      } else {
+        answer.add(element * k);
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  List<int> solution63(List<int> numbers, int num1, int num2) {
+    List<int> answer = [];
+    for (var i = num1; i <= num2; i++) {
+      answer.add(numbers[i]);
+    }
+    print(answer);
+    return answer;
+  }
+
+  List<int> solution63_1(List<int> numbers, int num1, int num2) {
+    List<int> answer = [];
+    answer = numbers.sublist(num1, num2 + 1);
+    print(answer);
+    return answer;
+  }
 }

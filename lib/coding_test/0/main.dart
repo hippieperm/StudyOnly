@@ -163,4 +163,17 @@ void main() {
 
   Solution().solution60([1, 8, 3]);
   Solution().solution60([9, 10, 11, 8]);
+
+  Solution().solution61(3, [4, 5, 6, 7, 8, 9, 10, 11, 12]);
+  Solution().solution61(5, [1, 9, 3, 10, 13, 5]);
+  Solution().solution61(12, [2, 100, 120, 600, 12, 12]);
+
+  Solution().solution62([1, 2, 3, 100, 99, 98], 3);
+  Solution().solution62([1, 2, 3, 100, 99, 98], 2);
+
+  Solution().solution63([1, 2, 3, 4, 5], 1, 3);
+  Solution().solution63([1, 3, 5], 1, 2);
+
+  Solution().solution63_1([1, 2, 3, 4, 5], 1, 3);
+  Solution().solution63_1([1, 3, 5], 1, 2);
 }
