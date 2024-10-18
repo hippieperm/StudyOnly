@@ -787,4 +787,40 @@ class Solution {
     print(answer);
     return answer;
   }
+
+  String solution64(String myString, String letter) {
+    String answer = '';
+    for (var element in myString.split('')) {
+      letter != element ? answer += element : null;
+    }
+    print(answer);
+    return answer;
+  }
+
+  //꼬리 문자열 추천
+  String solution65(List<String> strList, String ex) {
+    String answer = '';
+    var cnt = 0;
+    for (var element in strList) {
+      var index = element;
+      if (ex.length == 1) {
+        for (var element in index.split('')) {
+          if (element != ex) {
+            cnt++;
+          }
+          if (cnt == 3) print(answer += element);
+        }
+      } else {
+        for (var i = 0; i < index.length - 2; i++) {
+          var sIndex = (index.substring(i, (ex.length + i)));
+          var sIndex1 = (index.substring(i + 1, (ex.length + i + 1)));
+          if (sIndex != ex && sIndex1 != ex) {
+            answer += index;
+          }
+        }
+      }
+    }
+    // print(answer);
+    return answer;
+  }
 }

@@ -176,4 +176,10 @@ void main() {
 
   Solution().solution63_1([1, 2, 3, 4, 5], 1, 3);
   Solution().solution63_1([1, 3, 5], 1, 2);
+
+  Solution().solution64('abcdef', 'f');
+  Solution().solution64('BCBdbe', 'B');
+
+  Solution().solution65(["abc", "def", "ghi"], 'ef');
+  Solution().solution65(["abc", "bbc", "cbc"], 'c');
 }
