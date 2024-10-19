@@ -797,7 +797,7 @@ class Solution {
     return answer;
   }
 
-  //꼬리 문자열 추천
+  //꼬리 문자열 추천 못품**
   String solution65(List<String> strList, String ex) {
     String answer = '';
     var cnt = 0;
@@ -822,5 +822,34 @@ class Solution {
     }
     // print(answer);
     return answer;
+  }
+
+  String solution66(String myString) {
+    String answer = '';
+    for (var i = myString.length - 1; i >= 0; i--) {
+      answer += myString[i];
+    }
+    print(answer);
+    return answer;
+  }
+
+  String solution67(int n) {
+    return n.toString();
+  }
+
+  int solution68(List<int> numList, int n) {
+    int answer = 0;
+    for (var element in numList) {
+      if (element == n) {
+        answer = 1;
+        break;
+      }
+      answer = 0;
+    }
+    return answer;
+  }
+
+  int solution69(String nStr) {
+    return int.parse(nStr);
   }
 }

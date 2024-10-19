@@ -182,4 +182,7 @@ void main() {
 
   Solution().solution65(["abc", "def", "ghi"], 'ef');
   Solution().solution65(["abc", "bbc", "cbc"], 'c');
+
+  Solution().solution66('jaron');
+  Solution().solution66('bread');
 }
