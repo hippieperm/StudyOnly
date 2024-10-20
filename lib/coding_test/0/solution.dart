@@ -282,7 +282,7 @@ class Solution {
   //   return answer;
   // }
 
-  // /주사�� 게임 2
+  // /주사 게임 2
   int solution30(int a, int b, int c) {
     int answer = 0;
     if (a != b && b != c && a != c) {
@@ -870,5 +870,43 @@ class Solution {
     }
     print(answer);
     return answer;
+  }
+
+  int solution71(double flo) {
+    return flo ~/ 1;
+  }
+
+  String solution72(String rsp) {
+    String answer = '';
+    for (var i = 0; i < rsp.length; i++) {
+      if (rsp[i] == '2') {
+        answer += '0';
+      } else if (rsp[i] == '0') {
+        answer += '5';
+      } else if (rsp[i] == '5') {
+        answer += '2';
+      }
+    }
+    // print(answer);
+    return answer;
+  }
+
+  int solution73(List<int> numList) {
+    int answer = 0;
+    int odd = 0;
+    int even = 0;
+
+    print(numList.length);
+
+    for (var i = 1; i < numList.length; i += 2) {
+      even += numList[i];
+    }
+    for (var i = 0; i < numList.length; i += 2) {
+      odd += numList[i];
+    }
+
+    print('odd : $odd');
+    print('even : $even');
+    return (odd > even) ? odd : even;
   }
 }

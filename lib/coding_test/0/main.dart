@@ -188,4 +188,11 @@ void main() {
 
   Solution().solution70(10, 3);
   Solution().solution70(64, 6);
+
+  print('Rock Siser Paper');
+  Solution().solution72('2');
+  Solution().solution72('205');
+
+  Solution().solution73([4, 2, 6, 1, 7, 6]);
+  Solution().solution73([-1, 2, 5, 6, 3]);
 }
