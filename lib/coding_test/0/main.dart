@@ -185,4 +185,7 @@ void main() {
 
   Solution().solution66('jaron');
   Solution().solution66('bread');
+
+  Solution().solution70(10, 3);
+  Solution().solution70(64, 6);
 }

@@ -852,4 +852,23 @@ class Solution {
   int solution69(String nStr) {
     return int.parse(nStr);
   }
+
+  int solution70(int n, int k) {
+    int answer = 0;
+    int sheepNiku = (12000 * n);
+    int allCoke = (k * 2000);
+
+    int disCoke = (sheepNiku ~/ 120000) * 2000;
+
+    // print(coke);
+    if (disCoke >= 2000) {
+      answer += allCoke - disCoke;
+      answer += sheepNiku;
+    } else {
+      answer += sheepNiku;
+      answer += allCoke;
+    }
+    print(answer);
+    return answer;
+  }
 }
