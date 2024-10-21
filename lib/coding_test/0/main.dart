@@ -195,4 +195,12 @@ void main() {
 
   Solution().solution73([4, 2, 6, 1, 7, 6]);
   Solution().solution73([-1, 2, 5, 6, 3]);
+
+  Solution().solution65_2(["abc", "def", "ghi"], 'ef');
+  Solution().solution65_2(["abc", "bbc", "cbc"], 'c');
+
+  print("************************************");
+
+  Solution().solution65_3(["abc", "def", "ghi"], 'ef');
+  Solution().solution65_3(["abc", "bbc", "cbc"], 'c');
 }
