@@ -824,6 +824,88 @@ class Solution {
     return answer;
   }
 
+  String solution65_1(List<String> strList, String ex) {
+    String answer = '';
+    var index = '';
+    var cnt = 0;
+
+    for (var i = 0; i < strList.length; i++) {
+      index = strList[i];
+      for (var j = 0; j < index.length; j++) {
+        if (ex.length == 1) {
+          if (index[j] != ex[0]) {
+            cnt++;
+            print(cnt);
+          }
+          if (cnt == index.length) {
+            answer += index;
+            // print(answer);
+          }
+        } else if (ex.length == 2) {
+          if (index[j] != ex[1]) {
+            answer += index;
+          }
+        } else if (ex.length == 3) {
+          if (index[j] != ex[2]) {
+            answer += index;
+          }
+        } else if (ex.length == 4) {
+          if (index[j] != ex[3]) {
+            answer += index;
+          }
+        } else if (ex.length == 5) {
+          if (index[j] != ex[4]) {
+            answer += index;
+          }
+        }
+      }
+    }
+    // print(answer);
+    return answer;
+    // 원시적인 방법으로 풀수 없다고 판단 해서 매서드 사용하기로 함
+  }
+
+  String solution65_2(List<String> strList, String ex) {
+    String answer = '';
+    for (var element in strList) {
+      if (element.contains(ex) != true) {
+        answer += element;
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  String solution65_3(List<String> strList, String ex) {
+    String answer = '';
+    for (var element in strList) {
+      bool found = false; // ex가 element에 포함되었는지 확인하는 변수
+      for (var i = 0; i <= element.length - ex.length; i++) {
+        // element의 각 위치에 대해 반복
+        bool match = true; // ex와 일치하는지 확인하는 변수
+        for (var j = 0; j < ex.length; j++) {
+          // ex의 각 문자에 대해 반복
+          if (element[i + j] != ex[j]) {
+            // 일치하지 않으면
+            match = false; // match를 false로 설정
+            break; // 더 이상 반복할 필요 없음
+          }
+        }
+        if (match) {
+          // ex가 발견된 경우
+          found = true; // found를 true로 설정
+          break; // 더 이상 반복할 필요 없음
+        }
+      }
+      if (!found) {
+        // ex가 발견되지 않은 경우
+        answer += element; // element를 answer에 추가
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
   String solution66(String myString) {
     String answer = '';
     for (var i = myString.length - 1; i >= 0; i--) {
@@ -892,7 +974,6 @@ class Solution {
   }
 
   int solution73(List<int> numList) {
-    int answer = 0;
     int odd = 0;
     int even = 0;
 
