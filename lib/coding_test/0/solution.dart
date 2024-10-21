@@ -990,4 +990,23 @@ class Solution {
     print('even : $even');
     return (odd > even) ? odd : even;
   }
+
+  void solution74() {
+    int n = int.parse(stdin.readLineSync()!);
+    List<String> strList = [
+      '*',
+      '**',
+      '***',
+      '****',
+      '*****',
+      '******',
+      '*******',
+      '********',
+      '*********',
+      '**********'
+    ];
+    for (var i = 0; i < n; i++) {
+      print(strList[i]);
+    }
+  }
 }
