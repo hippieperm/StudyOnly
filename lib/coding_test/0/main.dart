@@ -205,4 +205,18 @@ void main() {
   Solution().solution65_3(["abc", "bbc", "cbc"], 'c');
   //잔디테스트
   //잔디테스트2
+
+  Solution().solution75(["a", "b", "c"], ["com", "b", "d", "p", "c"]);
+  Solution().solution75(["n", "omg"], ["m", "dot"]);
+
+  Solution().solution76(23);
+  Solution().solution76(24);
+  Solution().solution76(999);
+
+  Solution().solution77(["We", "are", "the", "world!"]);
+  Solution().solution77(["I", "Love", "Programmers."]);
+
+  Solution().solution78([1, 2, -3, 4, -5]);
+  Solution().solution78([0, -31, 24, 10, 1, 9]);
+  Solution().solution78([10, 20, 30, 5, 5, 20, 5]);
 }

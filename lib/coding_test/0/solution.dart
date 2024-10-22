@@ -1009,4 +1009,66 @@ class Solution {
       print(strList[i]);
     }
   }
+
+  int solution75(List<String> s1, List<String> s2) {
+    int answer = 0;
+    for (var element in s1) {
+      for (var i = 0; i < s2.length; i++) {
+        // print(s2[i]);
+        if (element == s2[i]) {
+          answer++;
+        }
+      }
+    }
+    // print(answer);
+    return answer;
+  }
+
+  int solution76(int hp) {
+    int answer = 0;
+
+    int generalAntVal = hp ~/ 5;
+    int generalAntRemainder = hp % 5;
+
+    int soldierAntVal = generalAntRemainder ~/ 3;
+    int soldierAntRemainder = generalAntRemainder % 3;
+
+    int workerAntVal = soldierAntRemainder ~/ 1;
+    int workerAntRemainder = 0;
+
+    print(generalAntVal + soldierAntVal + workerAntVal);
+    return generalAntVal + soldierAntVal + workerAntVal;
+  }
+
+  int solution76_1(int hp) {
+    return (hp ~/ 5) + ((hp % 5) ~/ 3) + (((hp % 5) % 3) ~/ 1);
+  }
+
+  List<int> solution77(List<String> strlist) {
+    List<int> answer = [];
+    for (var element in strlist) {
+      answer.add(element.length);
+    }
+    print(answer);
+    return answer;
+  }
+
+  int solution78(List<int> numbers) {
+    int max1 = 0;
+    int max2 = 0;
+    for (var i = 0; i < numbers.length; i++) {
+      var num = numbers[i] * -1;
+
+      if (num > max1) {
+        max2 = max1;
+        max1 = numbers[i];
+      } else if (num > max2) {
+        max2 = numbers[i];
+      }
+    }
+    print('max1 : $max1');
+    print('max2 : $max2');
+    print(max1 * max2);
+    return max1 * max2;
+  }
 }
