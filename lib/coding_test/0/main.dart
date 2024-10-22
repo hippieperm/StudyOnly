@@ -216,7 +216,12 @@ void main() {
   Solution().solution77(["We", "are", "the", "world!"]);
   Solution().solution77(["I", "Love", "Programmers."]);
 
-  Solution().solution78([1, 2, -3, 4, -5]);
-  Solution().solution78([0, -31, 24, 10, 1, 9]);
-  Solution().solution78([10, 20, 30, 5, 5, 20, 5]);
+  Solution().solution78_([1, 2, -3, 4, -5]);
+  Solution().solution78_([0, -31, 24, 10, 1, 9]);
+  Solution().solution78_([10, 20, 30, 5, 5, 20, 5]);
+  Solution().solution78_([10000, -10000]);
+
+  print(Solution().solution79('ab6CDE443fgh22iJKlmn1o', '6CD'));
+  print(Solution().solution79('ppprrrogrammers', 'pppp'));
+  print(Solution().solution79('AbcAbcA', 'AAA'));
 }

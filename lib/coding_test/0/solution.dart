@@ -1054,21 +1054,38 @@ class Solution {
   }
 
   int solution78(List<int> numbers) {
-    int max1 = 0;
-    int max2 = 0;
-    for (var i = 0; i < numbers.length; i++) {
-      var num = numbers[i] * -1;
+    int max = -100000000;
 
-      if (num > max1) {
-        max2 = max1;
-        max1 = numbers[i];
-      } else if (num > max2) {
-        max2 = numbers[i];
+    for (var i = 0; i < numbers.length; i++) {
+      for (var j = (i + 1); j < numbers.length - 1; j++) {
+        int num = numbers[i] * numbers[j];
+        if (num >= max) {
+          max = num;
+        }
       }
     }
-    print('max1 : $max1');
-    print('max2 : $max2');
-    print(max1 * max2);
-    return max1 * max2;
+    print(max);
+    return max;
+  }
+
+  int solution78_(List<int> numbers) {
+    int max = numbers[0] * numbers[1]; // 초기값을 첫 두 원소의 곱으로 설정
+
+    for (var i = 0; i < numbers.length; i++) {
+      for (var j = (i + 1); j < numbers.length; j++) {
+        // j의 조건을 수정
+        int num = numbers[i] * numbers[j];
+        if (num > max) {
+          // max보다 큰 경우에만 업데이트
+          max = num;
+        }
+      }
+    }
+    print(max);
+    return max;
+  }
+
+  int solution79(String str1, String str2) {
+    return str1.contains(str2) ? 1 : 2;
   }
 }
