@@ -239,4 +239,13 @@ void main() {
 
   Solution().solution83('0010');
   Solution().solution83('854020');
+
+  print(Solution().solution84('abc', 'aabcc'));
+  print(Solution().solution84('tbt', 'tbbttb'));
+
+  Solution().solution87(["AAA", "BBB", "CCC", "DDD"]);
+  Solution().solution87(["aBc", "AbC"]);
+  print('---------------------------------------');
+  Solution().solution88_1("banana", "ana");
+  Solution().solution88_1("banana", "wxyz");
 }

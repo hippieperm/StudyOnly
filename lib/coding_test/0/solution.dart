@@ -16,7 +16,7 @@ class Solution {
     return answer;
   }
 
-  // 문자 리스트를 문자열로 변환하기
+  // 문자 리스트를 열로 변환하기
   String solution1(List<String> arr) {
     String answer = '';
     for (var arrs in arr) {
@@ -1166,5 +1166,44 @@ class Solution {
     }
     print(nStr.substring(cnt));
     return nStr.substring(cnt);
+  }
+
+  int solution84(String str1, String str2) {
+    return str2.contains(str1) ? 1 : 0;
+  }
+
+  String solution85(String myString) {
+    return myString.toLowerCase();
+  }
+
+  String solution86(String myString) {
+    return myString.toUpperCase();
+  }
+
+  List<String> solution87(List<String> strArr) {
+    List<String> answer = [];
+    for (var i = 0; i < strArr.length; i++) {
+      if ((i == 0) || (i % 2 == 0)) {
+        answer.add(strArr[i].toLowerCase());
+      } else {
+        answer.add(strArr[i].toUpperCase());
+      }
+    }
+    return answer;
+  }
+
+  int solution88(String myString, String target) {
+    return myString.contains(target) ? 1 : 0;
+  }
+
+  int solution88_1(String myString, String target) {
+    int result = 0;
+    for (var i = 0; i < (myString.length - target.length); i++) {
+      if (myString.substring(i, i + target.length) == target) {
+        result = 1;
+      }
+    }
+
+    return result;
   }
 }
