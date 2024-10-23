@@ -224,4 +224,19 @@ void main() {
   print(Solution().solution79('ab6CDE443fgh22iJKlmn1o', '6CD'));
   print(Solution().solution79('ppprrrogrammers', 'pppp'));
   print(Solution().solution79('AbcAbcA', 'AAA'));
+
+  Solution().solution80(24);
+  Solution().solution80(29);
+
+  Solution().solution81([1, 1, 1], 1);
+  Solution().solution81([10, 8, 6], 3);
+  Solution().solution81_1([1, 1, 1], 1);
+  Solution().solution81_1([10, 8, 6], 3);
+
+  Solution().solution82(3, 5);
+  Solution().solution82(6, 1);
+  Solution().solution82(2, 4);
+
+  Solution().solution83('0010');
+  Solution().solution83('854020');
 }

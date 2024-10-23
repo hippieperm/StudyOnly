@@ -1088,4 +1088,83 @@ class Solution {
   int solution79(String str1, String str2) {
     return str1.contains(str2) ? 1 : 2;
   }
+
+  List<int> solution80(int n) {
+    List<int> answer = [];
+    for (var i = 1; i <= n; i++) {
+      if (n % i == 0) answer.add(i);
+    }
+    print(answer);
+    return answer;
+  }
+
+  int solution81(List<int> box, int n) {
+    int width = box[0];
+    int depth = box[1];
+    int height = box[2];
+
+    // int widthVal = width ~/ n;
+    // int depthVal = depth ~/ n;
+    // int heightVal = height ~/ n;
+    int widthVal = 0;
+    int depthVal = 0;
+    int heightVal = 0;
+
+    if (1 <= n && n <= 50) {
+      if (width >= n) {
+        for (var i = n; i <= width; i += n) {
+          widthVal += 1;
+        }
+      }
+      if (depth >= n) {
+        for (var i = n; i <= depth; i += n) {
+          depthVal += 1;
+        }
+      }
+      if (height >= n) {
+        for (var i = n; i <= height; i += n) {
+          heightVal += 1;
+        }
+      }
+    }
+    print(widthVal * depthVal * heightVal);
+    return widthVal * depthVal * heightVal;
+  }
+
+  int solution81_1(List<int> box, int n) {
+    int width = box[0] ~/ n;
+    int depth = box[1] ~/ n;
+    int height = box[2] ~/ n;
+
+    print(width * depth * height);
+    return width * depth * height;
+  }
+
+  int solution82(int a, int b) {
+    int answer = 0;
+
+    if (a % 2 != 0 && b % 2 != 0) {
+      answer = (a * a) + (b * b);
+    } else if (a % 2 != 0 || b % 2 != 0) {
+      answer = 2 * (a + b);
+    } else {
+      answer = a - b;
+    }
+    if (answer < 0) answer *= -1;
+
+    return answer;
+  }
+
+  String solution83(String nStr) {
+    int cnt = 0;
+    for (var element in nStr.split('')) {
+      if (element == '0') {
+        cnt++;
+      } else {
+        break;
+      }
+    }
+    print(nStr.substring(cnt));
+    return nStr.substring(cnt);
+  }
 }
