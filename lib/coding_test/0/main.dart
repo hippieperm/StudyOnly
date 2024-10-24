@@ -263,4 +263,9 @@ void main() {
   Solution().solution93([49, 13], [70, 11, 2]);
   Solution().solution93([100, 17, 84, 1], [55, 12, 65, 36]);
   Solution().solution93([1, 2, 3, 4, 5], [3, 3, 3, 3, 3]);
+
+  Solution().solution94("abstract algebra");
+  Solution().solution94('PrOgRaMmErS');
+
+  print(Solution().solution95(10, 3));
 }

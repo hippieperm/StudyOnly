@@ -1280,6 +1280,8 @@ class Solution {
     int arrVar1 = 0;
     int arrVar2 = 0;
 
+    // arrVar1 > arrVar2 ? 1 : 0;
+
     if (length1 != length2) {
       (length1 > length2)
           ? answer = 1
@@ -1300,4 +1302,27 @@ class Solution {
     print(answer);
     return answer;
   }
+
+  String solution94(String myString) {
+    String answer = '';
+    for (var element in myString.split('')) {
+      if (element == 'a' || element == 'A') {
+        answer += element.toUpperCase();
+      } else {
+        answer += element.toLowerCase();
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  List<int> solution95(int startNum, int endNum) {
+    List<int> answer = [];
+    for (var i = startNum; i >= endNum; i--) {
+      answer.add(i);
+    }
+    return answer;
+  }
 }
+
+
