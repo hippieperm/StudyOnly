@@ -248,4 +248,19 @@ void main() {
   print('---------------------------------------');
   Solution().solution88_1("banana", "ana");
   Solution().solution88_1("banana", "wxyz");
+
+  Solution().solution89("123456789");
+  Solution().solution89("1000000");
+
+  Solution().solution90([12, 4, 15, 46, 38, 1, 14, 56, 32, 10]);
+  print('---------------------------------------');
+  print(Solution().solution91_1([12, 4, 15, 46, 38, 1, 14]));
+
+  Solution().solution92([49, 12, 100, 276, 33], 27);
+  Solution().solution92([444, 555, 666, 777], 100);
+
+  print('------------------ 배열비교하기 ------------------');
+  Solution().solution93([49, 13], [70, 11, 2]);
+  Solution().solution93([100, 17, 84, 1], [55, 12, 65, 36]);
+  Solution().solution93([1, 2, 3, 4, 5], [3, 3, 3, 3, 3]);
 }

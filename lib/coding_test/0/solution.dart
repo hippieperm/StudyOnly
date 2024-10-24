@@ -1203,7 +1203,101 @@ class Solution {
         result = 1;
       }
     }
-
     return result;
+  }
+
+  int solution89(String numStr) {
+    int answer = 0;
+    for (var element in numStr.split("")) {
+      answer += int.parse(element);
+    }
+    print(answer);
+    return answer;
+  }
+
+  List<int> solution90(List<int> numList) {
+    List<int> answer = [];
+    numList.sort();
+    for (var i = 5; i < numList.length; i++) {
+      answer.add(numList[i]);
+    }
+    // print(answer);
+    // 역순정렬
+    // answer.sort(
+    //   (a, b) => b.compareTo(a),
+    // );
+    print(answer);
+    return answer;
+  }
+
+  List<int> solution91(List<int> numList) {
+    List<int> answer = [];
+    numList.sort();
+    for (var i = 0; i < 5; i++) {
+      answer.add(numList[i]);
+    }
+    // print(answer);
+    return answer;
+  }
+
+  List<int> solution91_1(List<int> numList) {
+    // numList를 오름차순으로 정렬합니다.
+    numList.sort();
+    // 정렬된 리스트에서 처음 5개의 요소를 가져와 리스트로 변환하여 반환합니다.
+    return numList.take(5).toList();
+    // 정렬된 리스트에서 뒤에서 5개의 요소를 가져와 리스트로 변환하여 반환합니다.
+    // return numList.reversed.take(5).toList();
+  }
+
+  List<int> solution92(List<int> arr, int n) {
+    List<int> answer = [];
+    int length = arr.length;
+    if (length % 2 == 0) {
+      for (var i = 0; i < arr.length; i++) {
+        if (i % 2 != 0) {
+          answer.add(arr[i] + n);
+        } else {
+          answer.add(arr[i]);
+        }
+      }
+    } else {
+      for (var i = 0; i < arr.length; i++) {
+        if (i % 2 == 0) {
+          answer.add(arr[i] + n);
+        } else {
+          answer.add(arr[i]);
+        }
+      }
+    }
+    return answer;
+  }
+
+  int solution93(List<int> arr1, List<int> arr2) {
+    int answer = 0;
+    int length1 = arr1.length;
+    int length2 = arr2.length;
+
+    int arrVar1 = 0;
+    int arrVar2 = 0;
+
+    if (length1 != length2) {
+      (length1 > length2)
+          ? answer = 1
+          : (length1 < length2)
+              ? answer = -1
+              : 0;
+    } else if (length1 == length2) {
+      for (var i = 0; i < length1; i++) {
+        arrVar1 += arr1[i];
+        arrVar2 += arr2[i];
+      }
+      (arrVar1 > arrVar2)
+          ? answer = 1
+          : (arrVar1 < arrVar2)
+              ? answer = -1
+              : 0;
+    }
+    print(answer);
+    return answer;
   }
 }
