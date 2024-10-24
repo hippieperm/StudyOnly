@@ -1323,6 +1323,15 @@ class Solution {
     }
     return answer;
   }
+
+  List<int> solution96(List<int> arr) {
+    List<int> answer = [];
+
+    for (var element in arr) {
+      for (var i = 0; i < element; i++) {
+        answer.add(element);
+      }
+    }
+    return answer;
+  }
 }
-
-

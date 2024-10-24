@@ -268,4 +268,9 @@ void main() {
   Solution().solution94('PrOgRaMmErS');
 
   print(Solution().solution95(10, 3));
+
+  print('------------------ 배열의 원소만큼 추가하기 ------------------');
+  Solution().solution96([5, 1, 4]);
+  Solution().solution96([6, 6]);
+  Solution().solution96([1]);
 }
