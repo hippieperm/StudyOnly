@@ -1371,4 +1371,49 @@ class Solution {
     }
     return answer;
   }
+
+  String solution101(String myString, String alp) {
+    String answer = '';
+    for (var element in myString.split('')) {
+      answer += (element == alp) ? (element.toUpperCase()) : element;
+    }
+    return answer;
+  }
+
+  int solution102(String myString, String pat) {
+    String str = myString.toLowerCase();
+    String patStr = pat.toLowerCase();
+    return (str.contains(patStr)) ? 1 : 0;
+  }
+
+  int solution103(List<int> numList) {
+    int answer = 1;
+    if (numList.length >= 11) {
+      answer = 0;
+      for (var element in numList) {
+        answer += element;
+      }
+    } else {
+      for (var element in numList) {
+        answer *= element;
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  List<int> solution104(List<int> arr) {
+    List<int> answer = [];
+    int result = 0;
+    for (var element in arr) {
+      result = (element >= 50 && element % 2 == 0)
+          ? element ~/ 2
+          : (element <= 50 && element % 2 == 1)
+              ? element * 2
+              : element;
+      answer.add(result);
+    }
+    print(answer);
+    return answer;
+  }
 }

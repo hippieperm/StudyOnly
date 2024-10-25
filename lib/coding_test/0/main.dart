@@ -287,4 +287,9 @@ void main() {
 
   Solution().solution100(" i    love  you");
   Solution().solution100("    programmers  ");
+
+  Solution().solution103([3, 4, 5, 2, 5, 4, 6, 7, 3, 7, 2, 2, 1]);
+  Solution().solution103([2, 3, 4, 5]);
+
+  Solution().solution104([1, 2, 3, 100, 99, 98]);
 }
