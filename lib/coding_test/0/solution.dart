@@ -1334,4 +1334,41 @@ class Solution {
     }
     return answer;
   }
+
+  String solution97(String rnyString) {
+    String answer = '';
+    for (var element in rnyString.split('')) {
+      answer += (element == 'm') ? 'rn' : element;
+    }
+    return answer;
+  }
+
+  int solution98(String myString, String pat) {
+    int answer = 0;
+    String trans = '';
+    for (var element in myString.split('')) {
+      //**복습 */
+      trans += (element == 'A') ? 'B' : 'A';
+      answer = trans.contains(pat) ? 1 : 0;
+    }
+    print(answer);
+    return answer;
+  }
+
+  List<String> solution99(String myString) {
+    List<String> answer = [];
+    for (var element in myString.split(' ')) {
+      answer.add(element);
+    }
+    print(answer);
+    return answer;
+  }
+
+  List<String> solution100(String myString) {
+    List<String> answer = [];
+    for (var element in myString.split(' ')) {
+      if (element != ' ' && element != '') answer.add(element);
+    }
+    return answer;
+  }
 }

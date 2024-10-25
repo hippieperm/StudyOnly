@@ -273,4 +273,18 @@ void main() {
   Solution().solution96([5, 1, 4]);
   Solution().solution96([6, 6]);
   Solution().solution96([1]);
+
+  Solution().solution97("masterpiece");
+  Solution().solution97("programmers");
+  Solution().solution97("jerry");
+  Solution().solution97("burn");
+
+  Solution().solution98("ABBAA", "AABB");
+  Solution().solution98("ABAB", "ABAB");
+
+  Solution().solution99("i love you");
+  Solution().solution99("programmers");
+
+  Solution().solution100(" i    love  you");
+  Solution().solution100("    programmers  ");
 }
