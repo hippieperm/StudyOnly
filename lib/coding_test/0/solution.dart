@@ -1416,4 +1416,77 @@ class Solution {
     print(answer);
     return answer;
   }
+
+  int solution105(List<int> numbers, int n) {
+    int answer = 0;
+    for (var element in numbers) {
+      answer += element;
+      if (answer > n) break;
+    }
+    return answer;
+  }
+
+  List<String> solution106(List<String> todoList, List<bool> finished) {
+    List<String> answer = [];
+    for (var i = 0; i < todoList.length; i++) {
+      if (!finished[i]) {
+        answer.add(todoList[i]);
+      }
+    }
+    return answer;
+  }
+
+  List<String> solution107(List<String> names) {
+    List<String> answer = [];
+    for (var i = 0; i < names.length; i++) {
+      if ((i == 0) || (i % 5 == 0)) {
+        answer.add(names[i]);
+      }
+    }
+    return answer;
+  }
+
+  List<int> solution108(List<int> numList, int n) {
+    List<int> answer = [];
+    for (var i = 0; i < numList.length; i++) {
+      if (i % n == 0) {
+        answer.add(numList[i]);
+      }
+    }
+    return answer;
+  }
+
+  List<int> solution109(List<int> numList, int n) {
+    return numList.take(n).toList();
+  }
+
+  List<int> solution110(List<int> numList, int n) {
+    List<int> answer = [];
+    List<int> temp = [];
+
+    for (var i = 0; i < n; i++) {
+      temp.add(numList[i]);
+    }
+    for (var i = n; i < numList.length; i++) {
+      answer.add(numList[i]);
+    }
+    answer += temp;
+    return answer;
+  }
+
+  List<int> solution110_1(List<int> numList, int n) {
+    return [...numList.sublist(n), ...numList.sublist(0, n)];
+  }
+
+  List<int> solution111(List<int> numList, int n) {
+    return numList.sublist(n - 1);
+  }
+
+  int solution112(List<int> numList) {
+    int answer = 0;
+    for (var i = 0; i < numList.length; i++) {
+      answer = numList[i] < 0 ? i : -1;
+    }
+    return answer;
+  }
 }
