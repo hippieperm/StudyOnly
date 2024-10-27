@@ -292,4 +292,41 @@ void main() {
   Solution().solution103([2, 3, 4, 5]);
 
   Solution().solution104([1, 2, 3, 100, 99, 98]);
+
+  Solution().solution113([0, 0, 0, 1], 1);
+  Solution().solution113([1, 0, 0, 1, 0, 0], 4);
+  Solution().solution113([1, 1, 1, 1, 0], 3);
+
+  Solution().solution115("banana");
+  Solution().solution115("programmers");
+
+  Solution().solution116("ProgrammerS123", 11);
+  Solution().solution116("He110W0r1d", 5);
+
+  //부분 문자열 이어 붙여 문자열 만들기
+  // Solution().solution117([
+  //   "progressive",
+  //   "hamburger",
+  //   "hammer",
+  //   "ahocorasick"
+  // ], [
+  //   [0, 4],
+  //   [1, 2],
+  //   [3, 5],
+  //   [7, 7]
+  // ]);
+
+  Solution().solution119("abcdevwxyz");
+  Solution().solution119("llnnllllmm");
+
+  Solution().solution120("hello", 1, 2);
+  Solution().solution120("I love you", 3, 6);
+
+  Solution().solution121("oxooxoxxox");
+  Solution().solution121("xabcxdefxghi");
+
+  Solution().solution122("hello", 3);
+
+  Solution().solution123("bus");
+  Solution().solution123("nice to meet you");
 }

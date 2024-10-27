@@ -1475,6 +1475,7 @@ class Solution {
   }
 
   List<int> solution110_1(List<int> numList, int n) {
+    //순서바꾸기
     return [...numList.sublist(n), ...numList.sublist(0, n)];
   }
 
@@ -1487,6 +1488,143 @@ class Solution {
     for (var i = 0; i < numList.length; i++) {
       answer = numList[i] < 0 ? i : -1;
     }
+    return answer;
+  }
+
+  int solution113(List<int> arr, int idx) {
+    int answer = 0;
+    for (var i = idx; i < arr.length; i++) {
+      if (arr[i] == 1) {
+        answer = i;
+        break;
+      } else {
+        answer = -1;
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  int solution113_1(List<int> arr, int idx) {
+    for (var i = idx; i < arr.length; i++) {
+      if (arr[i] == 1) {
+        return i;
+        // 리턴되면 매서드 종료됨
+      }
+    }
+    //위 조건이 참이 아니면 -1로 리턴하고 매서드 종료
+    return -1;
+  }
+
+  int solution114(String myString, String isPrefix) {
+    String str = '';
+    for (var element in myString.split('')) {
+      if ((str += element) == myString) {
+        return 1;
+      }
+    }
+    return 0;
+  }
+
+  List<String> solution115(String myString) {
+    List<String> answer = [];
+    for (var i = 0; i < myString.length; i++) {
+      answer += [myString.substring(i)];
+    }
+    answer.sort();
+    print(answer);
+    return answer;
+  }
+
+  String solution116(String myString, int n) {
+    print(myString.substring(myString.length - n));
+    return myString.substring(myString.length - n);
+  }
+
+  //부분 문자열 이어 붙여 문자열 만들기
+  // String solution117(List<String> myStrings, List<List<int>> parts) {
+  //   String answer = '';
+  //   List<int> list = [];
+  //   for (var i = 0; i < myStrings.length; i++) {
+  //     for (var element in parts[i]) {
+  //       list.add(element);
+  //     }
+  //   }
+  //   print(answer);
+  //   return answer;
+  // }
+
+  String solution118(String myString, List<int> indexList) {
+    String answer = '';
+    for (var element in indexList) {
+      answer += myString[element];
+    }
+    return answer;
+  }
+
+  String solution119(String myString) {
+    String answer = '';
+    String val = 'abcdefghijk';
+    for (var element in myString.split('')) {
+      if (val.contains(element)) {
+        // var = 'abcdefghijk' 이 값에 포함이 되냐? element
+        answer += 'l';
+      } else {
+        answer += element;
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  String solution120(String myString, int num1, int num2) {
+    String answer = '';
+
+    for (var i = 0; i < myString.length; i++) {
+      if (i == num1) {
+        answer += myString[num2];
+      } else if (i == num2) {
+        answer += myString[num1];
+      } else {
+        answer += myString[i];
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  List<int> solution121(String myString) {
+    List<int> answer = [];
+    var list = myString.split('x');
+    print(list);
+    for (var element in list) {
+      answer += [element.length];
+    }
+    print(answer);
+    return answer;
+  }
+
+  String solution122(String myString, int n) {
+    String answer = '';
+    for (var element in myString.split('')) {
+      for (var i = 0; i < n; i++) {
+        answer += element;
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  String solution123(String myString) {
+    String answer = '';
+    String check = 'a, e, i, o, u ';
+    for (var element in myString.split('')) {
+      if (!check.contains(element)) {
+        //문자열에 포함이 되는지(이값이)
+        answer += element;
+      }
+    }
+    print(answer);
     return answer;
   }
 }
