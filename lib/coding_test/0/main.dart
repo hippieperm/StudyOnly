@@ -368,4 +368,17 @@ void main() {
   print(Solution().solution128(0)); // Expected output: 0
   print(Solution().solution128(999)); // Expected output: 27
   print(Solution().solution128(10001)); // Expected output: 2
+
+  print('------------------ 순서쌍의 개수 ------------------');
+  Solution().solution129(5); // Expected output: 4
+  Solution().solution129(10); // Expected output: 6
+  Solution().solution129(1); // Expected output: 2
+  Solution().solution129(20); // Expected output: 0
+  Solution().solution129(100); // Expected output: 8
+
+  Solution().solution129(5); // Expected output: 2
+  Solution().solution129(10); // Expected output: 4
+  Solution().solution129(1); // Expected output: 1
+  Solution().solution129(0); // Expected output: 0
+  Solution().solution129(6); // Expected output: 4
 }

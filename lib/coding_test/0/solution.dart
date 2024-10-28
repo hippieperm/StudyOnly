@@ -1714,4 +1714,20 @@ class Solution {
     }
     return answer;
   }
+
+  int solution129(int n) {
+    // 시간초과 확인
+    int answer = 0;
+    if (1 <= n && n <= 1000000) {
+      for (var i = 1; i <= n; i++) {
+        for (var k = 1; k <= n; k++) {
+          if ((i * k) == n) {
+            answer++;
+          }
+        }
+      }
+    }
+    print(answer);
+    return answer;
+  }
 }
