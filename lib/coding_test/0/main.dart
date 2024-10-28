@@ -303,19 +303,6 @@ void main() {
   Solution().solution116("ProgrammerS123", 11);
   Solution().solution116("He110W0r1d", 5);
 
-  //부분 문자열 이어 붙여 문자열 만들기
-  // Solution().solution117([
-  //   "progressive",
-  //   "hamburger",
-  //   "hammer",
-  //   "ahocorasick"
-  // ], [
-  //   [0, 4],
-  //   [1, 2],
-  //   [3, 5],
-  //   [7, 7]
-  // ]);
-
   Solution().solution119("abcdevwxyz");
   Solution().solution119("llnnllllmm");
 
@@ -329,4 +316,50 @@ void main() {
 
   Solution().solution123("bus");
   Solution().solution123("nice to meet you");
+
+  print('배열의 원소 삭제하기');
+  Solution()
+      .solution124([293, 1000, 395, 678, 94], [94, 777, 104, 1000, 1, 12]);
+  Solution().solution124([110, 66, 439, 785, 1], [377, 823, 119, 43]);
+
+  Solution().solution123("hello world"); // Expected output: "hll wrld"
+  Solution().solution123("dart programming"); // Expected output: "drt prgrmmng"
+  Solution().solution123("university"); // Expected output: "nvrsty"
+  Solution().solution123("beautiful day"); // Expected output: "btfl dy"
+  Solution()
+      .solution123("a quick brown fox"); // Expected output: " qck brwn fx"
+
+  // 부분 문자열 이어 붙여 문자열 만들기
+  print('부분 문자열 이어 붙여 문자열 만들기');
+  Solution().solution117([
+    "progressive",
+    "hamburger",
+    "hammer",
+    "ahocorasick"
+  ], [
+    [0, 4],
+    [1, 2],
+    [3, 5],
+    [7, 7]
+  ]);
+
+  Solution().solution125(10, 3); // Expected output: [3, 6, 9]
+  Solution().solution125(15, 4); // Expected output: [4, 8, 12]
+  Solution().solution125(7, 2); // Expected output: [2, 4, 6]
+  Solution().solution125(10, 3); // Expected output: [5, 10, 15]
+  Solution().solution125(15, 5); // Expected output: [3, 6],
+
+  print(Solution().solution126([3, 4])); // Expected output: 1
+  print(Solution().solution126([-3, 4])); // Expected output: 2
+  print(Solution().solution126([-3, -4])); // Expected output: 3
+  print(Solution().solution126([3, -4])); // Expected output: 4
+  print(Solution().solution126(
+      [0, 5])); // Expected output: 0 (Assuming point is on the axis)
+  print('------------------ 최댓값 만들기(1) ------------------');
+
+  Solution().solution127([3, 5, 1, 7]); // Expected output: 35
+  Solution().solution127([10, 20, 30]); // Expected output: 600
+  Solution().solution127([-5, -1, -3]); // Expected output: 5
+  Solution().solution127([1, 2, 3, 4, 5]); // Expected output: 0
+  Solution().solution127([0, 31, 24, 10, 1, 9]); // Expected output: 0
 }

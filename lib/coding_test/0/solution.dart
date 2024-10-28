@@ -1542,17 +1542,21 @@ class Solution {
   }
 
   //부분 문자열 이어 붙여 문자열 만들기
-  // String solution117(List<String> myStrings, List<List<int>> parts) {
-  //   String answer = '';
-  //   List<int> list = [];
-  //   for (var i = 0; i < myStrings.length; i++) {
-  //     for (var element in parts[i]) {
-  //       list.add(element);
-  //     }
-  //   }
-  //   print(answer);
-  //   return answer;
-  // }
+  String solution117(List<String> myStrings, List<List<int>> parts) {
+    String answer = '';
+    List<int> index = [];
+
+    for (var i = 0; i < myStrings.length; i++) {
+      index = parts[i];
+      if ((index[0] < myStrings[i].length) &&
+          (index[1] <= myStrings[i].length) &&
+          (index[0] <= index[1])) {
+        answer += myStrings[i].substring(index[0], index[1] + 1);
+      }
+    }
+    print(answer);
+    return answer;
+  }
 
   String solution118(String myString, List<int> indexList) {
     String answer = '';
@@ -1625,6 +1629,81 @@ class Solution {
       }
     }
     print(answer);
+    return answer;
+  }
+
+  //배열의 원소 삭제하기
+  List<int> solution124(List<int> arr, List<int> deleteList) {
+    List<int> answer = [];
+    var count = 0;
+    for (var element in arr) {
+      for (var element1 in deleteList) {
+        if (element != element1) {
+          count++;
+          if (count == deleteList.length) {
+            answer.add(element);
+            count = 0;
+          }
+        }
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  List<int> solution124_1(List<int> arr, List<int> deleteList) {
+    List<int> result = [];
+    for (var element in arr) {
+      if (!deleteList.contains(element)) {
+        result.add(element);
+      }
+    }
+    return result;
+  }
+
+  List<int> solution125(int n, int k) {
+    List<int> answer = [];
+    int result;
+    for (var i = 1; i <= n; i++) {
+      result = k * i;
+      if (result <= n) {
+        answer.add(result);
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  int solution126(List<int> dot) {
+    int answer = 0;
+    //  x y R
+    //  + + 1
+    //  - + 2
+    //  - - 3
+    //  + - 4
+    int indexX = dot[0];
+    int indexY = dot[1];
+
+    if (indexX > 0 && indexY > 0) {
+      return answer = 1;
+    } else if (indexX < 0 && indexY > 0) {
+      return answer = 2;
+    } else if (indexX < 0 && indexY < 0) {
+      return answer = 3;
+    } else if (indexX > 0 && indexY < 0) {
+      return answer = 4;
+    }
+    return answer;
+  }
+
+  int solution127(List<int> numbers) {
+    int answer = 0;
+    numbers.sort();
+    int length = numbers.length;
+
+    print(numbers[length - 2] * numbers[length - 1]);
+    answer = numbers[length - 2] * numbers[length - 1];
+
     return answer;
   }
 }
