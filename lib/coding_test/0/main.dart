@@ -362,4 +362,10 @@ void main() {
   Solution().solution127([-5, -1, -3]); // Expected output: 5
   Solution().solution127([1, 2, 3, 4, 5]); // Expected output: 0
   Solution().solution127([0, 31, 24, 10, 1, 9]); // Expected output: 0
+
+  print(Solution().solution128(123)); // Expected output: 6
+  print(Solution().solution128(4567)); // Expected output: 22
+  print(Solution().solution128(0)); // Expected output: 0
+  print(Solution().solution128(999)); // Expected output: 27
+  print(Solution().solution128(10001)); // Expected output: 2
 }

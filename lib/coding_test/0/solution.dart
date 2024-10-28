@@ -1706,4 +1706,12 @@ class Solution {
 
     return answer;
   }
+
+  int solution128(int n) {
+    int answer = 0;
+    for (var element in n.toString().split('')) {
+      answer += int.parse(element);
+    }
+    return answer;
+  }
 }
