@@ -1847,4 +1847,28 @@ class Solution {
     }
     return -1;
   }
+
+  //간단한 식 계산하기
+  int solution138(String binomial) {
+    int answer = 0;
+    String num1 = '';
+    String num2 = '';
+
+    if (binomial.contains('+')) {
+      for (var element in binomial.split(' + ')) {
+        if (element != '+') {
+          if (element != ' ') {
+            num1 += element;
+          } else {
+            num2 += element;
+          }
+        }
+      }
+    } else if (binomial.contains('-')) {
+    } else if (binomial.contains('*')) {}
+
+    return answer;
+  }
+
+  
 }

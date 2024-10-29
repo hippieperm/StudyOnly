@@ -397,4 +397,8 @@ void main() {
   print(Solution().solution137(29183, 1));
   print(Solution().solution137(232443, 4));
   print(Solution().solution137(123456, 7));
+
+  Solution().solution138("43 + 12");
+  Solution().solution138("0 - 7777");
+  Solution().solution138("40000 * 40000");
 }
