@@ -370,15 +370,31 @@ void main() {
   print(Solution().solution128(10001)); // Expected output: 2
 
   print('------------------ 순서쌍의 개수 ------------------');
-  Solution().solution129(5); // Expected output: 4
-  Solution().solution129(10); // Expected output: 6
-  Solution().solution129(1); // Expected output: 2
-  Solution().solution129(20); // Expected output: 0
-  Solution().solution129(100); // Expected output: 8
+  print(Solution().solution129_1(20));
+  print(Solution().solution129_1(100));
+  // Expected output: 6
 
-  Solution().solution129(5); // Expected output: 2
-  Solution().solution129(10); // Expected output: 4
-  Solution().solution129(1); // Expected output: 1
-  Solution().solution129(0); // Expected output: 0
-  Solution().solution129(6); // Expected output: 4
+  print(Solution().solution131(3, 10)); // Expected output: 4
+  print(Solution().solution131(4, 9)); // Expected output: 3
+  print(Solution().solution131(5, 20)); // Expected output: 4
+  print(Solution().solution131(7, 10)); // Expected output: 1
+  print(Solution().solution131(4, 12)); // Expected output: 1
+
+  print(Solution().solution132(6));
+  print(Solution().solution132(10));
+  print(Solution().solution132(4));
+
+  print(Solution().solution133(23));
+  print(Solution().solution133(51));
+  print(Solution().solution133(100));
+
+  Solution().solution135(3);
+  Solution().solution135(29423);
+
+  Solution().solution136(["and", "notad", "abcd"]);
+  Solution().solution136(["there", "are", "no", "a", "ds"]);
+
+  print(Solution().solution137(29183, 1));
+  print(Solution().solution137(232443, 4));
+  print(Solution().solution137(123456, 7));
 }

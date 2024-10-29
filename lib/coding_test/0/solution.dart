@@ -1727,7 +1727,124 @@ class Solution {
         }
       }
     }
+    // print(answer);
+    return answer;
+  }
+
+  int solution129_1(int n) {
+    //더 간단한 방법
+    int answer = 0;
+    for (var i = 1; i <= n ~/ 2; i++) {
+      if (n % i == 0) {
+        answer++;
+      }
+    }
+    return answer + 1;
+  }
+
+  int solution129_2(int n) {
+    //정답 순서쌍의 개수
+    int answer = 0;
+    if (1 <= n && n <= 1000000) {
+      for (int i = 1; (i * i <= n); i++) {
+        if (n % i == 0) {
+          answer++; // i는 약수
+          if (i != n ~/ i) {
+            // i와 n ~/ i가 다르면 두 번째 약수도 추가
+            answer++;
+          }
+        }
+      }
+    }
+    return answer;
+  }
+
+  //특별한 이차원 배열 1
+  // List<List<int>> solution130(int n) {
+  //   List<List<int>> answer = [[]];
+  //   for (var i = 0; i < n; i++) {
+  //     for (var k = 0; k <= 1; k++) {
+  //       answer[i][k] = 1;
+  //     }
+  //   }
+  //   return answer;
+  // }
+
+  int solution131(int slice, int n) {
+    int minPizza = n ~/ slice;
+    if (!(n % slice == 0)) {
+      minPizza++;
+    }
+    return minPizza;
+  }
+
+  int solution132(int n) {
+    var six = 0;
+    for (var i = 1;; i++) {
+      six = n * i;
+      if (six % 6 == 0) {
+        break;
+      }
+    }
+    return six ~/ 6;
+  }
+
+  String solution133(int age) {
+    String answer = '';
+    List<String> listStr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
+    for (var element in age.toString().split('')) {
+      answer += listStr[int.parse(element)];
+    }
+    return answer;
+  }
+
+  // //배열 회전시키기
+  // List<int> solution134(List<int> numbers, String direction) {
+  //   List<int> answer = [];
+
+  //   if (direction == 'right') {
+  //     for (var i = 0; i < numbers.length; i++) {
+  //       answer[i] = numbers[i];
+  //     }
+  //   } else {
+  //     for (var i = 0; i < numbers.length; i++) {}
+  //   }
+
+  //   return answer;
+  // }
+  int solution135(int order) {
+    int answer = 0;
+    for (var element in order.toString().split('')) {
+      answer +=
+          ((element == '3') || (element == '6') || (element == '9')) ? 1 : 0;
+    }
     print(answer);
     return answer;
+  }
+
+  List<String> solution136(List<String> strArr) {
+    List<String> answer = [];
+
+    for (var element in strArr) {
+      if (!element.contains('ad')) {
+        answer.add(element);
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  int solution137(int num, int k) {
+    String numStr = num.toString();
+    String kStr = k.toString();
+
+    if (numStr.contains(kStr)) {
+      for (var i = 0; i < numStr.length; i++) {
+        if (numStr[i] == kStr) {
+          return i + 1;
+        }
+      }
+    }
+    return -1;
   }
 }
