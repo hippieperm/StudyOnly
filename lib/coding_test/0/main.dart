@@ -435,6 +435,7 @@ void main() {
   print(Solution().countCompositeNumbers(10));
   print(Solution().countCompositeNumbers(15));
 
+  print('aaaaa');
   Solution().solution144("axbxcxdx");
   Solution().solution144("dxccxbbbxaaaa");
 }

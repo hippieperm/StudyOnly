@@ -1956,33 +1956,16 @@ class Solution {
     return count;
   }
 
-  List<String> solution143(String myString) {
-    List<String> answer = [];
-    return answer;
-  }
-
   List<String> solution144(String myString) {
     List<String> answer = [];
-    List<String> strList = [];
 
-    for (var element in myString.split('')) {
-      if (element != 'x') {
-        strList.add(element);
+    var str = myString.split('x');
+    for (var element in str) {
+      if (element != '') {
+        answer.add(element);
       }
     }
-    strList.sort();
-    for (var element in strList) {
-      for (var i = 0; i < strList.length;) {
-        if (answer.isEmpty) {
-          answer.add(element);
-        } else if (answer[i] == element) {
-          answer[i] = element;
-        } else {
-          i++;
-          answer[i] = element;
-        }
-      }
-    }
+    answer.sort();
     print(answer);
     return answer;
   }
