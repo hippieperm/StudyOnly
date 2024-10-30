@@ -398,7 +398,43 @@ void main() {
   print(Solution().solution137(232443, 4));
   print(Solution().solution137(123456, 7));
 
+  Solution().solution139("Bcad");
+  Solution().solution139("heLLo");
+  Solution().solution139("Python");
+
+  Solution().solution140([
+    1,
+    2,
+    3,
+    4,
+    5
+  ], [
+    [1, 3],
+    [0, 4]
+  ]);
+  print(Solution().solution140_1([
+    1,
+    2,
+    3,
+    4,
+    5
+  ], [
+    [1, 3],
+    [0, 4]
+  ]));
+
+  Solution().solution141("dfjardstddetckdaccccdegk", 4);
+  // Solution().solution141("pfqallllabwaoclk", 2);
+
   Solution().solution138("43 + 12");
   Solution().solution138("0 - 7777");
   Solution().solution138("40000 * 40000");
+
+  Solution().solution142(10);
+  Solution().solution142(15);
+  print(Solution().countCompositeNumbers(10));
+  print(Solution().countCompositeNumbers(15));
+
+  Solution().solution144("axbxcxdx");
+  Solution().solution144("dxccxbbbxaaaa");
 }

@@ -1848,27 +1848,142 @@ class Solution {
     return -1;
   }
 
-  //간단한 식 계산하기
+  //Coomplet 간단한 식 계산하기
   int solution138(String binomial) {
     int answer = 0;
-    String num1 = '';
-    String num2 = '';
+    List<String> strList = [];
+    strList = binomial.split(' - ');
 
     if (binomial.contains('+')) {
-      for (var element in binomial.split(' + ')) {
-        if (element != '+') {
-          if (element != ' ') {
-            num1 += element;
-          } else {
-            num2 += element;
-          }
-        }
-      }
+      strList = binomial.split(' + ');
+      List<int> intList = strList.map(int.parse).toList();
+      answer = intList[0] + intList[1];
+    } else if (binomial.contains('*')) {
+      strList = binomial.split(' * ');
+      List<int> intList = strList.map(int.parse).toList();
+      answer = intList[0] * intList[1];
     } else if (binomial.contains('-')) {
-    } else if (binomial.contains('*')) {}
+      strList = binomial.split(' - ');
+      List<int> intList = strList.map(int.parse).toList();
+      answer = intList[0] - intList[1];
+    }
+    print(answer);
 
     return answer;
   }
 
-  
+  String solution139(String myString) {
+    String answer = myString.toLowerCase();
+    var result = '';
+    List<String> list = [];
+    for (var element in answer.split('')) {
+      list.add(element);
+    }
+    list.sort();
+    for (var element in list) {
+      result += element;
+    }
+    print(result);
+    return result;
+  }
+
+  List<int> solution140(List<int> arr, List<List<int>> intervals) {
+    List<int> answer = [];
+    for (var element in intervals) {
+      for (var i = element[0]; i <= element[1]; i++) {
+        answer.add(arr[i]);
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  List<int> solution140_(List<int> arr, List<List<int>> intervals) {
+    List<int> answer = [];
+    for (var element in intervals) {
+      answer.addAll(
+          arr.sublist(element[0], element[1] + 1)); // sublist를 사용하여 간결하게 추가
+    }
+    return answer; // print 제거
+  }
+
+  List<int> solution140_1(List<int> arr, List<List<int>> intervals) {
+    List<int> answer = [];
+    for (var inter in intervals) {
+      answer.addAll(arr.sublist(inter[0], inter[1] + 1));
+    }
+    return answer;
+  }
+
+  String solution141(String cipher, int code) {
+    String answer = '';
+    for (var i = (code - 1); i < cipher.length; (i += code)) {
+      answer += cipher[i];
+    }
+    print(answer);
+    return answer;
+  }
+
+  //합성수 찾기
+  int solution142(int n) {
+    int answer = 0;
+
+    for (var i = 4; i <= n; i++) {
+      bool isComposite = false;
+    }
+
+    return answer;
+  }
+
+  int countCompositeNumbers(int n) {
+    int count = 0;
+
+    for (int i = 4; i <= n; i++) {
+      // 4부터 시작 (합성수의 최소값)
+      bool isComposite = false;
+
+      for (int j = 2; j <= i ~/ 2; j++) {
+        if (i % j == 0) {
+          isComposite = true; // 약수가 존재하면 합성수
+          break;
+        }
+      }
+
+      if (isComposite) {
+        count++;
+      }
+    }
+    return count;
+  }
+
+  List<String> solution143(String myString) {
+    List<String> answer = [];
+    return answer;
+  }
+
+  List<String> solution144(String myString) {
+    List<String> answer = [];
+    List<String> strList = [];
+
+    for (var element in myString.split('')) {
+      if (element != 'x') {
+        strList.add(element);
+      }
+    }
+    strList.sort();
+    for (var element in strList) {
+      for (var i = 0; i < strList.length;) {
+        if (answer.isEmpty) {
+          answer.add(element);
+        } else if (answer[i] == element) {
+          answer[i] = element;
+        } else {
+          i++;
+          answer[i] = element;
+        }
+      }
+    }
+    print(answer);
+    return answer;
+  }
 }
