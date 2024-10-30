@@ -438,4 +438,6 @@ void main() {
   print('aaaaa');
   Solution().solution144("axbxcxdx");
   Solution().solution144("dxccxbbbxaaaa");
+
+  Solution().solution145("ihrhbakrfpndopljhygc", 4, 2);
 }

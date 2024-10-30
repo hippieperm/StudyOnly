@@ -1969,4 +1969,24 @@ class Solution {
     print(answer);
     return answer;
   }
+
+  String solution145(String myString, int m, int c) {
+    String answer = '';
+    List<List<String>> list = List.generate(
+      myString.length,
+      (index) {
+        return List.filled(m, '');
+      },
+    );
+    for (var i = 0; i < myString.length; i++) {
+      for (var k = 0; k < m; k++) {
+        list[i][k] = myString[i];
+      }
+    }
+    for (var i = 0; i < count; i++) {
+      
+    }
+    print(list);
+    return answer;
+  }
 }
