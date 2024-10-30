@@ -1973,20 +1973,39 @@ class Solution {
   String solution145(String myString, int m, int c) {
     String answer = '';
     List<List<String>> list = List.generate(
-      myString.length,
-      (index) {
-        return List.filled(m, '');
-      },
+      (myString.length ~/ m).ceil(),
+      (index) => List.filled(m, ''),
     );
+
     for (var i = 0; i < myString.length; i++) {
-      for (var k = 0; k < m; k++) {
-        list[i][k] = myString[i];
+      list[i ~/ m][i % m] = myString[i];
+    }
+    for (var i = 0; i < list.length; i++) {
+      if (c - 1 < m) {
+        answer += list[i][c - 1];
       }
     }
-    for (var i = 0; i < count; i++) {
-      
-    }
-    print(list);
+    print(answer);
     return answer;
+  }
+
+  String solution145_(String myString, int m, int c) {
+    // 2차원배열
+    String str = '';
+    List<List<String>> list = List.generate(
+      (myString.length ~/ m),
+      (index) => List.filled(m, ''),
+    );
+
+    for (var i = 0; i < myString.length; i++) {
+      list[i ~/ m][i % m] = myString[i];
+    }
+    for (var i = 0; i < list.length; i++) {
+      if (c - 1 < m) {
+        str += list[i][c - 1];
+      }
+    }
+    print(str);
+    return '';
   }
 }
