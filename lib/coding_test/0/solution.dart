@@ -2021,4 +2021,15 @@ class Solution {
     print(answer);
     return answer;
   }
+
+  String solution147(String myString) {
+    String answer = '';
+    for (var element in myString.split('')) {
+      if (!answer.contains(element)) {
+        answer += element;
+      }
+    }
+    print(answer);
+    return answer;
+  }
 }

@@ -448,4 +448,7 @@ void main() {
   Solution().solution146(1, 13, 1);
   Solution().solution146(10, 50, 5);
   Solution().solution146(3, 10, 2);
+
+  Solution().solution147("people");
+  Solution().solution147("We are the world");
 }
