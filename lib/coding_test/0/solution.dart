@@ -2008,4 +2008,17 @@ class Solution {
     print(str);
     return '';
   }
+
+  int solution146(int i, int j, int k) {
+    int answer = 0;
+    for (var fi = i; fi <= j; fi += k) {
+      for (var element in fi.toString().split('')) {
+        if (element.contains(k.toString())) {
+          answer++;
+        }
+      }
+    }
+    print(answer);
+    return answer;
+  }
 }

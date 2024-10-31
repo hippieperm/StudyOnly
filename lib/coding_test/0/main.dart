@@ -444,4 +444,8 @@ void main() {
 
   Solution().solution145_("ihrhbakrfpndopljhygc", 4, 2);
   Solution().solution145_("programmers", 1, 1);
+
+  Solution().solution146(1, 13, 1);
+  Solution().solution146(10, 50, 5);
+  Solution().solution146(3, 10, 2);
 }
