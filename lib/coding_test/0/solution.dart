@@ -2034,6 +2034,7 @@ class Solution {
   }
 
   int solution148(List<int> date1, List<int> date2) {
+    //날짜비교하기
     if (date1[0] < date2[0]) {
       return 1;
     } else if (date1[0] == date2[0]) {
@@ -2047,4 +2048,18 @@ class Solution {
     }
     return 0;
   }
+
+  int solution149(String myString, String pat) {
+    int answer = 0;
+    for (var i = 0; i < pat.length + 1; i++) {
+      print(myString.substring(i, pat.length));
+    }
+    return answer;
+  }
 }
+// 012345
+// banana
+// 012
+//  123 
+//   234
+//    345 

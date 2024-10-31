@@ -454,4 +454,7 @@ void main() {
 
   print(Solution().solution148([2021, 12, 28], [2021, 12, 29]));
   print(Solution().solution148([1024, 10, 24], [1024, 10, 24]));
+
+  Solution().solution149("banana", "ana");
+  Solution().solution149("aaaa", "aa");
 }
