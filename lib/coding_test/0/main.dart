@@ -451,4 +451,7 @@ void main() {
 
   Solution().solution147("people");
   Solution().solution147("We are the world");
+
+  print(Solution().solution148([2021, 12, 28], [2021, 12, 29]));
+  print(Solution().solution148([1024, 10, 24], [1024, 10, 24]));
 }
