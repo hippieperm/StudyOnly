@@ -2051,15 +2051,100 @@ class Solution {
 
   int solution149(String myString, String pat) {
     int answer = 0;
-    for (var i = 0; i < pat.length + 1; i++) {
-      print(myString.substring(i, pat.length));
+    for (var i = 0; i <= pat.length; i++) {
+      if (myString.substring(i, i + pat.length) == pat) {
+        // 012345
+        // banana
+        // 012
+        //  123
+        //   234
+        //    345
+        answer++;
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  int solution151(String s) {
+    return int.parse(s);
+  }
+
+  int solution152(int n) {
+    int answer = 0;
+    for (var i = 1; i <= n; i++) {
+      if (n % i == 0) {
+        answer += i;
+      }
     }
     return answer;
   }
+
+  int solution153(int n) {
+    int answer = 0;
+    for (var element in n.toString().split('')) {
+      answer += int.parse(element);
+    }
+    return answer;
+  }
+
+  String solution154(int num) {
+    return (num % 2 == 0) ? "Even" : "Odd";
+  }
+
+  double solution155(List<int> arr) {
+    int answer = 0;
+    for (var element in arr) {
+      answer += element;
+      return answer / arr.length;
+    }
+    return 0;
+  }
+
+  List<int> solution156(int x, int n) {
+    List<int> answer = [];
+    var cnt = 0;
+    for (var i = x; n > cnt; i += x) {
+      answer.add(i);
+      cnt++;
+    }
+    print(answer);
+    return answer;
+  }
+
+  int solution157(int n) {
+    for (var i = 1; i < n; i++) {
+      if (n % i == 1) {
+        return i;
+      }
+    }
+    return 0;
+  }
+
+  bool solution158(String s) {
+    int pCnt = 0;
+    int yCnt = 0;
+
+    for (var element in s.toLowerCase().split('')) {
+      if (element == 'p') {
+        pCnt++;
+      } else if (element == 'y') {
+        yCnt++;
+      }
+    }
+    if (pCnt == yCnt) {
+      return true;
+    }
+    return false;
+  }
+
+  List<dynamic> solution159(int n) {
+    List<dynamic> answer = [];
+    for (var element in n.toString().split('')) {
+      answer.add(int.parse(element));
+    }
+
+    print(answer.reversed.toList());
+    return answer.reversed.toList();
+  }
 }
-// 012345
-// banana
-// 012
-//  123 
-//   234
-//    345 

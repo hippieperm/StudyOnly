@@ -457,4 +457,14 @@ void main() {
 
   Solution().solution149("banana", "ana");
   Solution().solution149("aaaa", "aa");
+
+  print('########################');
+  Solution().solution156(2, 5);
+  Solution().solution156(4, 3);
+  Solution().solution156(-4, 2);
+
+  print(Solution().solution158("pPoooyY"));
+  print(Solution().solution158("Pyy"));
+
+  Solution().solution159(12345);
 }
