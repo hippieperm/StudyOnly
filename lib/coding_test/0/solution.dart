@@ -2147,4 +2147,128 @@ class Solution {
     print(answer.reversed.toList());
     return answer.reversed.toList();
   }
+
+  void temp() {
+    List<int> list = [1, 2, 3, 4, 5];
+
+    int firstNum = list.first;
+    int lastNum = list.last;
+
+    if (true) {
+      final list1 = [list.last];
+      list.removeLast();
+      list1.addAll(list);
+    }
+  }
+
+  List<int> solution160(List<int> numbers, String direction) {
+    List<int> answer = [];
+    if (direction == 'right') {
+      answer.add(numbers.removeLast()); //지운걸 반환
+      answer.addAll(numbers);
+    } else {
+      var i = numbers.removeAt(0); //지운걸 반환
+      answer.addAll(numbers);
+      answer.add(i);
+    }
+
+    return answer;
+  }
+
+  String solution161(int n) {
+    String answer = '';
+    String su = '수';
+    String park = '박';
+
+    for (var i = 0; i < n; i++) {
+      if (i % 2 == 0) {
+        answer += su;
+      } else {
+        answer += park;
+      }
+    }
+    print(answer);
+    return '';
+  }
+
+  String solution161_1(int n) {
+    String answer = '';
+    for (int i = 0; i < n / 2; i++) {
+      answer += "수박";
+    }
+    if (n % 2 == 1) {
+      answer += "수";
+    }
+    return answer;
+  }
+
+  String solution161_2(String str, int n) {
+    String answer = '';
+    var cnt = 0;
+    var totalCnt = 0;
+
+    for (var i = 0; i < n ~/ str.length; i++) {
+      answer += str[i];
+      cnt++;
+      totalCnt++;
+      if (cnt == n) {
+        cnt = 0;
+        i = 0;
+      }
+      if (totalCnt == n) {
+        print(answer);
+        return answer;
+      }
+    }
+
+    return answer;
+  }
+
+  String solution161_3(String str, int n) {
+    String answer = '';
+    for (var i = 0; i < n ~/ str.length; i++) {
+      for (var element in str.split('')) {
+        answer += element;
+      }
+    }
+    for (var i = 1; i < n % str.length; i++) {
+      for (var element in str.split('')) {
+        answer += element;
+      }
+    }
+    print(answer);
+    return '';
+  }
+
+  // print(Solution().solution161_4('초콜릿', 8)); // 초콜릿초콜릿초콜;
+  // print(Solution().solution161_4('맥북프로', 9)); // 맥북프로맥북프로맥;
+  String solution161_4(String str, int n) {
+    String answer = '';
+
+    for (int i = 0; i < str.length / (str.length / i); i++) {
+      answer += str;
+    }
+
+    for (int i = 0; i < (str.length % (str.length % i)); i++) {
+      answer += str[i];
+    }
+
+    return answer;
+  }
+
+  String solution161_5(String str, int n) {
+    String answer = '';
+
+    for (int i = 0; i < n ~/ str.length; i++) {
+      // n을 str.length로 나눈 몫만큼 반복
+      answer += str; // str을 answer에 추가
+    }
+
+    for (int i = 0; i < (n % str.length); i++) {
+      // n을 str.length로 나눈 나머지만큼 반복
+      answer += str[i]; // str의 각 문자를 answer에 추가
+    }
+
+    return answer; // 최종 결과 반환
+  }
 }

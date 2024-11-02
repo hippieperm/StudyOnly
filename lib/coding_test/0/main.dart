@@ -467,4 +467,10 @@ void main() {
   print(Solution().solution158("Pyy"));
 
   Solution().solution159(12345);
+
+  Solution().solution161(3);
+  Solution().solution161(4);
+
+  print(Solution().solution161_4('초콜릿', 2)); // 초콜릿초콜릿초콜;
+  print(Solution().solution161_4('맥북프로', 3)); // 맥북프로맥북프로맥;
 }
