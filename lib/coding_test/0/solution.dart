@@ -2242,19 +2242,6 @@ class Solution {
 
   // print(Solution().solution161_4('초콜릿', 8)); // 초콜릿초콜릿초콜;
   // print(Solution().solution161_4('맥북프로', 9)); // 맥북프로맥북프로맥;
-  String solution161_4(String str, int n) {
-    String answer = '';
-
-    for (int i = 0; i < str.length / (str.length / i); i++) {
-      answer += str;
-    }
-
-    for (int i = 0; i < (str.length % (str.length % i)); i++) {
-      answer += str[i];
-    }
-
-    return answer;
-  }
 
   String solution161_5(String str, int n) {
     String answer = '';
@@ -2270,5 +2257,72 @@ class Solution {
     }
 
     return answer; // 최종 결과 반환
+  }
+
+  int solution162(int a, int b) {
+    int answer = 0;
+    int min = 0;
+    int max = 0;
+    if (a < b) {
+      min = a;
+      max = b;
+    } else {
+      min = b;
+      max = a;
+    }
+    for (var i = min; i <= max; i++) {
+      answer += i;
+    }
+    print(answer);
+    return answer;
+  }
+
+  int solution163(int n) {
+    //공부
+    int intAnswer = 0;
+    String strAnswer = '';
+    List<int> list = [];
+
+    for (var element in n.toString().split('')) {
+      list.add(int.parse(element));
+    }
+
+    list.sort();
+
+    for (var element in list.reversed.toList()) {
+      strAnswer += element.toString();
+    }
+
+    intAnswer = int.parse(strAnswer);
+    print(intAnswer);
+    return intAnswer;
+  }
+
+  int solution163_(int n) {
+    // 숫자를 문자열로 변환하고 각 자릿수를 정수로 변환하여 리스트에 저장
+    List<int> digits = n.toString().split('').map(int.parse).toList();
+
+    // 리스트를 내림차순으로 정렬
+    digits.sort((a, b) => b.compareTo(a));
+
+    // 정렬된 숫자들을 문자열로 결합
+    String sortedNumber = digits.join('');
+
+    // 문자열을 정수로 변환하여 반환
+    return int.parse(sortedNumber);
+  }
+
+  List<int> solution164(List<int> arr, int divisor) {
+    List<int> answer = [];
+    arr.sort();
+    for (var element in arr) {
+      if (element % divisor == 0) {
+        answer.add(element);
+      } else if (answer.isEmpty) {
+        answer.add(-1);
+      }
+    }
+
+    return answer;
   }
 }

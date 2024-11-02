@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ig118372ore_for_file: avoid_print
 
 import 'solution.dart';
 
@@ -471,6 +471,16 @@ void main() {
   Solution().solution161(3);
   Solution().solution161(4);
 
-  print(Solution().solution161_4('초콜릿', 2)); // 초콜릿초콜릿초콜;
-  print(Solution().solution161_4('맥북프로', 3)); // 맥북프로맥북프로맥;
+  print(Solution().solution161_5('초콜릿', 2)); // 초콜릿초콜릿초콜;
+  print(Solution().solution161_5('맥북프로', 3)); // 맥북프로맥북프로맥;
+
+  Solution().solution162(3, 5);
+  Solution().solution162(3, 3);
+  Solution().solution162(5, 3);
+
+  Solution().solution163(118372);
+
+  Solution().solution164([5, 9, 7, 10], 5);
+  Solution().solution164([2, 36, 1, 3], 1);
+  Solution().solution164([3, 2, 6], 10);
 }
