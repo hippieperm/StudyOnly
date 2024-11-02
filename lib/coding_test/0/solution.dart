@@ -2318,11 +2318,12 @@ class Solution {
     for (var element in arr) {
       if (element % divisor == 0) {
         answer.add(element);
-      } else if (answer.isEmpty) {
-        answer.add(-1);
       }
     }
-
+    if (answer.isEmpty) {
+      answer.add(-1);
+    }
+    print(answer);
     return answer;
   }
 }
