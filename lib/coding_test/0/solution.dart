@@ -2405,4 +2405,17 @@ class Solution {
     print(answer);
     return answer;
   }
+
+  List<int> solution171(List<int> arr) {
+    List<int> answer = [];
+    for (var i = 0; i < arr.length; i++) {
+      if (answer.isEmpty) {
+        answer.add(arr[i]);
+      } else if (answer.last != arr[i]) {
+        answer.add(arr[i]);
+      }
+    }
+    print(answer);
+    return answer;
+  }
 }

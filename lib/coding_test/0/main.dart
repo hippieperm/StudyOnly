@@ -1,5 +1,7 @@
 // ig118372ore_for_file: avoid_print
 
+// ignore_for_file: avoid_print
+
 import 'solution.dart';
 
 void main() {
@@ -496,4 +498,7 @@ void main() {
   Solution().solution169([5, 8, 4, 0, 6, 7, 9]);
 
   Solution().solution170("Zbcdefg");
+
+  Solution().solution171([1, 1, 3, 3, 0, 1, 1]);
+  Solution().solution171([4, 4, 4, 3, 3]);
 }
