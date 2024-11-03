@@ -2398,8 +2398,11 @@ class Solution {
       strList.add(element);
     }
     strList.sort();
-    String s1 = strList.reversed.toString();
-    print(s1);
-    return strList.reversed.toString();
+    for (var element in strList.reversed) {
+      answer += element;
+    }
+
+    print(answer);
+    return answer;
   }
 }
