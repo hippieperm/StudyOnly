@@ -485,4 +485,10 @@ void main() {
   Solution().solution164([3, 2, 6], 10);
 
   Solution().solution165(["Jane", "Kim"]);
+
+  Solution().solution166(121);
+  Solution().solution166(1);
+
+  Solution().solution167([4, 3, 2, 1]);
+  Solution().solution167([10]);
 }

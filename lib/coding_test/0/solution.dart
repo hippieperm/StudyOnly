@@ -2337,4 +2337,33 @@ class Solution {
     }
     return answer;
   }
+
+  int solution166(int n) {
+    for (var i = 1; i <= n; i++) {
+      if ((i * i == n)) {
+        print((i + 1) * (i + 1));
+        return (i + 1) * (i + 1);
+      }
+    }
+    print(-1);
+    return -1;
+  }
+
+  List<int> solution167(List<int> arr) {
+    List<int> originalList = List.from(arr);
+
+    arr.sort();
+    var temp = arr.reversed;
+    int removeNum = temp.toList().removeLast();
+
+    for (var i = 0; i < originalList.length; i++) {
+      if (originalList[i] == removeNum && originalList.length > 1) {
+        originalList.removeAt(i);
+        print(originalList);
+        return originalList;
+      }
+    }
+
+    return [-1];
+  }
 }
