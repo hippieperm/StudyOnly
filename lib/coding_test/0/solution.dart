@@ -2326,4 +2326,15 @@ class Solution {
     print(answer);
     return answer;
   }
+
+  String solution165(List<String> seoul) {
+    String answer = '';
+    for (var i = 0; i < seoul.length; i++) {
+      if (seoul[i].contains('Kim')) {
+        print("김서방은 $i에 있다");
+        return "김서방은 $i에 있다";
+      }
+    }
+    return answer;
+  }
 }

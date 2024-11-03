@@ -483,4 +483,6 @@ void main() {
   Solution().solution164([5, 9, 7, 10], 5);
   Solution().solution164([2, 36, 1, 3], 1);
   Solution().solution164([3, 2, 6], 10);
+
+  Solution().solution165(["Jane", "Kim"]);
 }
