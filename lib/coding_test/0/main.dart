@@ -491,4 +491,7 @@ void main() {
 
   Solution().solution167([4, 3, 2, 1]);
   Solution().solution167([10]);
+
+  Solution().solution169([1, 2, 3, 4, 6, 7, 8, 0]);
+  Solution().solution169([5, 8, 4, 0, 6, 7, 9]);
 }

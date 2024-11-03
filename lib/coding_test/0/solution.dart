@@ -2366,4 +2366,28 @@ class Solution {
 
     return [-1];
   }
+
+  int solution168(List<int> absolutes, List<bool> signs) {
+    int answer = 0;
+    for (var i = 0; i < absolutes.length; i++) {
+      if (signs[i]) {
+        answer += i;
+      } else {
+        answer -= i;
+      }
+    }
+    return answer;
+  }
+
+  int solution169(List<int> numbers) {
+    int answer = 0;
+
+    for (var i = 0; i < 10; i++) {
+      if (!numbers.contains(i)) {
+        answer += i;
+      }
+    }
+    print(answer);
+    return answer;
+  }
 }
