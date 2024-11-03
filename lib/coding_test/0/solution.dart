@@ -2390,4 +2390,16 @@ class Solution {
     print(answer);
     return answer;
   }
+
+  String solution170(String s) {
+    String answer = '';
+    List<String> strList = [];
+    for (var element in s.split('')) {
+      strList.add(element);
+    }
+    strList.sort();
+    String s1 = strList.reversed.toString();
+    print(s1);
+    return strList.reversed.toString();
+  }
 }

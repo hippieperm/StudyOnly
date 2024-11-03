@@ -494,4 +494,6 @@ void main() {
 
   Solution().solution169([1, 2, 3, 4, 6, 7, 8, 0]);
   Solution().solution169([5, 8, 4, 0, 6, 7, 9]);
+
+  Solution().solution170("Zbcdefg");
 }
