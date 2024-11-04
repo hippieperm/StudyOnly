@@ -507,4 +507,7 @@ void main() {
 
   Solution().solution173(13, 17);
   Solution().solution173(24, 27);
+
+  Solution().solution174('a234');
+  Solution().solution174('1234');
 }

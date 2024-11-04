@@ -2451,7 +2451,18 @@ class Solution {
         answer -= i;
       }
     }
-    print(answer*-1);
+    print(answer * -1);
     return answer * -1;
+  }
+
+  bool solution174(String s) {
+    bool answer = true;
+    for (var element in s.split('')) {
+      if (int.tryParse(element) == null) {
+        answer = false;
+      }
+    }
+    print(answer);
+    return answer;
   }
 }
