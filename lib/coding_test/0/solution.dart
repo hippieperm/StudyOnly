@@ -2457,9 +2457,12 @@ class Solution {
 
   bool solution174(String s) {
     bool answer = true;
-    for (var element in s.split('')) {
-      if (int.tryParse(element) == null) {
-        answer = false;
+
+    if (s.isNotEmpty && s.length <= 8) {
+      for (var element in s.split('')) {
+        if (int.tryParse(element) == null) {
+          answer = false;
+        }
       }
     }
     print(answer);
