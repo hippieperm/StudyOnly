@@ -2418,4 +2418,40 @@ class Solution {
     print(answer);
     return answer;
   }
+
+  String solution172(String phoneNumber) {
+    String answer = '';
+    for (var i = 0; i < phoneNumber.length; i++) {
+      if (i < phoneNumber.length - 4) {
+        answer += '*';
+      } else {
+        answer += phoneNumber[i];
+      }
+    }
+    print(answer);
+    return answer;
+  }
+
+  int solution173(int left, int right) {
+    int answer = 0;
+    int oddEven = 0;
+
+    for (var i = left; i <= right; i++) {
+      oddEven = 0;
+      for (var k = 1; k <= i / 2; k++) {
+        if (i % k == 0) {
+          oddEven++;
+        }
+      }
+      if (oddEven % 2 == 0) {
+        print('even : $i');
+        answer += i;
+      } else {
+        print('odd : $i');
+        answer -= i;
+      }
+    }
+    print(answer*-1);
+    return answer * -1;
+  }
 }

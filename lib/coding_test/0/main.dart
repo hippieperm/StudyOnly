@@ -501,4 +501,10 @@ void main() {
 
   Solution().solution171([1, 1, 3, 3, 0, 1, 1]);
   Solution().solution171([4, 4, 4, 3, 3]);
+
+  Solution().solution172("01033334444");
+  Solution().solution172("027778888");
+
+  Solution().solution173(13, 17);
+  Solution().solution173(24, 27);
 }
