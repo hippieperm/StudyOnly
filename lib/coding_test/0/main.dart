@@ -514,4 +514,5 @@ void main() {
   Solution().solution175();
 
   Solution().solution176("1 2 3 4");
+  print(Solution().solution176_("1 2 3 4"));
 }

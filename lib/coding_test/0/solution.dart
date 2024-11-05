@@ -2489,15 +2489,34 @@ class Solution {
   }
 
   String solution176(String s) {
-    String answer = '';
     List<int> list = [];
     for (var element in s.split(' ')) {
       list.add(int.parse(element));
     }
     list.sort();
-    print(list.reduce(min));
-    print(list.reduce(max));
+    int minValue = list.reduce(min);
+    int maxValue = list.reduce(max);
     //실행이 안됨
+
+    return '$maxValue $minValue';
+  }
+
+  String solution176_(String s) {
+    List<int> list = [];
+
+    for (var element in s.split(' ')) {
+      list.add(int.parse(element));
+    }
+
+    list.sort();
+
+    // 리스트에서 최솟값과 최대값을 구해서 문자열로 반환
+    int minValue = list.reduce(min);
+    int maxValue = list.reduce(max);
+
+    // 최솟값과 최대값을 문자열로 조합하여 반환
+    String answer = '$minValue $maxValue';
+
     return answer;
   }
 }
