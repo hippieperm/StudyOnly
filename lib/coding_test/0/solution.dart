@@ -2497,6 +2497,7 @@ class Solution {
     list.sort();
     print(list.reduce(min));
     print(list.reduce(max));
+    //실행이 안됨
     return answer;
   }
 }
