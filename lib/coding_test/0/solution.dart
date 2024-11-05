@@ -2468,4 +2468,23 @@ class Solution {
     print(answer);
     return answer;
   }
+
+  void solution175() {
+    // List<String> inputList = stdin.readLineSync()!.split(' ');
+    // int a = int.parse(inputList[0]);
+    // int b = int.parse(inputList[1]);
+    int a = 5;
+    int b = 3;
+    List<String> list = [];
+    var str = '';
+
+    for (var i = 0; i < a; i++) {
+      list.add('*');
+    }
+    for (var i = 0; i < b; i++) {
+      str = list[i];
+      print(str);
+    }
+    print(a + b);
+  }
 }
