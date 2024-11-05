@@ -2510,11 +2510,9 @@ class Solution {
 
     list.sort();
 
-    // 리스트에서 최솟값과 최대값을 구해서 문자열로 반환
     int minValue = list.reduce(min);
     int maxValue = list.reduce(max);
 
-    // 최솟값과 최대값을 문자열로 조합하여 반환
     String answer = '$minValue $maxValue';
 
     return answer;
