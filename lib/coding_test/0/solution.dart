@@ -2487,4 +2487,16 @@ class Solution {
     }
     print(a + b);
   }
+
+  String solution176(String s) {
+    String answer = '';
+    List<int> list = [];
+    for (var element in s.split(' ')) {
+      list.add(int.parse(element));
+    }
+    list.sort();
+    print(list.reduce(min));
+    print(list.reduce(max));
+    return answer;
+  }
 }

@@ -512,4 +512,6 @@ void main() {
   Solution().solution174('1234');
 
   Solution().solution175();
+
+  Solution().solution176("1 2 3 4");
 }
