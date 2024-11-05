@@ -2490,9 +2490,11 @@ class Solution {
 
   String solution176(String s) {
     List<int> list = [];
+
     for (var element in s.split(' ')) {
       list.add(int.parse(element));
     }
+
     list.sort();
     int minValue = list.reduce(min);
     int maxValue = list.reduce(max);
@@ -2509,10 +2511,8 @@ class Solution {
     }
 
     list.sort();
-
     int minValue = list.reduce(min);
     int maxValue = list.reduce(max);
-
     String answer = '$minValue $maxValue';
 
     return answer;
