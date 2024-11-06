@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:first_pj/webtoon_app_v2/v3_7/models/webtoon_model_V3_7.dart';
 import 'package:http/http.dart';
 
-class ApiServiceV3_7 {
+class ApiServiceV3_8 {
   static const String baseUrl =
       'https://webtoon-crawler.nomadcoders.workers.dev';
   static const String today = 'today';
