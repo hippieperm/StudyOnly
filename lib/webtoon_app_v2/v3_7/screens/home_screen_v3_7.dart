@@ -1,5 +1,3 @@
-import 'package:first_pj/webtoon_app_v2/v3_6/models/webtoon_model_V3_6.dart';
-import 'package:first_pj/webtoon_app_v2/v3_6/services/api_service_v3_6.dart';
 import 'package:first_pj/webtoon_app_v2/v3_7/models/webtoon_model_V3_7.dart';
 import 'package:first_pj/webtoon_app_v2/v3_7/services/api_service_v3_7.dart';
 import 'package:flutter/material.dart';
