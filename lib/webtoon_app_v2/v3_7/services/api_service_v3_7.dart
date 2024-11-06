@@ -8,15 +8,15 @@ class ApiServiceV3_7 {
       'https://webtoon-crawler.nomadcoders.workers.dev';
   static const String today = 'today';
 
-  static Future<List<WebtoonModelV3_7>> getTodayToon() async {
+  static Future<List<WebtoonModelV3_8>> getTodayToon() async {
     final url = Uri.parse('$baseUrl/$today');
     final response = await get(url);
-    List<WebtoonModelV3_7> webToonInstances = [];
+    List<WebtoonModelV3_8> webToonInstances = [];
 
     if (response.statusCode == 200) {
       final List<dynamic> jsonBody = jsonDecode(response.body);
       for (var json in jsonBody) {
-        webToonInstances.add(WebtoonModelV3_7.fromJson(json));
+        webToonInstances.add(WebtoonModelV3_8.fromJson(json));
       }
       return webToonInstances;
     }
