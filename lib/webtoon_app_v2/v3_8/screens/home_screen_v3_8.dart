@@ -1,11 +1,11 @@
-import 'package:first_pj/webtoon_app_v2/v3_7/models/webtoon_model_V3_7.dart';
-import 'package:first_pj/webtoon_app_v2/v3_7/services/api_service_v3_8.dart';
+import 'package:first_pj/webtoon_app_v2/v3_8/models/webtoon_model_V3_8.dart';
+import 'package:first_pj/webtoon_app_v2/v3_8/services/api_service_v3_8.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreenV3_8 extends StatelessWidget {
   const HomeScreenV3_8({super.key});
 
-  static Future<List<WebtoonModelV3_7>> toons = ApiServiceV3_7.getTodayToon();
+  static Future<List<WebtoonModelV3_8>> toons = ApiServiceV3_8.getTodayToon();
 
   @override
   Widget build(BuildContext context) {
