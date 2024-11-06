@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class HomeScreenV3_8 extends StatelessWidget {
   const HomeScreenV3_8({super.key});
 
-  static Future<List<WebtoonModelV3_7>> toons = ApiServiceV3_8.getTodayToon();
+  static Future<List<WebtoonModelV3_7>> toons = ApiServiceV3_7.getTodayToon();
 
   @override
   Widget build(BuildContext context) {
