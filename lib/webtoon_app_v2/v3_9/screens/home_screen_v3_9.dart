@@ -29,8 +29,16 @@ class HomeScreenV3_9 extends StatelessWidget {
             return ListView.separated(
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
+                var toonss = snapshot.data![index];
                 print(index);
-                return null;
+                return Text(
+                  '${toonss.title} (ID : ${toonss.id}) ${toonss.thumb}',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white.withOpacity(0.7),
+                  ),
+                );
               },
               separatorBuilder: (context, index) => const SizedBox(height: 15),
             );
