@@ -4,10 +4,11 @@ import 'package:first_pj/webtoon_app_v2/v3_9/models/webtoon_model_v3_9.dart';
 import 'package:http/http.dart';
 
 class ApiServiceV3_9 {
-  final String baseUrl = 'https://webtoon-crawler.nomadcoders.workers.dev';
-  final String today = 'today';
+  static const String baseUrl =
+      'https://webtoon-crawler.nomadcoders.workers.dev';
+  static const String today = 'today';
 
-  Future<List<WebtoonModelV3_9>> getTodaysToons() async {
+  static Future<List<WebtoonModelV3_9>> getTodaysToons() async {
     final Uri url = Uri.parse('$baseUrl/$today');
     final response = await get(url);
     List<WebtoonModelV3_9> webtoonsInstansce = [];
@@ -18,6 +19,7 @@ class ApiServiceV3_9 {
         // print(WebtoonModelV3_9.fromJson(element).title);
         webtoonsInstansce.add(WebtoonModelV3_9.fromJson(element));
       }
+
       return webtoonsInstansce;
     }
     throw Error();
