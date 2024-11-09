@@ -7,16 +7,17 @@ class ApiService {
   static const baseUrl = 'https://webtoon-crawler.nomadcoders.workers.dev';
   static const today = 'today';
 
-  void getTodayToons() async {
+  Future<List<WebtoonModel>> getTodayToons() async {
     final url = Uri.parse('$baseUrl/$today');
     final response = await https.get(url);
-    List<dynamic> webtoonInstances = [];
+    List<WebtoonModel> webtoonInstances = [];
 
     if (response.statusCode == 200) {
       final List<dynamic> jsonBody = jsonDecode(response.body);
       for (var toon in jsonBody) {
-        webtoonInstances = WebtoonModel.fromJson(toon);
+        webtoonInstances.add(WebtoonModel.fromJson(toon));
       }
+      return webtoonInstances;
     }
     throw Error();
   }
