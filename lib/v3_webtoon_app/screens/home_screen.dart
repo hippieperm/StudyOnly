@@ -27,9 +27,13 @@ class HomeScreen extends StatelessWidget {
         future: toons,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return const Text(
-              'data',
-              style: TextStyle(color: Colors.white),
+            return ListView.separated(
+              itemCount: snapshot.data!.length,
+              itemBuilder: (context, index) {
+                var toon = snapshot.data![index];
+                return null;
+              },
+              separatorBuilder: (context, index) => const SizedBox(height: 10),
             );
           }
           return const Center(
