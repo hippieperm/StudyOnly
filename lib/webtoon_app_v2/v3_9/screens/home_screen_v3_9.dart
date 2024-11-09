@@ -36,7 +36,7 @@ class HomeScreenV3_9 extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white.withOpacity(0.7),
+                    color: const Color.fromRGBO(255, 255, 255, 1).withOpacity(0.7),
                   ),
                 );
               },
