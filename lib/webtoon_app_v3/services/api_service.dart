@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:first_pj/webtoon_app_v3/models/webtoon_model.dart';
 import 'package:http/http.dart' as https;
 
 class ApiService {
@@ -9,11 +10,12 @@ class ApiService {
   void getTodayToons() async {
     final url = Uri.parse('$baseUrl/$today');
     final response = await https.get(url);
+    List<dynamic> webtoonInstances = [];
 
     if (response.statusCode == 200) {
       final List<dynamic> jsonBody = jsonDecode(response.body);
       for (var toon in jsonBody) {
-        
+        webtoonInstances = WebtoonModel.fromJson(toon);
       }
     }
     throw Error();
