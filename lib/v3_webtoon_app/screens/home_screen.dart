@@ -1,12 +1,12 @@
 import 'package:first_pj/v3_webtoon_app/models/webtoon_model.dart';
 import 'package:first_pj/v3_webtoon_app/services/api_service.dart';
-import 'package:first_pj/webtoon_app_v2/v2_1/models/webtoon_model.dart';
+
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-   HomeScreen({super.key});
+  HomeScreen({super.key});
 
-  Future<List<WebtoonModel>> toons = ApiServ
+  Future<List<WebtoonModel>> toons = ApiService.getTodayToons();
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +22,20 @@ class HomeScreen extends StatelessWidget {
             color: Colors.white.withOpacity(0.7),
           ),
         ),
+      ),
+      body: FutureBuilder(
+        future: toons,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return const Text(
+              'data',
+              style: TextStyle(color: Colors.white),
+            );
+          }
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
       ),
     );
   }
