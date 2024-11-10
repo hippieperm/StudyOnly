@@ -1,3 +1,6 @@
+import 'package:first_pj/v4_webtoon/models/v4_webtoon_model.dart';
+import 'package:first_pj/v4_webtoon/screens/v4_home_screen.dart';
+import 'package:first_pj/v4_webtoon/services/v4_api_service.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,6 +12,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp();
+    return MaterialApp(
+      home: V4HomeScreen(),
+    );
   }
 }
