@@ -18,6 +18,7 @@ class V4ApiService {
         var toons = V4WebtoonModel.fromJson(json);
         webtoonInstances.add(toons);
       }
+
       return webtoonInstances;
     }
     throw Error();

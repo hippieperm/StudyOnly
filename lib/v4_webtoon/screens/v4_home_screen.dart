@@ -28,9 +28,16 @@ class V4HomeScreen extends StatelessWidget {
           if (snapshot.hasData) {
             return ListView.separated(
               itemBuilder: (context, index) {
+                print(index);
                 var toon = snapshot.data![index];
-                
-                return;
+                return Text(
+                  '${toon.title}\n${toon.id}\n${toon.thumb}',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                );
               },
               separatorBuilder: (context, index) => const SizedBox(height: 15),
               itemCount: snapshot.data!.length,
