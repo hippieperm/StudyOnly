@@ -25,12 +25,17 @@ class V5HomeScreen extends StatelessWidget {
         future: webtoon,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return const Text(
-              "data",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 40,
-              ),
+            return ListView.separated(
+              itemBuilder: (context, index) {
+                print(index);
+                var toon = snapshot.data![index];
+                return Text(
+                  'id : ${toon.id} title : ${toon.title} thumb : ${toon.thumb}',
+                  style: TextStyle(),
+                );
+              },
+              separatorBuilder: (context, index) => const SizedBox(height: 30),
+              itemCount: snapshot.data!.length,
             );
           }
           return const Center(
