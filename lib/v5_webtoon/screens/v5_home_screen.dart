@@ -45,7 +45,9 @@ class V5HomeScreen extends StatelessWidget {
             );
           }
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              color: Colors.red,
+            ),
           );
         },
       ),
