@@ -23,7 +23,20 @@ class V5HomeScreen extends StatelessWidget {
       ),
       body: FutureBuilder(
         future: webtoon,
-        builder: (context, snapshot) {},
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return const Text(
+              "data",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 40,
+              ),
+            );
+          }
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
       ),
     );
   }
