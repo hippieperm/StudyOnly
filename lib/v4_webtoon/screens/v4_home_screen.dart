@@ -18,8 +18,7 @@ class V4HomeScreen extends StatelessWidget {
           style: TextStyle(
             color: Colors.white.withOpacity(0.9),
             fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
+            fontWeight: FontWeight.bold, ),
         ),
       ),
       body: FutureBuilder(
