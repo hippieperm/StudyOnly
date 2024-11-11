@@ -31,7 +31,13 @@ class V5HomeScreen extends StatelessWidget {
                 var toon = snapshot.data![index];
                 return Text(
                   'id : ${toon.id} title : ${toon.title} thumb : ${toon.thumb}',
-                  style: TextStyle(),
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white.withOpacity(
+                      0.85,
+                    ),
+                  ),
                 );
               },
               separatorBuilder: (context, index) => const SizedBox(height: 30),
