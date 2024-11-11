@@ -46,7 +46,9 @@ class V5HomeScreen extends StatelessWidget {
           }
           return const Center(
             child: CircularProgressIndicator(
-              color: Colors.red,
+              strokeAlign: 10,
+              strokeWidth: 6,
+              color: Colors.yellow,
             ),
           );
         },
