@@ -40,11 +40,15 @@ class V6HomeScreeen extends StatelessWidget {
                   ),
                 );
               },
-              separatorBuilder: (context, index) => const SizedBox(height: 24),
+              separatorBuilder: (context, index) => const SizedBox(height: 44),
             );
           }
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              backgroundColor: Colors.yellow,
+              color: Colors.red,
+              strokeAlign: 7,
+            ),
           );
         },
       ),
