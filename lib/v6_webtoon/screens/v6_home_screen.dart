@@ -1,3 +1,4 @@
+import 'package:first_pj/v3_webtoon_app/models/webtoon_model.dart';
 import 'package:first_pj/v6_webtoon/models/v6_webtoon_model.dart';
 import 'package:first_pj/v6_webtoon/services/v6_api_service.dart';
 import 'package:flutter/material.dart';
@@ -28,8 +29,11 @@ class V6HomeScreeen extends StatelessWidget {
             return ListView.separated(
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
+                V6WebtoonModel toon = snapshot.data![index];
                 print(index);
-                return null;
+                return Text(
+                  '제목 : ${toon.title}\n 웹툰아이디: ${toon.id} 썸네일링크 : ${toon.thumb}',
+                );
               },
               separatorBuilder: (context, index) => const SizedBox(height: 24),
             );
