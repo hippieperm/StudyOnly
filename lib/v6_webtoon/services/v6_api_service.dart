@@ -13,6 +13,10 @@ class V6ApiService {
 
     if (response.statusCode == 200) {
       List<dynamic> jsonBody = jsonDecode(response.body);
+
+      for (var json in jsonBody) {
+        
+      }
     }
   }
 }
