@@ -1,7 +1,11 @@
+import 'package:first_pj/v6_webtoon/models/v6_webtoon_model.dart';
+import 'package:first_pj/v6_webtoon/services/v6_api_service.dart';
 import 'package:flutter/material.dart';
 
 class V6HomeScreeen extends StatelessWidget {
-  const V6HomeScreeen({super.key});
+   V6HomeScreeen({super.key});
+
+  Future<List<V6WebtoonModel>> webtoons = V6ApiService.getToons();
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +20,12 @@ class V6HomeScreeen extends StatelessWidget {
               fontWeight: FontWeight.w600,
               color: Colors.white.withOpacity(0.9)),
         ),
+      ),
+      body: FutureBuilder(
+        future: webtoons,
+        builder: (context, snapshot) {
+
+        },
       ),
     );
   }
