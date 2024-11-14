@@ -25,7 +25,24 @@ class V7HomeScreen extends StatelessWidget {
       body: FutureBuilder(
         future: toon,
         builder: (context, snapshot) {
-          if (snapshot.hasData) {}
+          if (snapshot.hasData) {
+            return ListView.separated(
+              itemCount: snapshot.data!.length,
+              itemBuilder: (context, index) {
+                print(index);
+                var toonInfo = snapshot.data![index];
+                return Text(
+                  '제목 : ${toonInfo.title}\n아이디 : ${toonInfo.id} 썸네일 : ${toonInfo.thumb}',
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.9),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                );
+              },
+              separatorBuilder: (context, index) => const SizedBox(height: 44),
+            );
+          }
           return const Center(
             child: CircularProgressIndicator(),
           );
