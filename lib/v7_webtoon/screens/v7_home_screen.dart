@@ -43,8 +43,11 @@ class V7HomeScreen extends StatelessWidget {
               separatorBuilder: (context, index) => const SizedBox(height: 44),
             );
           }
-          return const Center(
-            child: CircularProgressIndicator(),
+          return Center(
+            child: CircularProgressIndicator(
+              backgroundColor: Colors.yellow.withOpacity(0.8),
+              color: Colors.red.withOpacity(0.8),
+            ),
           );
         },
       ),
