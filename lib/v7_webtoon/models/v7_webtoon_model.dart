@@ -1,0 +1,1 @@
+class V7WebtoonModel {}
