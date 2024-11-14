@@ -32,7 +32,7 @@ class V7HomeScreen extends StatelessWidget {
                 print(index);
                 var toonInfo = snapshot.data![index];
                 return Text(
-                  '제목 : ${toonInfo.title}\n아이디 : ${toonInfo.id} 썸네일 : ${toonInfo.thumb}',
+                  '제목 : ${toonInfo.title}\n아이디 : ${toonInfo.id} \n-\n썸네일 : ${toonInfo.thumb}',
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.9),
                     fontSize: 18,
@@ -47,6 +47,7 @@ class V7HomeScreen extends StatelessWidget {
             child: CircularProgressIndicator(
               backgroundColor: Colors.yellow.withOpacity(0.8),
               color: Colors.red.withOpacity(0.8),
+              strokeAlign: 2,
             ),
           );
         },
