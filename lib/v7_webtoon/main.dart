@@ -1,7 +1,8 @@
+import 'package:first_pj/v7_webtoon/screens/v7_home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatefulWidget {
@@ -14,6 +15,8 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: ,);
+    return MaterialApp(
+      home: V7HomeScreen(),
+    );
   }
 }
