@@ -24,7 +24,18 @@ class V8HomeScreen extends StatelessWidget {
       ),
       body: FutureBuilder(
         future: toons,
-        builder: (context, snapshot) {},
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return ListView.separated(
+              itemCount: snapshot.data!.length,
+              itemBuilder: itemBuilder,
+              separatorBuilder: (context, index) => const SizedBox(height: 44),
+            );
+          }
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
       ),
     );
   }
