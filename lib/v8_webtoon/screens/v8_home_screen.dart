@@ -34,8 +34,8 @@ class V8HomeScreen extends StatelessWidget {
 
                 return Text(
                   '제목 : ${toon.title}\n 웹툰아이디: ${toon.id} 썸네일링크 : ${toon.thumb}',
-                  style: TextStyle(
-                    color: Colors.white.withOpacity(0.9),
+                  style: const TextStyle(
+                    color: Colors.white,
                     fontSize: 19,
                     fontWeight: FontWeight.w500,
                   ),
@@ -45,7 +45,9 @@ class V8HomeScreen extends StatelessWidget {
             );
           }
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              backgroundColor: Colors.yellow,
+            ),
           );
         },
       ),
