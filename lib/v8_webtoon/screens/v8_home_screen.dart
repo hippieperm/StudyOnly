@@ -28,7 +28,19 @@ class V8HomeScreen extends StatelessWidget {
           if (snapshot.hasData) {
             return ListView.separated(
               itemCount: snapshot.data!.length,
-              itemBuilder: itemBuilder,
+              itemBuilder: (context, index) {
+                print(index);
+                var toon = snapshot.data![index];
+
+                return Text(
+                  '제목 : ${toon.title}\n 웹툰아이디: ${toon.id} 썸네일링크 : ${toon.thumb}',
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.9),
+                    fontSize: 19,
+                    fontWeight: FontWeight.w500,
+                  ),
+                );
+              },
               separatorBuilder: (context, index) => const SizedBox(height: 44),
             );
           }
