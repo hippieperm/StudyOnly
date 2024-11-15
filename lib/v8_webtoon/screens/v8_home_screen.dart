@@ -46,7 +46,9 @@ class V8HomeScreen extends StatelessWidget {
           }
           return const Center(
             child: CircularProgressIndicator(
-              backgroundColor: Colors.yellow,
+              backgroundColor: Colors.green,
+              color: Colors.red,
+              strokeAlign: 7,
             ),
           );
         },
