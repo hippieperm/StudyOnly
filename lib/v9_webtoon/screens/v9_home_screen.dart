@@ -27,7 +27,18 @@ class V9HomeScreen extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.separated(
-              itemBuilder: itemBuilder,
+              itemBuilder: (context, index) {
+                print(index);
+                var toon = snapshot.data![index];
+                return Text(
+                  '제목 : ${toon.title}\n웹툰아이디: ${toon.id}\n썸네일링크 : ${toon.thumb}',
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.white,
+                  ),
+                );
+              },
               separatorBuilder: (context, index) => const SizedBox(
                 height: 55,
               ),
