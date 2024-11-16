@@ -1,7 +1,11 @@
+import 'package:first_pj/v9_webtoon/models/v9_webtoon_model.dart';
+import 'package:first_pj/v9_webtoon/services/v9_api_service.dart';
 import 'package:flutter/material.dart';
 
 class V9HomeScreen extends StatelessWidget {
-  const V9HomeScreen({super.key});
+  V9HomeScreen({super.key});
+
+  Future<List<V9WebtoonModel>> toons = V9ApiService.getToons();
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +21,12 @@ class V9HomeScreen extends StatelessWidget {
             color: Colors.white,
           ),
         ),
+      ),
+      body: FutureBuilder(
+        future: toons,
+        builder: (context, snapshot) {
+          
+        },
       ),
     );
   }
