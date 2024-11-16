@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart';
 
 class V9ApiService {
@@ -9,6 +11,12 @@ class V9ApiService {
     final url = Uri.parse('$baseUrl/$today');
     final response = await get(url);
 
-    if (response.statusCode == 200) {}
+    if (response.statusCode == 200) {
+      List<dynamic> jsonBody = jsonDecode(response.body);
+
+      for (var json in jsonBody) {
+        
+      }
+    }
   }
 }
