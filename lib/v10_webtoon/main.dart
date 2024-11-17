@@ -1,3 +1,4 @@
+import 'package:first_pj/v10_webtoon/screens/v10_home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,6 +10,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const MaterialApp(
+      home: V10HomeScreen(),
+    );
   }
 }
