@@ -24,7 +24,20 @@ class V10HomeScreen extends StatelessWidget {
       ),
       body: FutureBuilder(
         future: webtoon,
-        builder: (context, snapshot) {},
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return ListView.separated(
+              itemBuilder: itemBuilder,
+              separatorBuilder: (context, index) => const SizedBox(
+                height: 33,
+              ),
+              itemCount: snapshot.data!.length,
+            );
+          }
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
       ),
     );
   }
