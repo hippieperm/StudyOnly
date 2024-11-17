@@ -35,6 +35,8 @@ class V10HomeScreen extends StatelessWidget {
                   '${toonInfo.id}\n${toonInfo.title}\n${toonInfo.thumb}',
                   style: const TextStyle(
                     color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
                   ),
                 );
               },
