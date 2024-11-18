@@ -1,9 +1,18 @@
+import 'dart:convert';
+
+import 'package:http/http.dart';
+
 class ClassName {
   static const String baseUrl =
       'https://webtoon-crawler.nomadcoders.workers.dev';
   static const String today = 'today';
 
-  static void getToons(){
-    
+  static Future<void> getToons() async {
+    final url = Uri.parse('$baseUrl/$today');
+    final response = await get(url);
+
+    if (response.statusCode == 200) {
+      jsonDecode(response.body);
+    }
   }
 }
