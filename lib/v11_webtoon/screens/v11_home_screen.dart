@@ -31,7 +31,7 @@ class V11HomeScreen extends StatelessWidget {
                 print(index);
                 var toonInfo = snapshot.data![index];
                 return Text(
-                  'test',
+                  '${toonInfo.title}${toonInfo.id}\n${toonInfo.thumb}',
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.8),
                     fontSize: 24,
