@@ -29,7 +29,14 @@ class V11HomeScreen extends StatelessWidget {
             return ListView.separated(
               itemBuilder: (context, index) {
                 print(index);
-                return null;
+                var toonInfo = snapshot.data![index];
+                return Text(
+                  'test',
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.8),
+                    fontSize: 24,
+                  ),
+                );
               },
               separatorBuilder: (context, index) => const SizedBox(
                 height: 24,
