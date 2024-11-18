@@ -12,7 +12,12 @@ class ClassName {
     final response = await get(url);
 
     if (response.statusCode == 200) {
-      jsonDecode(response.body);
+      List<dynamic> jsonBody = jsonDecode(response.body);
+
+      for (var json in jsonBody) {
+        
+      }
+
     }
   }
 }
