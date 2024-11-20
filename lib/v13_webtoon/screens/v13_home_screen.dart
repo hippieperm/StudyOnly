@@ -22,6 +22,21 @@ class V13HomeScreen extends StatelessWidget {
           ),
         ),
       ),
+      body: FutureBuilder(
+        future: toons,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return ListView.separated(
+              itemBuilder: itemBuilder,
+              separatorBuilder: separatorBuilder,
+              itemCount: snapshot.data!.length,
+            );
+          }
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
+      ),
     );
   }
 }
