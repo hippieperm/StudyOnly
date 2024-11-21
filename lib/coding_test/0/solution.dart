@@ -2517,4 +2517,38 @@ class Solution {
 
     return answer;
   }
+
+  String solution177(int A, int B) {
+    return "$A+$B";
+  }
+
+  List<int> solution178(String myString) {
+    List<int> answer = [];
+
+    for (var element in myString.split('')) {
+      if (int.tryParse(element) != null) {
+        answer.add(int.parse(element));
+      }
+    }
+    answer.sort();
+    print(answer);
+    return answer;
+  }
+
+  String solution179(String myString, int s, int e) {
+    String answer = '';
+    var splitStr = myString.substring(s, e);
+    var endStr = myString.substring(e + 1);
+    print(endStr);
+
+    for (var i = 0; i < s; i++) {
+      answer += myString[i];
+    }
+
+    for (var i = e - s - 1; i >= 0; i--) {
+      answer += splitStr[i];
+    }
+
+    return answer += endStr;
+  }
 }

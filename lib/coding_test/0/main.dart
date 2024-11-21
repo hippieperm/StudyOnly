@@ -515,4 +515,12 @@ void main() {
 
   Solution().solution176("1 2 3 4");
   print(Solution().solution176_("1 2 3 4"));
+
+  Solution().solution178("hi12392");
+  Solution().solution178("p2o4i8gj2");
+  Solution().solution178("abcde0");
+
+  print('########################');
+  Solution().solution179("Progra21Sremm3", 6, 12);
+  // Solution().solution179("Stanley1yelnatS", 4, 10);
 }
