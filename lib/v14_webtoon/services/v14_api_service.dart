@@ -13,7 +13,7 @@ class V14ApiService {
     final response = await get(url);
     List<V14WebtoonModel> webtoonInstances = [];
 
-    if (response == 200) {
+    if (response.statusCode == 200) {
       List<dynamic> jsonBody = jsonDecode(response.body);
 
       for (var json in jsonBody) {

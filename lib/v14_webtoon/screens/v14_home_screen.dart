@@ -22,6 +22,35 @@ class V14HomeScreen extends StatelessWidget {
           ),
         ),
       ),
+      body: FutureBuilder(
+        future: toons,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return ListView.separated(
+              itemBuilder: (context, index) {
+                print(index);
+                var toonInfo = snapshot.data![index];
+
+                return Text(
+                  '${toonInfo.title}${toonInfo.id}\n${toonInfo.thumb}',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                );
+              },
+              separatorBuilder: (context, index) => const SizedBox(
+                height: 66,
+              ),
+              itemCount: snapshot.data!.length,
+            );
+          }
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
+      ),
     );
   }
 }
