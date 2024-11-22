@@ -32,7 +32,7 @@ class V15HomeScreen extends StatelessWidget {
                 var toon = snapshot.data![index];
 
                 return Text(
-                  '${toon.id}${toon.title}${toon.thumb}',
+                  '${toon.id}\n${toon.title}\n${toon.thumb}',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18,
