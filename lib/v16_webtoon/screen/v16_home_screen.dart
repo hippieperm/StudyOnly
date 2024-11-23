@@ -25,7 +25,20 @@ class V16HomeScreen extends StatelessWidget {
       body: FutureBuilder(
         future: toons,
         builder: (context, snapshot) {
-          if (snapshot.hasData) {}
+          if (snapshot.hasData) {
+            return ListView.separated(
+              itemBuilder: (context, index) {
+                return ;
+              },
+              separatorBuilder: (context, index) => const SizedBox(
+                height: 60,
+              ),
+              itemCount: snapshot.data!.length,
+            );
+          }
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
         },
       ),
     );
