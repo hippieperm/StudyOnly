@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class V16HomeScreen extends StatelessWidget {
   V16HomeScreen({super.key});
 
-  Future<List<V16WebtoonModel>> toon = V16ApiService.getToons();
+  Future<List<V16WebtoonModel>> toons = V16ApiService.getToons();
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +21,12 @@ class V16HomeScreen extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
+      ),
+      body: FutureBuilder(
+        future: toons,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {}
+        },
       ),
     );
   }
