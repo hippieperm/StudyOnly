@@ -34,11 +34,13 @@ class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xff212528),
       appBar: AppBar(
+        backgroundColor: const Color(0xff212528),
         title: Text(
           widget.title,
           style: const TextStyle(
+            color: Colors.white,
             fontSize: 22,
             fontWeight: FontWeight.w600,
           ),
@@ -47,12 +49,12 @@ class _DetailScreenState extends State<DetailScreen> {
         foregroundColor: Colors.green,
         surfaceTintColor: Colors.white,
         shadowColor: Colors.black,
-        elevation: 2,
+        // elevation: 2,
       ),
       body: SingleChildScrollView(
         child: Padding(
           // padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
-          padding: const EdgeInsets.all(50),
+          padding: const EdgeInsets.all(30),
           child: Column(
             children: [
               Row(
@@ -61,7 +63,7 @@ class _DetailScreenState extends State<DetailScreen> {
                   Hero(
                     tag: widget.id,
                     child: Container(
-                      width: 250,
+                      width: 330,
                       clipBehavior: Clip.hardEdge,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(24),
@@ -83,7 +85,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 ],
               ),
               const SizedBox(
-                height: 25,
+                height: 50,
               ),
               FutureBuilder(
                 future: webtoon,
@@ -95,7 +97,9 @@ class _DetailScreenState extends State<DetailScreen> {
                         Text(
                           snapshot.data!.about,
                           style: const TextStyle(
-                            fontSize: 16,
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                         const SizedBox(
@@ -104,7 +108,9 @@ class _DetailScreenState extends State<DetailScreen> {
                         Text(
                           '${snapshot.data!.genre} / ${snapshot.data!.age}',
                           style: const TextStyle(
-                            fontSize: 16,
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ],

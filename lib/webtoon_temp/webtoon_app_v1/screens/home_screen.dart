@@ -11,20 +11,22 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xff212528),
       appBar: AppBar(
+        backgroundColor: const Color(0xff212528),
         title: const Text(
-          "오늘의 웹툰",
+          "TooOOOoooOOnS!",
           style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.w600,
+            color: Colors.white,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
           ),
         ),
         // backgroundColor: Colors.white,
         foregroundColor: Colors.green,
         surfaceTintColor: Colors.white,
         shadowColor: Colors.black,
-        elevation: 2,
+        // elevation: 1,
       ),
       body: FutureBuilder(
         future: webtoons,
@@ -32,9 +34,9 @@ class HomeScreen extends StatelessWidget {
           if (snapshot.hasData) {
             return Column(
               children: [
-                // const SizedBox(
-                //   height: 50,
-                // ),
+                const SizedBox(
+                  height: 14,
+                ),
                 Expanded(
                   child: makeList(snapshot),
                 ),
