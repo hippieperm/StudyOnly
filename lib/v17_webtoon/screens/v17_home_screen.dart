@@ -1,7 +1,11 @@
+import 'package:first_pj/v17_webtoon/models/v17_webtoon_model.dart';
+import 'package:first_pj/v17_webtoon/services/v17_api_service.dart';
 import 'package:flutter/material.dart';
 
 class V17HomeScreen extends StatelessWidget {
-  const V17HomeScreen({super.key});
+  V17HomeScreen({super.key});
+
+  Future<List<V17WebtoonModel>> toon = V17ApiService.getToons();
 
   @override
   Widget build(BuildContext context) {
