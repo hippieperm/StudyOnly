@@ -27,9 +27,23 @@ class V17HomeScreen extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.separated(
-              itemBuilder: itemBuilder,
-              separatorBuilder: separatorBuilder,
-              itemCount: itemCount,
+              itemBuilder: (context, index) {
+                print(index);
+                var toonInfo = snapshot.data![index];
+
+                return Text(
+                  '${toonInfo.id}\n${toonInfo.title}\n${toonInfo.thumb}',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                );
+              },
+              separatorBuilder: (context, index) => const SizedBox(
+                height: 55,
+              ),
+              itemCount: snapshot.data!.length,
             );
           }
           return const Center(
