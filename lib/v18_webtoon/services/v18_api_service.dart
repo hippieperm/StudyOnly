@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart';
 
 class V18ApiService {
@@ -10,7 +12,11 @@ class V18ApiService {
     final response = await get(url);
 
     if (response.statusCode == 200) {
-      
+      List<dynamic> jsonBodyList = jsonDecode(response.body);
+
+      for (var json  in jsonBodyList) {
+        
+      }
     }
   }
 }
