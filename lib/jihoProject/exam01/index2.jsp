@@ -26,7 +26,7 @@ pageEncoding="UTF-8"%>
       }
       nav > ul > li {
       /* 	color: white; */
-      	padding: 10px; 20px;
+      	padding: 10px 20px;
       }
       a {
       	color: white;
