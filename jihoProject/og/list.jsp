@@ -1,6 +1,7 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.sql.Date"%>
 <%@page import="java.sql.ResultSet"%>
+
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
@@ -68,7 +69,7 @@
     <nav>
         <ul>
             <li><a href="add.jsp">회원등록</a></li>
-            <li><a href="list_edit.jsp">회원목록조회/수정</a></li>
+            <li><a href="list.jsp">회원목록조회/수정</a></li>
             <li><a href="money.jsp">회원매출조회</a></li>
             <li><a href="index.jsp">홈으로.</a></li>
         </ul>
