@@ -100,14 +100,17 @@ table {
 
 	// SQL 작성 및 실행
 	String sql = 
-		"select t1.custno custno, " +
-		"t1.custname custname, " +
-		"decode(t1.grade,'A','VIP','B','일반','C','직원') grade, " +
-		"sum(t2.price) price " +
-		"from member_tbl_02 t1, money_tbl_02 t2 " +
-		"where t1.custno=t2.custno " +
-		"group by (t1.custno, t1.custname, t1.grade) " +
-		"order by price desc";
+	 "  SELECT"+
+	 "  a.custno custno,"+
+	 "  a.custname custname,"+
+	 "  decode(a.grade,'A', 'vip', 'B', '일반', 'C', '직원') AS grade,"+
+ 	 "  SUM(b.price) AS PRICE"+
+	 "	FROM"+
+	 "  member_tbl_02 a, money_tbl_02 b"+
+	 "  where a.custno = b.custno"+
+	 "	GROUP BY A.custno, A.custname, a.grade"+
+	 "	ORDER BY price desc";
+	  
 
 	PreparedStatement ps = conn.prepareStatement(sql);
 	ResultSet rs = ps.executeQuery();
