@@ -5,6 +5,70 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+	<style type="text/css">
+		*{padding: 0; margin: 0;}
+		
+		header {
+			width: 100%;
+			height: 100px;
+			line-height: 100px;
+			background-color: blue;
+			color: white;
+			font-size: 30px;
+			text-align: center;
+		}		
+		nav {
+			width: 100%;
+			background-color: gray;
+		}		
+		nav > ul {
+			display: flex;
+			list-style: none;
+		}		
+		nav > ul > li {
+			padding: 10px 30px;
+		}		
+		a {
+			color: white;
+			text-decoration: none;
+		}		
+		h3 {
+			color: white;
+			font-size: 30px;
+			text-align: center;
+			padding: 30px 0px;
+		}		
+		div {
+			padding: 15px 0px;
+		}		
+		header {
+			width: 100%;
+			height: 100px;
+			line-height: 100px;
+			background-color: blue;
+			color: white;
+			font-size: 30px;
+			text-align: center;
+		}		
+		header {
+			width: 100%;
+			height: 100px;
+			line-height: 100px;
+			background-color: blue;
+			color: white;
+			font-size: 30px;
+			text-align: center;
+		}
+		
+			
+			
+			
+		
+		
+		
+	</style>
+
 </head>
 <body>
 	<header>쇼핑몰회원관리 버전1.0</header>
