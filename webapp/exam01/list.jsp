@@ -105,11 +105,12 @@
                         Date date = rs.getDate("joindate");
                         SimpleDateFormat sDate = new SimpleDateFormat("yyyy.MM.dd");                                               
                         char grade = rs.getString("grade").charAt(0);
+                        String custno = rs.getInt("custno");
                 %>
                 <tr>
                     <td>
-                        <a href="edit.jsp?custno=<%= rs.getInt("custno") %>">
-                            <%= rs.getInt("custno") %>
+                        <a href="edit.jsp?custno=<%= custno %>">
+                            <%= custno %>
                         </a>
                     </td>
                     <td><%= rs.getString("custname") %></td>
