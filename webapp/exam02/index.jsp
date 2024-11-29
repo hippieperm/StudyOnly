@@ -32,7 +32,13 @@
 		a {
 			color: white;
 			text-decoration: none;
-		}		
+		}	
+		section {
+			width: 100%;
+			height: 600px;
+			background-color: silver;
+			color: white;
+		}	
 		h3 {
 			color: white;
 			font-size: 30px;
@@ -41,17 +47,8 @@
 		}		
 		div {
 			padding: 15px 0px;
-		}		
-		header {
-			width: 100%;
-			height: 100px;
-			line-height: 100px;
-			background-color: blue;
-			color: white;
-			font-size: 30px;
-			text-align: center;
-		}		
-		header {
+		}			
+		footer {
 			width: 100%;
 			height: 100px;
 			line-height: 100px;
@@ -60,14 +57,7 @@
 			font-size: 30px;
 			text-align: center;
 		}
-		
-			
-			
-			
-		
-		
-		
-	</style>
+		</style>
 
 </head>
 <body>
