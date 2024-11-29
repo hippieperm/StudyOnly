@@ -105,7 +105,7 @@
                         Date date = rs.getDate("joindate");
                         SimpleDateFormat sDate = new SimpleDateFormat("yyyy.MM.dd");                                               
                         char grade = rs.getString("grade").charAt(0);
-                        String custno = rs.getInt("custno");
+                        int custno = rs.getInt("custno");
                 %>
                 <tr>
                     <td>
