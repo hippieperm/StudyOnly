@@ -169,11 +169,11 @@
 						</tr>
 						<tr>
 							<td>가입일자</td>
-							<td><input type="text" name="joindate" id="joindate" value="<%=rs.getString("joindate")%>"></td>
-						</tr>
+							<td><input type="text" name="joindate" id="joindate" value="<%=rs.getDate("joindate")%>"></td>
+						</tr>																// 매서드 주의
 						<tr>
 							<td>회원등급A:VIP/B:일반/C:직원원</td>
-							<td><input type="text" name=""grade"" id="grade" value="<%=rs.getString("grade")%>"></td>
+							<td><input type="text" name="grade" id="grade" value="<%=rs.getString("grade")%>"></td>
 						</tr>
 						<tr>
 							<td>도시코드</td>
