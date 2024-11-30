@@ -86,6 +86,31 @@
 				custname.focus();
 				return false;
 			}
+			if(phone.value === ""){
+				alert("phone");
+				city.focus();
+				return false;
+			}
+			if(address.value === ""){
+				alert("adress");
+				adress.focus();
+				return false;
+			}
+			if(joindate.value === ""){
+				alert("joindate");
+				joindate.focus();
+				return false;
+			}
+			if(grade.value === ""){
+				alert("grade");
+				grade.focus();
+				return false;
+			}
+			if(city.value === ""){
+				alert("city");
+				city.focus();
+				return false;
+			}
 		}
 	</script>
 </head>
