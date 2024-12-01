@@ -147,3 +147,62 @@ a:visited {
 
 	}
 </script>
+</head>
+<body>
+
+	<header>쇼핑몰회원관리 버전1.0</header>
+	<nav>
+		<ul>
+			<li><a href="add.jsp">회원등록</a></li>
+			<li><a href="list.jsp">회원목록조회/수정</a></li>
+			<li><a href="money.jsp">회원매출조회</a></li>
+			<li><a href="index.jsp" class="home">홈으로.</a></li>
+		</ul>
+	</nav>
+	<section>
+		<h3>쇼핑몰 회원관리프로그램</h3>
+		<div>
+			<form action="edit_f.jsp" method="post" onsubmit="return cunf()">
+				<table border="1">
+					<%
+					if (rs.next()) {
+					%>
+					<tr>
+						<td>회원번호</td>
+						<td><input type="text" name="custno" id="custno"
+							value="<%=rs.getInt("custno")%>"></td>
+					</tr>
+					<tr>
+						<td>회원성명</td>
+						<td><input type="text" name="custname" id="custname"
+							value="<%=rs.getString("custname")%>"></td>
+					<tr>
+						<td>회원전화번호</td>
+						<td><input type="text" name="phone" id="phone"
+							value="<%=rs.getString("phone")%>"></td>
+					</tr>
+					<tr>
+						<td>회원주소</td>
+						<td><input type="text" name="address" id="address"
+							value="<%=rs.getString("address")%>"></td>
+					</tr>
+					<tr>
+						<td>가입일자</td>
+						<td><input type="text" name="joindate" id="joindate"
+							value="<%=rs.getDate("joindate")%>"></td>
+					</tr>
+					<tr>
+						<td>고객등급[A:VIP, B:일반 C:직원]</td>
+						<td><input type="text" name="grade" id=grade
+							value="<%=rs.getString("grade")%>"></td>
+					</tr>
+					<tr>
+						<td>도시코드</td>
+						<td><input type="text" name="city" id="city"
+							value="<%=rs.getString("city")%>"></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="수정"> <input
+							type="button" value="조회" onclick="location.href='list.jsp'"">
+						</td>
+					</tr>
