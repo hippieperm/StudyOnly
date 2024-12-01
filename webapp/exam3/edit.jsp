@@ -147,6 +147,7 @@ a:visited {
 
 	}
 </script>
+
 </head>
 <body>
 
@@ -206,3 +207,17 @@ a:visited {
 							type="button" value="조회" onclick="location.href='list.jsp'"">
 						</td>
 					</tr>
+					<%
+					}
+					rs.close();
+					ps.close();
+					con.close();
+					%>
+				</table>
+			</form>
+		</div>
+	</section>
+	<footer>HRDKOREA....................</footer>
+
+</body>
+</html>
