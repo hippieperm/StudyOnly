@@ -99,3 +99,51 @@ a:visited {
 	color: blue;
 }
 </style>
+<script type="text/javascript">
+	function cunf() {
+		var custno = document.getElementById("custno");
+		var custname = document.getElementById("custname");
+		var phone = document.getElementById("phone");
+		var address = document.getElementById("address");
+		var joindate = document.getElementById("joindate");
+		var grade = document.getElementById("grade");
+		var city = document.getElementById("city");
+
+		if (custno.value === "") {
+			alert("custno");
+			custno.focus();
+			return false;
+		}
+		if (custname.value === "") {
+			alert("custname");
+			custname.focus();
+			return false;
+		}
+		if (phone.value === "") {
+			alert("phone");
+			phone.focus();
+			return false;
+		}
+		if (address.value === "") {
+			alert("address");
+			address.focus();
+			return false;
+		}
+		if (joindate.value === "") {
+			alert("joindate");
+			joindate.focus();
+			return false;
+		}
+		if (grade.value === "") {
+			alert("grade");
+			grade.focus();
+			return false;
+		}
+		if (city.value === "") {
+			alert("city");
+			city.focus();
+			return false;
+		}
+
+	}
+</script>
