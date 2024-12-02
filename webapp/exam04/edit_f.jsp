@@ -15,21 +15,24 @@ String joindate =request.getParameter("joindate");
 String grade =request.getParameter("grade");
 String city =request.getParameter("city");
 
-String sql = "insert into member_tbl_02" 
-+"	(custno, custname, phone, address, joindate, grade, city) values(?,?,?,?,?,?,?)";
+String sql = "update member_tbl_02"
+		+"	set custname=?, phone=?, address=?, joindate=?, grade=?, city=?"
+		+"	where custno=?";
+
 
 Class.forName("oracle.jdbc.driver.OracleDriver");
 Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "1234"); 
 
 PreparedStatement ps = con.prepareStatement(sql);
 
-ps.setInt(1, custno);
-ps.setString(2, custname);
-ps.setString(3, phone);
-ps.setString(4, address);
-ps.setString(5, joindate);
-ps.setString(6, grade);
-ps.setString(7, city);
+
+ps.setString(1, custname);
+ps.setString(2, phone);
+ps.setString(3, address);
+ps.setString(4, joindate);
+ps.setString(5, grade);
+ps.setString(6, city);
+ps.setInt(7, custno);
 
 ps.executeUpdate();
 
@@ -39,6 +42,6 @@ con.close();
 %>
 
 <script type="text/javascript">
-alert("add complit");
+alert("edit complit");
 location.href="list.jsp";
 </script>
