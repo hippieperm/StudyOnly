@@ -11,7 +11,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
 
 <style>
 * {
@@ -86,6 +85,10 @@ td{
 text-align: center;
 }
 </style>
+
+</head>
+
+
 
 <body>
 

@@ -11,7 +11,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
 
 <style>
 * {
@@ -87,6 +86,10 @@ text-align: center;
 }
 </style>
 
+</head>
+
+
+
 <body>
 
 	<header>쇼핑몰회원관리</header>
@@ -112,13 +115,13 @@ text-align: center;
 				Class.forName("oracle.jdbc.driver.OracleDriver");
 				Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe",
 						"system", "1234");
-				String sql =    "select"
-						        +"	a.custno custno, a.custname custname, grade grade,"
+				String sql = "select"
+						+"	a.custno custno, a.custname custname, grade grade,"
 								+"	sum(b.price) price"
 								+"	from member_tbl_02 a, money_tbl_02 b"
 								+"	where a.custno = b.custno"
 								+"	group by a.custno, a.custname, a.grade"
-					        	+"	order by price desc";
+						+"	order by price desc";
 				PreparedStatement ps = con.prepareStatement(sql);
 				ResultSet rs = ps.executeQuery();
 				
