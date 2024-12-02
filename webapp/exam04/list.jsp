@@ -130,7 +130,7 @@ text-align: center;
 					
 				%>
 				<tr>
-					<td><a href="edit.jsp?custno= <%=custno%>"><%=custno%></a></td>
+					<td><a href="edit.jsp?custno=<%=custno%>"><%=custno%></a></td>
 					<td><%=rs.getString("custname")%></td>
 					<td><%=rs.getString("phone")%></td>
 					<td><%=rs.getString("address")%></td>
