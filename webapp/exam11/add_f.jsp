@@ -16,7 +16,7 @@ String city = request.getParameter("city");
 
 Class.forName("oracle.jdbc.driver.OracleDriver");
 Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "1234");
-String sql = "insert into member_tbl_02(custno, custname, phone, address, joindate, grade, city) values(?,?,?,?,?,?,?)";
+String sql = "insert into member_tbl_02 values(?,?,?,?,?,?,?)";
 PreparedStatement ps = con.prepareStatement(sql);
 
 ps.setInt(1, custno);
