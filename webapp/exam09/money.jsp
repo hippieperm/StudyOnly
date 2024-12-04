@@ -120,7 +120,7 @@ table {
 				ResultSet rs = ps.executeQuery();
 
 				while (rs.next()) {
-					String custno = rs.getString("custno");
+					int custno = rs.getInt("custno");
 					char grade = rs.getString("grade").charAt(0);
 				%>
 
