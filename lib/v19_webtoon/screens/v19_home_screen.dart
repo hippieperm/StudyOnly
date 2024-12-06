@@ -31,8 +31,12 @@ class V19HomeScreen extends StatelessWidget {
                 print(index);
                 var toonInfo = snapshot.data![index];
                 return Text(
-                  '${toonInfo.title}${toonInfo.id}${toonInfo.thumb}',
-                  style: TextStyle(color: Colors.white.withOpacity(0.9)),
+                  '${toonInfo.title}\n${toonInfo.id}\n${toonInfo.thumb}',
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.9),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                  ),
                 );
               },
               separatorBuilder: (context, index) => const SizedBox(
