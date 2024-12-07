@@ -1,4 +1,4 @@
-import 'package:first_pj/v19_webtoon/screens/v19_home_screen.dart';
+import 'package:first_pj/v19_webtoon/screens/v20_home_screen.dart';
 import 'package:first_pj/v19_webtoon/services/v19_api_service.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +12,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: V19HomeScreen(),
+      home: V20HomeScreen(),
     );
   }
 }
