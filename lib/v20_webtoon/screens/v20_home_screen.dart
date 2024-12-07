@@ -45,11 +45,8 @@ class V20HomeScreen extends StatelessWidget {
               itemCount: snapshot.data!.length,
             );
           }
-          return Center(
-            child: CircularProgressIndicator(
-              backgroundColor: Colors.yellow.withOpacity(0.7),
-              color: Colors.red.withOpacity(0.6),
-            ),
+          return const Center(
+            child: CircularProgressIndicator(),
           );
         },
       ),
