@@ -1,7 +1,13 @@
+import 'package:first_pj/v21_webtoon/model/v21_webtoon_model.dart';
+import 'package:first_pj/v21_webtoon/service/v21_api_service.dart';
 import 'package:flutter/material.dart';
 
 class V21HomeScreen extends StatelessWidget {
-  const V21HomeScreen({super.key});
+  V21HomeScreen({
+    super.key,
+  });
+
+  Future<List<V21WebtoonModel>> toons = V21ApiService.getToons();
 
   @override
   Widget build(BuildContext context) {
