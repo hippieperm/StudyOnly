@@ -35,7 +35,11 @@ class V21HomeScreen extends StatelessWidget {
 
                 return Text(
                   '${toonInfo.id}\n${toonInfo.title}\n${toonInfo.thumb}',
-                  style: const TextStyle(),
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
                 );
               },
               separatorBuilder: (context, index) => const SizedBox(
