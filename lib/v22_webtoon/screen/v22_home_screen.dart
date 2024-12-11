@@ -32,7 +32,11 @@ class V22HomeScreen extends StatelessWidget {
                 var toonInfo = snapshot.data![index];
                 return Text(
                   '${toonInfo.id}\n${toonInfo.title}\n${toonInfo.thumb}',
-                  
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.9),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                  ),
                 );
               },
               separatorBuilder: (context, index) => const SizedBox(
