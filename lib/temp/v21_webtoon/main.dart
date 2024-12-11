@@ -1,5 +1,5 @@
 import 'package:first_pj/temp/v20_webtoon/main.dart';
-import 'package:first_pj/v21_webtoon/screen/v21_home_screen.dart';
+import 'package:first_pj/temp/v21_webtoon/screen/v21_home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

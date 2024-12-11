@@ -1,5 +1,5 @@
-import 'package:first_pj/v21_webtoon/model/v21_webtoon_model.dart';
-import 'package:first_pj/v21_webtoon/service/v21_api_service.dart';
+import 'package:first_pj/temp/v21_webtoon/model/v21_webtoon_model.dart';
+import 'package:first_pj/temp/v21_webtoon/service/v21_api_service.dart';
 import 'package:flutter/material.dart';
 
 class V21HomeScreen extends StatelessWidget {
