@@ -5,8 +5,19 @@ class V22HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xff212528),
+    return Scaffold(
+      backgroundColor: const Color(0xff212528),
+      appBar: AppBar(
+        backgroundColor: const Color(0xff212528),
+        title: Text(
+          'TOON!',
+          style: TextStyle(
+            color: Colors.white.withOpacity(0.8),
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
     );
   }
 }
