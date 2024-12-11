@@ -25,7 +25,13 @@ class V22HomeScreen extends StatelessWidget {
       body: FutureBuilder(
         future: toons,
         builder: (context, snapshot) {
-          if (snapshot.hasData) {}
+          if (snapshot.hasData) {
+            return ListView.separated(
+              itemBuilder: itemBuilder,
+              separatorBuilder: (context, index) => ,
+              itemCount: snapshot.data!.length,
+            );
+          }
           return const Center(
             child: CircularProgressIndicator(),
           );
