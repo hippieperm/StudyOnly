@@ -22,6 +22,10 @@ class V22HomeScreen extends StatelessWidget {
           ),
         ),
       ),
+      body: FutureBuilder(
+        future: future,
+        builder: builder,
+      ),
     );
   }
 }
