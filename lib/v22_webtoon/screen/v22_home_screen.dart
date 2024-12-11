@@ -23,8 +23,13 @@ class V22HomeScreen extends StatelessWidget {
         ),
       ),
       body: FutureBuilder(
-        future: future,
-        builder: builder,
+        future: toons,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {}
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
       ),
     );
   }
