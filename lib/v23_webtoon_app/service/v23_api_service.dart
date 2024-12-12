@@ -7,6 +7,7 @@ class V23ApiService {
   static const String baseUrl =
       'https://webtoon-crawler.nomadcoders.workers.dev';
   static const String today = 'today';
+
   static Future<List<V23WebtoonModel>> getToons() async {
     final url = Uri.parse('$baseUrl/$today');
     final response = await get(url);
