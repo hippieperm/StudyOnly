@@ -1,4 +1,4 @@
-import 'package:first_pj/v23_webtoon_app/screen/v23_home_screen.dart';
+import 'package:first_pj/temp/v23_webtoon_app/screen/v23_home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

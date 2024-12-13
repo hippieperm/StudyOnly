@@ -1,5 +1,5 @@
-import 'package:first_pj/v23_webtoon_app/model/v23_webtoon_model.dart';
-import 'package:first_pj/v23_webtoon_app/service/v23_api_service.dart';
+import 'package:first_pj/temp/v23_webtoon_app/model/v23_webtoon_model.dart';
+import 'package:first_pj/temp/v23_webtoon_app/service/v23_api_service.dart';
 import 'package:flutter/material.dart';
 
 class V23HomeScreen extends StatelessWidget {
