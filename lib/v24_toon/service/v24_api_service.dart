@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart';
 
 class V24ApiService {
@@ -9,6 +11,10 @@ class V24ApiService {
     final url = Uri.parse('$baseUrl/$today');
     final response = await get(url);
 
-    if (response.statusCode == 200) {}
+    if (response.statusCode == 200) {
+      
+      jsonDecode(response.body)
+
+    }
   }
 }
