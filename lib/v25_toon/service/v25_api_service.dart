@@ -14,7 +14,7 @@ class V25ApiService {
     if (response.statusCode == 200) {
       final jsonBody = jsonDecode(response.body);
 
-      for (var element in collection) {
+      for (var json in jsonBody) {
         
       }
     }
