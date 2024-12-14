@@ -1,7 +1,11 @@
+import 'package:first_pj/v25_toon/model/v25_webtoon_model.dart';
+import 'package:first_pj/v25_toon/service/v25_api_service.dart';
 import 'package:flutter/material.dart';
 
 class V25HomeScreen extends StatelessWidget {
-  const V25HomeScreen({super.key});
+  V25HomeScreen({super.key});
+
+  Future<List<V25WebtoonModel>> toons = V25ApiService.getToons();
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +21,12 @@ class V25HomeScreen extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
+      ),
+      body: FutureBuilder(
+        future: toons,
+        builder: (context, snapshot) {
+          
+        },
       ),
     );
   }
