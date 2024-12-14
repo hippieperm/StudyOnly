@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:first_pj/v24_toon/model/v24_toon_model.dart';
+import 'package:first_pj/temp/v24_toon/model/v24_toon_model.dart';
 import 'package:http/http.dart';
 
 class V24ApiService {
@@ -19,6 +19,7 @@ class V24ApiService {
       for (var json in jsonBody) {
         toonList.add(V24ToonModel.fromJson(json));
       }
+
       return toonList;
     }
     throw Error();

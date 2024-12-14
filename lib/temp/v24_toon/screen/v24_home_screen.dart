@@ -1,5 +1,5 @@
-import 'package:first_pj/v24_toon/model/v24_toon_model.dart';
-import 'package:first_pj/v24_toon/service/v24_api_service.dart';
+import 'package:first_pj/temp/v24_toon/model/v24_toon_model.dart';
+import 'package:first_pj/temp/v24_toon/service/v24_api_service.dart';
 import 'package:flutter/material.dart';
 
 class V24HomeScreen extends StatelessWidget {
@@ -32,7 +32,10 @@ class V24HomeScreen extends StatelessWidget {
                 var toonInfo = snapshot.data![index];
 
                 return Text(
-                  '${toonInfo.id}\n${toonInfo.title}\n${toonInfo.thumb}',
+                  '''${toonInfo.id}\n${toonInfo.title}\n${toonInfo.thumb}
+                  테스트
+                  테스트
+                  ''',
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.9),
                     fontWeight: FontWeight.w500,
@@ -44,6 +47,7 @@ class V24HomeScreen extends StatelessWidget {
               itemCount: snapshot.data!.length,
             );
           }
+
           return const Center(
             child: CircularProgressIndicator(),
           );

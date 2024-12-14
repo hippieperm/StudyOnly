@@ -1,4 +1,4 @@
-import 'package:first_pj/v24_toon/screen/v24_home_screen.dart';
+import 'package:first_pj/temp/v24_toon/screen/v24_home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
