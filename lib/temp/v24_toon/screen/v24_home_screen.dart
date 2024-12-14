@@ -32,10 +32,7 @@ class V24HomeScreen extends StatelessWidget {
                 var toonInfo = snapshot.data![index];
 
                 return Text(
-                  '''${toonInfo.id}\n${toonInfo.title}\n${toonInfo.thumb}
-                  테스트
-                  테스트
-                  ''',
+                  '${toonInfo.id}\n${toonInfo.title}\n${toonInfo.thumb}',
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.9),
                     fontWeight: FontWeight.w500,
