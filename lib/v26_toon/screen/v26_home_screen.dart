@@ -3,7 +3,7 @@ import 'package:first_pj/v26_toon/service/v26_api_service.dart';
 import 'package:flutter/material.dart';
 
 class V26HomeScreen extends StatelessWidget {
-   V26HomeScreen({super.key});
+  V26HomeScreen({super.key});
 
   Future<List<V26ToonModel>> toon = V26ApiService.getToon();
 
@@ -21,6 +21,12 @@ class V26HomeScreen extends StatelessWidget {
             color: Colors.white.withOpacity(0.9),
           ),
         ),
+      ),
+      body: FutureBuilder(
+        future: toon,
+        builder: (context, snapshot) {
+          
+        },
       ),
     );
   }
