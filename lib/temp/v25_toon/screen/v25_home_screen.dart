@@ -1,5 +1,5 @@
-import 'package:first_pj/v25_toon/model/v25_webtoon_model.dart';
-import 'package:first_pj/v25_toon/service/v25_api_service.dart';
+import 'package:first_pj/temp/v25_toon/model/v25_webtoon_model.dart';
+import 'package:first_pj/temp/v25_toon/service/v25_api_service.dart';
 import 'package:flutter/material.dart';
 
 class V25HomeScreen extends StatelessWidget {

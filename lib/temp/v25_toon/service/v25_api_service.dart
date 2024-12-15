@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:first_pj/v25_toon/model/v25_webtoon_model.dart';
+import 'package:first_pj/temp/v25_toon/model/v25_webtoon_model.dart';
 import 'package:http/http.dart';
 
 class V25ApiService {
@@ -15,6 +15,7 @@ class V25ApiService {
     if (response.statusCode == 200) {
       final jsonBody = jsonDecode(response.body);
       List<V25WebtoonModel> webtoonList = [];
+
       for (var json in jsonBody) {
         webtoonList.add(V25WebtoonModel.fromJson(json));
       }
