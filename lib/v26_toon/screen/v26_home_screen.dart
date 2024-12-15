@@ -32,7 +32,13 @@ class V26HomeScreen extends StatelessWidget {
                 var toonInfo = snapshot.data![index];
 
                 return Text(
-                    '${toonInfo.id}\n${toonInfo.title}\n${toonInfo.thumb}');
+                  '${toonInfo.id}\n${toonInfo.title}\n${toonInfo.thumb}',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                  ),
+                );
               },
               separatorBuilder: (context, index) => const SizedBox(height: 18),
               itemCount: snapshot.data!.length,
