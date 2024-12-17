@@ -1,5 +1,5 @@
-import 'package:first_pj/v26_toon/model/v26_toon_model.dart';
-import 'package:first_pj/v26_toon/service/v26_api_service.dart';
+import 'package:first_pj/temp/v26_toon/model/v26_toon_model.dart';
+import 'package:first_pj/temp/v26_toon/service/v26_api_service.dart';
 import 'package:flutter/material.dart';
 
 class V26HomeScreen extends StatelessWidget {
