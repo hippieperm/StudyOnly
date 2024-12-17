@@ -1,7 +1,11 @@
+import 'package:first_pj/v27_toon/model/v27_webtoon_model.dart';
+import 'package:first_pj/v27_toon/service/v27_api_service.dart';
 import 'package:flutter/material.dart';
 
 class V27HomeScreen extends StatelessWidget {
-  const V27HomeScreen({super.key});
+  V27HomeScreen({super.key});
+
+  Future<List<V27WebtoonModel>> toons = V27ApiService.getToon();
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +21,10 @@ class V27HomeScreen extends StatelessWidget {
             color: Colors.white.withOpacity(0.8),
           ),
         ),
+      ),
+      body: FutureBuilder(
+        future: future,
+        builder: builder,
       ),
     );
   }
