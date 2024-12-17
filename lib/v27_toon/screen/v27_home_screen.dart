@@ -23,8 +23,19 @@ class V27HomeScreen extends StatelessWidget {
         ),
       ),
       body: FutureBuilder(
-        future: future,
-        builder: builder,
+        future: toons,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return ListView.separated(
+              itemBuilder: itemBuilder,
+              separatorBuilder: separatorBuilder,
+              itemCount: itemCount,
+            );
+          }
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
       ),
     );
   }
