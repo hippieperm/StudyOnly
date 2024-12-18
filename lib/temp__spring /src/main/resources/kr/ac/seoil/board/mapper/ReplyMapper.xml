@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.ac.seoil.board.mapper.ReplyMapper">
+
+    <!-- 
+        댓글 정보를 매핑하는 ResultMap
+        - SELECT 쿼리 결과를 ReplyInfoVO 객체에 매핑
+    -->
+    <resultMap id="selectReplyMap" type="kr.ac.seoil.board.vo.ReplyInfoVO">
+        <result property="rno" column="RNO" /> <!-- 댓글 번호 -->
+        <result property="bno" column="BNO" /> <!-- 게시글 번호 -->
+        <result property="reply" column="REPLY" /> <!-- 댓글 내용 -->
+        <result property="userNm" column="USER_NM" /> <!-- 작성자 이름 -->
+        <result property="replyDate" column="REPLY_DATE" /> <!-- 댓글 작성일 -->
+        <result property="updDate" column="UPD_DATE" /> <!-- 댓글 수정일 -->
+    </resultMap>
+
+    <!-- 댓글 등록 -->
+    <insert id="insert">
+        <![CDATA[
+        INSERT INTO TBL_REPLY (
+            RNO, BNO, REPLY, USER_ID -- 댓글 번호, 게시글 번호, 댓글 내용, 작성자 ID
+        ) VALUES (
+            SEQ_REPLY.NEXTVAL, #{bno}, #{reply}, #{userId} -- 시퀀스를 이용한 댓글 번호 생성
+        )
+        ]]>
+    </insert>
+
+    <!-- 특정 댓글 조회 -->
+    <select id="select" resultMap="selectReplyMap">
+        <![CDATA[
+        SELECT 
+            RNO,             -- 댓글 번호
+            BNO,             -- 게시글 번호
+            REPLY,           -- 댓글 내용
+            (SELECT USER_NM 
+             FROM TBL_USER 
+             WHERE USER_ID = TR.USER_ID) USER_NM, -- 작성자 이름
+            REPLY_DATE,      -- 댓글 작성일
+            UPD_DATE         -- 댓글 수정일
+        FROM TBL_REPLY TR
+        WHERE RNO = #{rno} -- 특정 댓글 번호 조회
+        ]]>
+    </select>
+
+    <!-- 댓글 삭제 -->
+    <delete id="delete">
+        <![CDATA[
+        DELETE FROM TBL_REPLY 
+        WHERE RNO = #{rno} -- 특정 댓글 번호 삭제
+        ]]>
+    </delete>
+
+    <!-- 댓글 수정 -->
+    <update id="update">
+        <![CDATA[
+        UPDATE TBL_REPLY SET
+            REPLY = #{reply},   -- 댓글 내용 수정
+            UPD_DATE = SYSDATE  -- 수정일 갱신
+        WHERE RNO = #{rno} -- 특정 댓글 번호로 수정
+        ]]>
+    </update>
+
+    <!-- 게시글에 대한 댓글 목록 조회 -->
+    <select id="selectList" resultMap="selectReplyMap">
+        <![CDATA[
+        WITH V_REPLY AS (
+            SELECT 
+                /*+ INDEX(TBL_REPLY, IDX_REPLY) */ -- 인덱스 힌트를 사용한 성능 최적화
+                ROWNUM RN,        -- 행 번호
+                BNO,             -- 게시글 번호
+                RNO,             -- 댓글 번호
+                REPLY,           -- 댓글 내용
+                (SELECT USER_NM 
+                 FROM TBL_USER 
+                 WHERE USER_ID = TR.USER_ID) USER_NM, -- 작성자 이름
+                REPLY_DATE,      -- 댓글 작성일
+                UPD_DATE         -- 댓글 수정일
+            FROM TBL_REPLY TR
+            WHERE BNO = #{bno}       -- 특정 게시글에 대한 댓글 조회
+              AND RNO > 0            -- 댓글 번호가 0보다 큰 경우
+              AND ROWNUM <= #{cri.pageNum} * #{cri.amount} -- 요청된 페이지까지의 데이터 제한
+        )
+        SELECT 
+            RNO, BNO, REPLY, USER_NM, REPLY_DATE, UPD_DATE
+        FROM V_REPLY
+        WHERE RN > (#{cri.pageNum} - 1) * #{cri.amount} -- 이전 페이지 데이터 제외
+        ]]>
+    </select>
+
+    <!-- 특정 게시글에 대한 댓글 개수 조회 -->
+    <select id="selectCountByBno" resultType="int">
+        <![CDATA[
+        SELECT COUNT(RNO) -- 특정 게시글에 대한 전체 댓글 수 조회
+        FROM TBL_REPLY
+        WHERE BNO = #{bno} -- 게시글 번호로 필터링
+        ]]>
+    </select>
+
+</mapper>
