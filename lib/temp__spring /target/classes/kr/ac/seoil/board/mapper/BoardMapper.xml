@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.ac.seoil.board.mapper.BoardMapper">
+
+    <!-- 
+        게시글 목록 조회를 위한 ResultMap
+        - SELECT 쿼리 결과를 BoardListVO 객체에 매핑
+    -->
+    <resultMap id="selectListMap" type="kr.ac.seoil.board.vo.BoardListVO">
+        <result property="bno" column="BNO" /> <!-- 게시글 번호 -->
+        <result property="title" column="TITLE" /> <!-- 게시글 제목 -->
+        <result property="userNm" column="USER_NM" /> <!-- 작성자 이름 -->
+        <result property="regDate" column="REG_DATE" /> <!-- 등록일 -->
+        <result property="updDate" column="UPD_DATE" /> <!-- 수정일 -->
+    </resultMap>
+
+    <!-- 
+        게시글 상세 정보 조회를 위한 ResultMap
+        - SELECT 쿼리 결과를 BoardInfoVO 객체에 매핑
+    -->
+    <resultMap id="selectInfoMap" type="kr.ac.seoil.board.vo.BoardInfoVO">
+        <result property="bno" column="BNO" /> <!-- 게시글 번호 -->
+        <result property="title" column="TITLE" /> <!-- 게시글 제목 -->
+        <result property="content" column="CONTENT" /> <!-- 게시글 내용 -->
+        <result property="userNm" column="USER_NM" /> <!-- 작성자 이름 -->
+        <result property="regDate" column="REG_DATE" /> <!-- 등록일 -->
+    </resultMap>
+
+    <!-- 게시글 목록 조회 -->
+    <select id="selectList" resultMap="selectListMap">
+        <![CDATA[
+        SELECT 
+            TB.BNO,         -- 게시글 번호
+            TB.TITLE,       -- 게시글 제목
+            TU.USER_NM,     -- 작성자 이름
+            TB.REG_DATE,    -- 등록일
+            TB.UPD_DATE     -- 수정일
+        FROM TBL_BOARD TB
+        INNER JOIN TBL_USER TU 
+            ON TB.USER_ID = TU.USER_ID -- 게시글 테이블과 사용자 테이블을 조인
+        WHERE TB.BNO > 0 -- 게시글 번호가 0보다 큰 경우만 조회
+        ORDER BY TB.BNO DESC -- 게시글 번호를 기준으로 내림차순 정렬
+        ]]>
+    </select>
+
+    <!-- 
+        검색 조건을 동적으로 생성하는 SQL
+        - 조건: 제목(T), 내용(C), 작성자(W) 중 하나를 선택
+    -->
+    <sql id="criteria">
+        <trim prefix="(" suffix=") AND" prefixOverrides="OR">
+            <foreach item="type" collection="typeArr">
+                <trim prefix="OR">
+                    <choose>
+                        <when test="type == 'T'.toString()">
+                            TB.TITLE LIKE '%' || #{keyword} || '%' -- 제목에 키워드 포함
+                        </when>
+                        <when test="type == 'C'.toString()">
+                            TB.CONTENT LIKE '%' || #{keyword} || '%' -- 내용에 키워드 포함
+                        </when>
+                        <when test="type == 'W'.toString()">
+                            TU.USER_NM LIKE '%' || #{keyword} || '%' -- 작성자 이름에 키워드 포함
+                        </when>
+                    </choose>
+                </trim>
+            </foreach>
+        </trim>
+    </sql>
+
+    <!-- 페이징 처리된 게시글 목록 조회 -->
+    <select id="selectListWithPaging" resultMap="selectListMap">
+        <![CDATA[
+        WITH V_DATA AS (
+            SELECT 
+                /*+ INDEX_DESC(TBL_BOARD PK_BOARD) */ -- 기본 키 인덱스를 역순으로 탐색
+                ROWNUM RN,     -- 행 번호
+                TB.BNO,        -- 게시글 번호
+                TB.TITLE,      -- 게시글 제목
+                TU.USER_NM,    -- 작성자 이름
+                TB.REG_DATE,   -- 등록일
+                TB.UPD_DATE    -- 수정일
+            FROM TBL_BOARD TB
+            INNER JOIN TBL_USER TU 
+                ON TB.USER_ID = TU.USER_ID -- 게시글과 사용자 조인
+            WHERE
+        ]]>
+        <include refid="criteria" /> <!-- 동적 검색 조건 포함 -->
+        <![CDATA[
+            ROWNUM <= #{pageNum} * #{amount} -- 요청된 페이지 번호 * 페이지 크기만큼 데이터 제한
+        )
+        SELECT 
+            BNO, TITLE, USER_NM, REG_DATE, UPD_DATE
+        FROM V_DATA
+        WHERE RN > (#{pageNum} - 1) * #{amount} -- 이전 페이지 데이터 제외
+        ]]>
+    </select>
+
+    <!-- 전체 게시글 개수 조회 -->
+    <select id="selectTotalCount" resultType="int">
+        <![CDATA[
+        SELECT COUNT(TB.BNO) -- 전체 게시글 개수 조회
+        FROM TBL_BOARD TB
+        INNER JOIN TBL_USER TU 
+            ON TB.USER_ID = TU.USER_ID -- 게시글과 사용자 조인
+        WHERE
+        ]]>
+        <include refid="criteria" /> <!-- 검색 조건 적용 -->
+        <![CDATA[
+            TB.BNO > 0 -- 게시글 번호가 0보다 큰 경우만 포함
+        ]]>
+    </select>
+
+    <!-- 게시글 삽입 -->
+    <insert id="insert">
+        <![CDATA[
+        INSERT INTO TBL_BOARD (
+            BNO, TITLE, CONTENT, USER_ID -- 컬럼들
+        ) VALUES (
+            SEQ_BOARD.NEXTVAL, #{title}, #{content}, #{userId} -- 값들
+        )
+        ]]>
+    </insert>
+
+    <!-- 게시글 삽입 (SelectKey를 사용해 기본 키 값 설정) -->
+    <insert id="insertSelectKey">
+        <selectKey keyProperty="bno" order="BEFORE" resultType="long">
+            <![CDATA[
+            SELECT SEQ_BOARD.NEXTVAL FROM DUAL -- 기본 키 값을 미리 생성
+            ]]>
+        </selectKey>
+        <![CDATA[
+        INSERT INTO TBL_BOARD (
+            BNO, TITLE, CONTENT, USER_ID -- 컬럼들
+        ) VALUES (
+            #{bno}, #{title}, #{content}, #{userId} -- 값들
+        )
+        ]]>
+    </insert>
+
+    <!-- 특정 게시글 상세 정보 조회 -->
+    <select id="selectInfo" resultMap="selectInfoMap">
+        <![CDATA[
+        SELECT 
+            BNO,            -- 게시글 번호
+            TITLE,          -- 게시글 제목
+            CONTENT,        -- 게시글 내용
+            (SELECT USER_NM 
+             FROM TBL_USER 
+             WHERE USER_ID = TB.USER_ID) USER_NM, -- 작성자 이름 서브쿼리
+            REG_DATE        -- 등록일
+        FROM TBL_BOARD TB
+        WHERE BNO = #{bno} -- 특정 게시글 번호로 조회
+        ]]>
+    </select>
+
+    <!-- 게시글 삭제 -->
+    <delete id="delete">
+        <![CDATA[
+        DELETE FROM TBL_BOARD 
+        WHERE BNO = #{bno} -- 특정 게시글 번호 삭제
+        ]]>
+    </delete>
+
+    <!-- 게시글 수정 -->
+    <update id="update">
+        <![CDATA[
+        UPDATE TBL_BOARD SET
+            TITLE = #{title},   -- 제목 수정
+            CONTENT = #{content}, -- 내용 수정
+            UPD_DATE = SYSDATE  -- 수정일 갱신
+        WHERE BNO = #{bno} -- 특정 게시글 번호로 수정
+        ]]>
+    </update>
+
+</mapper>
