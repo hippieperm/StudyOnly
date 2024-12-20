@@ -29,9 +29,18 @@ class V28HomeScreen extends StatelessWidget {
             return ListView.separated(
               itemBuilder: (context, index) {
                 print(index);
-                return null;
+                var toonInfo = snapshot.data![index];
+
+                return Text(
+                  '${toonInfo.id}\n${toonInfo.title}\n${toonInfo.thumb}',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                  ),
+                );
               },
-              separatorBuilder: (context, index) => const SizedBox(height: 18),
+              separatorBuilder: (context, index) => const SizedBox(height: 58),
               itemCount: snapshot.data!.length,
             );
           }
