@@ -1,7 +1,11 @@
+import 'package:first_pj/v28_toon/model/v28_toon_model.dart';
+import 'package:first_pj/v28_toon/service/v28_api_service.dart';
 import 'package:flutter/material.dart';
 
 class V28HomeScreen extends StatelessWidget {
-  const V28HomeScreen({super.key});
+  V28HomeScreen({super.key});
+
+  Future<List<V28ToonModel>> toons = V28ApiService.getToons();
 
   @override
   Widget build(BuildContext context) {
