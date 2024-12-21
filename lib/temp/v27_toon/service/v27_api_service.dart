@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:first_pj/v27_toon/model/v27_webtoon_model.dart';
+import 'package:first_pj/temp/v27_toon/model/v27_webtoon_model.dart';
 import 'package:http/http.dart';
 
 class V27ApiService {
