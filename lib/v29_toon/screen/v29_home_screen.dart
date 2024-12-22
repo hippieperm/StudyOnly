@@ -1,7 +1,11 @@
+import 'package:first_pj/v29_toon/model/v29_toon_model.dart';
+import 'package:first_pj/v29_toon/service/v29_api_service.dart';
 import 'package:flutter/material.dart';
 
 class V29HomeScreen extends StatelessWidget {
-   V29HomeScreen({super.key});
+  V29HomeScreen({super.key});
+
+  Future<List<V29ToonModel>> toon = V29ApiService.getToon();
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +21,15 @@ class V29HomeScreen extends StatelessWidget {
             color: Colors.white.withOpacity(0.8),
           ),
         ),
+      ),
+      body: FutureBuilder(
+        future: toon,
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if (snapshot.hasData) {}
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
       ),
     );
   }
