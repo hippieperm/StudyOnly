@@ -24,8 +24,18 @@ class V29HomeScreen extends StatelessWidget {
       ),
       body: FutureBuilder(
         future: toon,
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if (snapshot.hasData) {}
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return ListView.separated(
+              itemBuilder: (context, index) {
+                
+              },
+              separatorBuilder: (context, index) => const SizedBox(
+                height: 18,
+              ),
+              itemCount: snapshot.data!.length,
+            );
+          }
           return const Center(
             child: CircularProgressIndicator(),
           );
