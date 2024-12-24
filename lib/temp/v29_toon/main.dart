@@ -11,7 +11,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: V29HomeScreen(),
+      home: V30HomeScreen(),
     );
   }
 }
