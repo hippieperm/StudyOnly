@@ -1,4 +1,5 @@
-import 'package:first_pj/v30_toon/screen/v30_home_screen.dart';
+import 'package:first_pj/temp/v30_toon/screen/v30_home_screen.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,5 +16,3 @@ class App extends StatelessWidget {
     );
   }
 }
-
-

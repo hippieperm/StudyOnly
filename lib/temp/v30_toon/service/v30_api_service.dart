@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-import 'package:first_pj/v30_toon/model/v30_toon_model.dart';
+import 'package:first_pj/temp/v30_toon/model/v30_toon_model.dart';
+
 import 'package:http/http.dart';
 
 class V30ApiService {
