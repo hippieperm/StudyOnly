@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:first_pj/v31_toon/model/v31_toon_model.dart';
+import 'package:first_pj/temp/v31_toon/model/v31_toon_model.dart';
 
 import 'package:http/http.dart';
 
