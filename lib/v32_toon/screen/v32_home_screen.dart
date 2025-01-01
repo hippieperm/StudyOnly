@@ -1,11 +1,11 @@
-
+import 'package:first_pj/v32_toon/model/v32_toon_model.dart';
 import 'package:first_pj/v32_toon/service/v32_api_service.dart';
 import 'package:flutter/material.dart';
 
 class V32HomeScreen extends StatelessWidget {
   V32HomeScreen({super.key});
 
-  Future<List<V32HomeScreen>> toon = V32ApiService.getToon();
+  Future<List<V32ToonModel>> toon = V32ApiService.getToon();
 
   @override
   Widget build(BuildContext context) {
