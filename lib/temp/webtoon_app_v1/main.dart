@@ -1,4 +1,4 @@
-import 'package:first_pj/webtoon_app_v1/screens/home_screen.dart';
+import 'package:first_pj/temp/Pomodoro_App_v3/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,7 +9,7 @@ class App extends StatelessWidget {
   const App({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: HomeScreen(),
     );
   }
