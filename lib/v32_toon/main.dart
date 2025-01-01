@@ -1,4 +1,4 @@
-import 'package:first_pj/temp/v30_toon/screen/v30_home_screen.dart';
+import 'package:first_pj/v32_toon/screen/v32_home_screen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -12,7 +12,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: V30HomeScreen(),
+      home: V32HomeScreen(),
     );
   }
 }
