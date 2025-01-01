@@ -32,7 +32,7 @@ class V32HomeScreen extends StatelessWidget {
                 var ttt = snapshot.data![index];
 
                 return Text(
-                  '${ttt.id}\n${ttt.title}\n${ttt.thumb}',
+                  '${ttt.id}\n${ttt.title}',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 14,
