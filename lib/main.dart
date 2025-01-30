@@ -27,7 +27,7 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   bool isDarkMode = true;
 
   @override
@@ -127,12 +127,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                           Colors.black.withOpacity(0), // 투명한 배경
                                     ),
                                   ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      // 다이얼로그 내부 터치 시 아무 동작도 하지 않음
-                                    },
-                                    child: const AccountDetailDialog(
-                                        bankName: '은행명'), // 다이얼로그 내용
+                                  // 애니메이션 효과 추가
+                                  AnimatedOpacity(
+                                    opacity: 1.0,
+                                    duration: const Duration(milliseconds: 300),
+                                    child: ScaleTransition(
+                                      scale: Tween<double>(begin: 0.8, end: 1.0)
+                                          .animate(
+                                        CurvedAnimation(
+                                          parent: AnimationController(
+                                            vsync: this,
+                                            duration: const Duration(
+                                                milliseconds: 300),
+                                          )..forward(),
+                                          curve: Curves.easeInOut,
+                                        ),
+                                      ),
+                                      child: const AccountDetailDialog(
+                                          bankName: '은행명'), // 다이얼로그 내용
+                                    ),
                                   ),
                                 ],
                               ),
@@ -160,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
             // 계좌 추가 기능
             showDialog(
               context: context,
-              builder: (context) => AddEditAccountDialog(),
+              builder: (context) => const AddEditAccountDialog(),
             );
           } else if (index == 2) {
             // 설정 화면으로 이동
@@ -176,7 +189,7 @@ class _HomeScreenState extends State<HomeScreen> {
           // 새 계좌 추가 기능
           showDialog(
             context: context,
-            builder: (context) => AddEditAccountDialog(),
+            builder: (context) => const AddEditAccountDialog(),
           );
         },
         child: const Icon(Icons.add),
@@ -227,15 +240,37 @@ class AccountDetailDialog extends StatelessWidget {
   }
 }
 
-class AddEditAccountDialog extends StatelessWidget {
+class AddEditAccountDialog extends StatefulWidget {
+  const AddEditAccountDialog({super.key});
+
+  @override
+  _AddEditAccountDialogState createState() => _AddEditAccountDialogState();
+}
+
+class _AddEditAccountDialogState extends State<AddEditAccountDialog>
+    with SingleTickerProviderStateMixin {
   final TextEditingController bankNameController = TextEditingController();
   final TextEditingController startDateController = TextEditingController();
   final TextEditingController endDateController = TextEditingController();
   final TextEditingController interestRateController = TextEditingController();
   bool isTaxExempt = false;
   double taxRate = 0;
+  late AnimationController _controller;
 
-  AddEditAccountDialog({super.key});
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 300),
+    )..forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -247,7 +282,6 @@ class AddEditAccountDialog extends StatelessWidget {
           BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0), // 블러 강도 조절
             child: GestureDetector(
-              // 추가: GestureDetector로 감싸기
               onTap: () {
                 Navigator.pop(context); // 다이얼로그 닫기
               },
@@ -256,84 +290,96 @@ class AddEditAccountDialog extends StatelessWidget {
               ),
             ),
           ),
-          // 다이얼로그 내용
-          AlertDialog(
-            title: const Text('계좌 추가/수정'),
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                TextField(
-                  controller: bankNameController,
-                  decoration: const InputDecoration(labelText: '은행명'),
+          // 애니메이션 효과 추가
+          AnimatedOpacity(
+            opacity: 1.0,
+            duration: const Duration(milliseconds: 300),
+            child: ScaleTransition(
+              scale: Tween<double>(begin: 0.8, end: 1.0).animate(
+                CurvedAnimation(
+                  parent: _controller,
+                  curve: Curves.easeInOut,
                 ),
-                TextField(
-                  controller: startDateController,
-                  decoration: const InputDecoration(labelText: '시작일'),
-                  onTap: () async {
-                    // 날짜 선택 기능
-                    DateTime? pickedDate = await showDatePicker(
-                      context: context,
-                      initialDate: DateTime.now(),
-                      firstDate: DateTime(2000),
-                      lastDate: DateTime(2101),
-                    );
-                    if (pickedDate != null) {
-                      startDateController.text =
-                          "${pickedDate.toLocal()}".split(' ')[0];
-                    }
-                  },
-                ),
-                TextField(
-                  controller: endDateController,
-                  decoration: const InputDecoration(labelText: '종료일'),
-                  onTap: () async {
-                    // 날짜 선택 기능
-                    DateTime? pickedDate = await showDatePicker(
-                      context: context,
-                      initialDate: DateTime.now(),
-                      firstDate: DateTime(2000),
-                      lastDate: DateTime(2101),
-                    );
-                    if (pickedDate != null) {
-                      endDateController.text =
-                          "${pickedDate.toLocal()}".split(' ')[0];
-                    }
-                  },
-                ),
-                TextField(
-                  controller: interestRateController,
-                  decoration: const InputDecoration(labelText: '이자율'),
-                  keyboardType: TextInputType.number,
-                ),
-                SwitchListTile(
-                  title: const Text('비과세 여부'),
-                  value: isTaxExempt,
-                  onChanged: (value) {
-                    isTaxExempt = value;
-                  },
-                ),
-                Slider(
-                  value: taxRate,
-                  min: 0,
-                  max: 100,
-                  divisions: 100,
-                  label: '세율',
-                  onChanged: (value) {
-                    taxRate = value;
-                  },
-                ),
-              ],
-            ),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  // 저장 기능
-                  Navigator.pop(context); // 다이얼로그 닫기
-                  // 저장 로직 추가 필요
-                },
-                child: const Text('저장'),
               ),
-            ],
+              child: AlertDialog(
+                title: const Text('계좌 추가/수정'),
+                content: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    TextField(
+                      controller: bankNameController,
+                      decoration: const InputDecoration(labelText: '은행명'),
+                    ),
+                    TextField(
+                      controller: startDateController,
+                      decoration: const InputDecoration(labelText: '시작일'),
+                      onTap: () async {
+                        // 날짜 선택 기능
+                        DateTime? pickedDate = await showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(2000),
+                          lastDate: DateTime(2101),
+                        );
+                        if (pickedDate != null) {
+                          startDateController.text =
+                              "${pickedDate.toLocal()}".split(' ')[0];
+                        }
+                      },
+                    ),
+                    TextField(
+                      controller: endDateController,
+                      decoration: const InputDecoration(labelText: '종료일'),
+                      onTap: () async {
+                        // 날짜 선택 기능
+                        DateTime? pickedDate = await showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(2000),
+                          lastDate: DateTime(2101),
+                        );
+                        if (pickedDate != null) {
+                          endDateController.text =
+                              "${pickedDate.toLocal()}".split(' ')[0];
+                        }
+                      },
+                    ),
+                    TextField(
+                      controller: interestRateController,
+                      decoration: const InputDecoration(labelText: '이자율'),
+                      keyboardType: TextInputType.number,
+                    ),
+                    SwitchListTile(
+                      title: const Text('비과세 여부'),
+                      value: isTaxExempt,
+                      onChanged: (value) {
+                        isTaxExempt = value;
+                      },
+                    ),
+                    Slider(
+                      value: taxRate,
+                      min: 0,
+                      max: 100,
+                      divisions: 100,
+                      label: '세율',
+                      onChanged: (value) {
+                        taxRate = value;
+                      },
+                    ),
+                  ],
+                ),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      // 저장 기능
+                      Navigator.pop(context); // 다이얼로그 닫기
+                      // 저장 로직 추가 필요
+                    },
+                    child: const Text('저장'),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
