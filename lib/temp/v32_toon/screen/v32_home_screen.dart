@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class V32HomeScreen extends StatelessWidget {
   V32HomeScreen({super.key});
 
-  Future<List<V32ToonModel>> toon = V32ApiService.getToon();
+  final Future<List<V32ToonModel>> toon = V32ApiService.getToon();
 
   @override
   Widget build(BuildContext context) {
