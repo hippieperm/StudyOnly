@@ -106,8 +106,8 @@ th {
 				Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "1234");
 				String sql = "SELECT a.custno, a.custname, a.grade, c.product_name, SUM(b.price) price"
 								+"	FROM member_tbl_02 a"
-								+"	INNER JOIN money_tbl_02 b ON a.custno = b.custno"
-								+"	INNER JOIN product_tbl_02 c ON b.product_id = c.product_id"
+								+"	JOIN money_tbl_02 b ON a.custno = b.custno"
+								+"	JOIN product_tbl_02 c ON b.product_id = c.product_id"
 								+"	GROUP BY a.custno, a.custname, a.grade, c.product_name"
 								+"	ORDER BY price DESC";
 				PreparedStatement ps = con.prepareStatement(sql);
