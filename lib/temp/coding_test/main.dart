@@ -1,78 +1,50 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: TextFieldExample(),
-    );
-  }
-}
-
-class TextFieldExample extends StatefulWidget {
-  @override
-  _TextFieldExampleState createState() => _TextFieldExampleState();
-}
-
-class _TextFieldExampleState extends State<TextFieldExample> {
-  TextEditingController _controller = TextEditingController();
-  String displayedText = "";
-  int count = 0;
-
-  void incrementCounter() {
-    setState(() {
-      count++;
-    });
-  }
-
-  void updateText() {
-    setState(() {
-      displayedText = _controller.text;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("사용자 입력 및 화면 업데이트")),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Column & Row 연습"),
+          backgroundColor: Colors.deepPurple,
+        ),
+        body: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            TextField(
-              controller: _controller,
-              decoration: InputDecoration(
-                labelText: "이름을 입력하세요",
-                border: OutlineInputBorder(),
-              ),
+            // Row: 세 개의 아이콘 배치
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon(Icons.star, color: Colors.amber, size: 40),
+                Icon(Icons.star, color: Colors.amber, size: 40),
+                Icon(Icons.star, color: Colors.amber, size: 40),
+              ],
             ),
-            SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: updateText,
-              child: Text("출력하기"),
-            ),
-            SizedBox(height: 10),
-            Text(
-              "입력한 값: $displayedText",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            Divider(height: 30, thickness: 1),
-            Text(
-              "현재 값: $count",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: incrementCounter,
-              child: Text("숫자 증가"),
+            SizedBox(height: 30), // 간격 추가
+            // Column: 세 줄의 텍스트 출력
+            Column(
+              children: [
+                Text(
+                  "첫 번째 줄",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "두 번째 줄",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "세 번째 줄",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
           ],
         ),
