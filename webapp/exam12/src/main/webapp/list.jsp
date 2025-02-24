@@ -117,7 +117,11 @@ th {
 				<%
 				Class.forName("oracle.jdbc.driver.OracleDriver");
 				Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "1234");
-				String sql = "select  a.custno, a.custname, a.phone, a.address, a.city, a.joindate, a.grade, b.salenol,b.pcost,b.amount  from member_tbl_02 a, money_tbl_02 b where a.custno = b.custno and a.custno = ?";
+				String sql = "SELECT a.custno, a.custname, a.phone, a.address, a.city, "
+						  + " a.joindate, a.grade, b.salenol, b.pcost, b.amount "
+						  + " FROM member_tbl_02 a "
+						  + " JOIN money_tbl_02 b ON a.custno = b.custno "
+						  + " WHERE a.custno = ?";
 				PreparedStatement ps = con.prepareStatement(sql);
 				ps.setInt(1, custno2);
 				ResultSet rs = ps.executeQuery();

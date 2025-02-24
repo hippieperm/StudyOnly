@@ -104,12 +104,12 @@ th {
 				<%
 				Class.forName("oracle.jdbc.driver.OracleDriver");
 				Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "1234");
-				String sql = "select"
-								+"	a.custno custno, a.custname custname, a.grade grade, sum(b.price) price"
-								+"	from member_tbl_02 a, money_tbl_02 b"
-								+"	where a.custno = b.custno"
-								+"	group by a.custno, a.custname, a.grade"
-								+"	order by price desc";
+				String sql = "SELECT a.custno, a.custname, a.grade, c.product_name, SUM(b.price) price"
+								+"	FROM member_tbl_02 a"
+								+"	INNER JOIN money_tbl_02 b ON a.custno = b.custno"
+								+"	INNER JOIN product_tbl_02 c ON b.product_id = c.product_id"
+								+"	GROUP BY a.custno, a.custname, a.grade, c.product_name"
+								+"	ORDER BY price DESC";
 				PreparedStatement ps = con.prepareStatement(sql);
 				ResultSet rs = ps.executeQuery();
 
